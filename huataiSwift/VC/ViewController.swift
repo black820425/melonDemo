@@ -9,15 +9,16 @@
 import UIKit
 import LocalAuthentication
 
-var menuView:UIView?
-var fullScreenBounds:CGRect?
-var menuViewOriginX:CGFloat?
-var menuViewOriginY:CGFloat?
 
-var panGestureRecognizer:UIPanGestureRecognizer?
 
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-
+  
+  var menuView:UIView?
+  var fullScreenBounds:CGRect?
+  var menuViewOriginX:CGFloat?
+  var menuViewOriginY:CGFloat?
+  
+  var panGestureRecognizer:UIPanGestureRecognizer?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,7 +39,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     @IBAction func callCustomizeSliderMenuButtonAction(_ sender: Any) {
         UIView.animate(withDuration: 0.3) {
-            menuView?.center = CGPoint(x:menuViewOriginX!, y:menuViewOriginY!)
+            self.menuView?.center = CGPoint(x: self.menuViewOriginX!, y: self.menuViewOriginY!)
         }
     }
     
@@ -102,10 +103,14 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         if(recognizer.state == .ended) {
             UIView.animate(withDuration: 0.3) {
                 if(x < 0.0) {
-                    menuView?.center = CGPoint(x:-((fullScreenBounds?.width)!/2), y:menuViewOriginY!)
+                    self.menuView?.center =
+                      CGPoint(x: -((self.fullScreenBounds?.width)!/2),
+                              y: self.menuViewOriginY!)
                 
                 } else {
-                    menuView?.center = CGPoint(x:menuViewOriginX!, y:menuViewOriginY!)
+                  self.menuView?.center =
+                    CGPoint(x: self.menuViewOriginX!,
+                            y: self.menuViewOriginY!)
                 }
             }
         }
