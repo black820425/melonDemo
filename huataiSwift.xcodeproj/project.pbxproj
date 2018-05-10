@@ -1,0 +1,900 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3A50C1D320747BE0002171F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50C1D220747BE0002171F4 /* AppDelegate.swift */; };
+		3A50C1D520747BE0002171F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50C1D420747BE0002171F4 /* ViewController.swift */; };
+		3A50C1D820747BE0002171F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A50C1D620747BE0002171F4 /* Main.storyboard */; };
+		3A50C1DA20747BE1002171F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A50C1D920747BE1002171F4 /* Assets.xcassets */; };
+		3A50C1DD20747BE1002171F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A50C1DB20747BE1002171F4 /* LaunchScreen.storyboard */; };
+		3A50C1E820747BE1002171F4 /* huataiSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50C1E720747BE1002171F4 /* huataiSwiftTests.swift */; };
+		3A50C1F320747BE1002171F4 /* huataiSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50C1F220747BE1002171F4 /* huataiSwiftUITests.swift */; };
+		3A50C20220747C07002171F4 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A50C20120747C07002171F4 /* LocalAuthentication.framework */; };
+		3A945C3F209C2B62005414BE /* EffectiveScanningRangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A945C3E209C2B62005414BE /* EffectiveScanningRangeView.swift */; };
+		3A945C41209C456F005414BE /* TabBarImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A945C40209C456F005414BE /* TabBarImages.xcassets */; };
+		3A945C43209C45D4005414BE /* MoreViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A945C42209C45D4005414BE /* MoreViewController.storyboard */; };
+		3A945C45209C52B9005414BE /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A945C44209C52B9005414BE /* MainTabBarController.swift */; };
+		3A945C49209C5E01005414BE /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A945C48209C5E01005414BE /* LoginViewController.storyboard */; };
+		3A945C4D209C6180005414BE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A945C4C209C6180005414BE /* LoginViewController.swift */; };
+		3A945C4F209C6289005414BE /* LoginViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A945C4E209C6289005414BE /* LoginViewCollectionViewCell.swift */; };
+		3A975751209FDEBF007C1EC2 /* QuickLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A975750209FDEBF007C1EC2 /* QuickLoginViewController.swift */; };
+		3A975755209FDFE8007C1EC2 /* LoginViewPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A975754209FDFE8007C1EC2 /* LoginViewPageViewController.swift */; };
+		3A975758209FF594007C1EC2 /* GestureUnlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A975757209FF594007C1EC2 /* GestureUnlockViewController.swift */; };
+		3A97575C20A01B1C007C1EC2 /* GeneralLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A97575B20A01B1C007C1EC2 /* GeneralLoginViewController.swift */; };
+		3A97575E20A02EB1007C1EC2 /* GestureUnlockViewImage.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A97575D20A02EB1007C1EC2 /* GestureUnlockViewImage.xcassets */; };
+		3A97576120A0348A007C1EC2 /* QuickLoginViewPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A97576020A0348A007C1EC2 /* QuickLoginViewPageViewController.swift */; };
+		3A97576420A05567007C1EC2 /* BiometricViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A97576320A05567007C1EC2 /* BiometricViewController.swift */; };
+		3A97576820A06133007C1EC2 /* QRCodePaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A97576720A06133007C1EC2 /* QRCodePaymentViewController.swift */; };
+		3A97576A20A0617F007C1EC2 /* QRCodePaymentViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A97576920A0617F007C1EC2 /* QRCodePaymentViewController.storyboard */; };
+		3A97576F20A063E7007C1EC2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A97576E20A063E7007C1EC2 /* MainViewController.swift */; };
+		3A97577320A15C0E007C1EC2 /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A97577120A15C0E007C1EC2 /* MainViewController.storyboard */; };
+		3A97577620A17C94007C1EC2 /* NavigationItemImage.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A97577520A17C94007C1EC2 /* NavigationItemImage.xcassets */; };
+		3A97577820A18064007C1EC2 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A97577720A18064007C1EC2 /* MoreViewController.swift */; };
+		3A97577A20A18A39007C1EC2 /* MoreViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A97577920A18A39007C1EC2 /* MoreViewTableViewCell.swift */; };
+		3A97577C20A19FCF007C1EC2 /* MoreViewController.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A97577B20A19FCF007C1EC2 /* MoreViewController.xcassets */; };
+		3A97593F20A29B77007C1EC2 /* CreditCardMembershipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A97593E20A29B77007C1EC2 /* CreditCardMembershipViewController.swift */; };
+		3A97594320A2D3D5007C1EC2 /* CreditCardInstructionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A97594220A2D3D5007C1EC2 /* CreditCardInstructionsTableViewCell.swift */; };
+		3A97594520A2D444007C1EC2 /* CreditCardPublicTextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A97594420A2D444007C1EC2 /* CreditCardPublicTextFieldTableViewCell.swift */; };
+		3A975B0720A4131D007C1EC2 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3A975B0620A4131D007C1EC2 /* .gitignore */; };
+		3AF56DF1209957940021C42E /* ProjectAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF56DF0209957940021C42E /* ProjectAPI.swift */; };
+		3AF56DF320998CB70021C42E /* MapViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AF56DF220998CB70021C42E /* MapViewController.storyboard */; };
+		3AF56DFA20998D6F0021C42E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF56DF920998D6F0021C42E /* MapViewController.swift */; };
+		3AF56DFD20999BE20021C42E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3AF56DFF20999BE20021C42E /* InfoPlist.strings */; };
+		3AF56E0520999C4C0021C42E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3AF56E0720999C4C0021C42E /* Localizable.strings */; };
+		3AF56E0D2099AADF0021C42E /* MainViewImage.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AF56E0C2099AADF0021C42E /* MainViewImage.xcassets */; };
+		3AF56E10209AE9880021C42E /* MapViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF56E0F209AE9880021C42E /* MapViewCollectionViewCell.swift */; };
+		3AF56E12209AFCD70021C42E /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF56E11209AFCD70021C42E /* Singleton.swift */; };
+		3AF56E15209B088A0021C42E /* ScanQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF56E14209B088A0021C42E /* ScanQRCodeViewController.swift */; };
+		3AF56E19209B17FE0021C42E /* ScanQRCodeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AF56E18209B17FE0021C42E /* ScanQRCodeViewController.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3A50C1E420747BE1002171F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A50C1C720747BE0002171F4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A50C1CE20747BE0002171F4;
+			remoteInfo = huataiSwift;
+		};
+		3A50C1EF20747BE1002171F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A50C1C720747BE0002171F4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A50C1CE20747BE0002171F4;
+			remoteInfo = huataiSwift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3A50C1CF20747BE0002171F4 /* huataiSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = huataiSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A50C1D220747BE0002171F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3A50C1D420747BE0002171F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3A50C1D720747BE0002171F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3A50C1D920747BE1002171F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3A50C1DC20747BE1002171F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3A50C1DE20747BE1002171F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A50C1E320747BE1002171F4 /* huataiSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = huataiSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A50C1E720747BE1002171F4 /* huataiSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = huataiSwiftTests.swift; sourceTree = "<group>"; };
+		3A50C1E920747BE1002171F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A50C1EE20747BE1002171F4 /* huataiSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = huataiSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A50C1F220747BE1002171F4 /* huataiSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = huataiSwiftUITests.swift; sourceTree = "<group>"; };
+		3A50C1F420747BE1002171F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A50C20120747C07002171F4 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		3A945C3E209C2B62005414BE /* EffectiveScanningRangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectiveScanningRangeView.swift; sourceTree = "<group>"; };
+		3A945C40209C456F005414BE /* TabBarImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TabBarImages.xcassets; sourceTree = "<group>"; };
+		3A945C42209C45D4005414BE /* MoreViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MoreViewController.storyboard; sourceTree = "<group>"; };
+		3A945C44209C52B9005414BE /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		3A945C48209C5E01005414BE /* LoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
+		3A945C4C209C6180005414BE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3A945C4E209C6289005414BE /* LoginViewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewCollectionViewCell.swift; sourceTree = "<group>"; };
+		3A975750209FDEBF007C1EC2 /* QuickLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickLoginViewController.swift; sourceTree = "<group>"; };
+		3A975754209FDFE8007C1EC2 /* LoginViewPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewPageViewController.swift; sourceTree = "<group>"; };
+		3A975757209FF594007C1EC2 /* GestureUnlockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureUnlockViewController.swift; sourceTree = "<group>"; };
+		3A97575B20A01B1C007C1EC2 /* GeneralLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralLoginViewController.swift; sourceTree = "<group>"; };
+		3A97575D20A02EB1007C1EC2 /* GestureUnlockViewImage.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = GestureUnlockViewImage.xcassets; sourceTree = "<group>"; };
+		3A97576020A0348A007C1EC2 /* QuickLoginViewPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickLoginViewPageViewController.swift; sourceTree = "<group>"; };
+		3A97576320A05567007C1EC2 /* BiometricViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricViewController.swift; sourceTree = "<group>"; };
+		3A97576720A06133007C1EC2 /* QRCodePaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodePaymentViewController.swift; sourceTree = "<group>"; };
+		3A97576920A0617F007C1EC2 /* QRCodePaymentViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QRCodePaymentViewController.storyboard; sourceTree = "<group>"; };
+		3A97576E20A063E7007C1EC2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		3A97577220A15C0E007C1EC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = huataiSwift/C/MainTabBarController/Base.lproj/MainViewController.storyboard; sourceTree = "<group>"; };
+		3A97577520A17C94007C1EC2 /* NavigationItemImage.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = NavigationItemImage.xcassets; sourceTree = "<group>"; };
+		3A97577720A18064007C1EC2 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		3A97577920A18A39007C1EC2 /* MoreViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewTableViewCell.swift; sourceTree = "<group>"; };
+		3A97577B20A19FCF007C1EC2 /* MoreViewController.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MoreViewController.xcassets; sourceTree = "<group>"; };
+		3A97593E20A29B77007C1EC2 /* CreditCardMembershipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardMembershipViewController.swift; sourceTree = "<group>"; };
+		3A97594220A2D3D5007C1EC2 /* CreditCardInstructionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardInstructionsTableViewCell.swift; sourceTree = "<group>"; };
+		3A97594420A2D444007C1EC2 /* CreditCardPublicTextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardPublicTextFieldTableViewCell.swift; sourceTree = "<group>"; };
+		3A975B0620A4131D007C1EC2 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		3AF56DF0209957940021C42E /* ProjectAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectAPI.swift; sourceTree = "<group>"; };
+		3AF56DF220998CB70021C42E /* MapViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapViewController.storyboard; sourceTree = "<group>"; };
+		3AF56DF920998D6F0021C42E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		3AF56DFE20999BE20021C42E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3AF56E0020999C260021C42E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		3AF56E0120999C260021C42E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		3AF56E0220999C260021C42E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		3AF56E0620999C4C0021C42E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3AF56E0820999C4E0021C42E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		3AF56E0C2099AADF0021C42E /* MainViewImage.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MainViewImage.xcassets; sourceTree = "<group>"; };
+		3AF56E0F209AE9880021C42E /* MapViewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewCollectionViewCell.swift; sourceTree = "<group>"; };
+		3AF56E11209AFCD70021C42E /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
+		3AF56E14209B088A0021C42E /* ScanQRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanQRCodeViewController.swift; sourceTree = "<group>"; };
+		3AF56E18209B17FE0021C42E /* ScanQRCodeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ScanQRCodeViewController.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3A50C1CC20747BE0002171F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A50C20220747C07002171F4 /* LocalAuthentication.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A50C1E020747BE1002171F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A50C1EB20747BE1002171F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3A50C1C620747BE0002171F4 = {
+			isa = PBXGroup;
+			children = (
+				3A975B0620A4131D007C1EC2 /* .gitignore */,
+				3A50C1D120747BE0002171F4 /* huataiSwift */,
+				3AF56E0B2099AAB30021C42E /* ImageFile */,
+				3A50C1E620747BE1002171F4 /* huataiSwiftTests */,
+				3A50C1F120747BE1002171F4 /* huataiSwiftUITests */,
+				3A50C1D020747BE0002171F4 /* Products */,
+				3A50C20020747C07002171F4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3A50C1D020747BE0002171F4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A50C1CF20747BE0002171F4 /* huataiSwift.app */,
+				3A50C1E320747BE1002171F4 /* huataiSwiftTests.xctest */,
+				3A50C1EE20747BE1002171F4 /* huataiSwiftUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3A50C1D120747BE0002171F4 /* huataiSwift */ = {
+			isa = PBXGroup;
+			children = (
+				3A50C1DE20747BE1002171F4 /* Info.plist */,
+				3AF56DFF20999BE20021C42E /* InfoPlist.strings */,
+				3AF56E0720999C4C0021C42E /* Localizable.strings */,
+				3AF56DF420998CFB0021C42E /* M */,
+				3AF56DF820998D2F0021C42E /* VC */,
+			);
+			path = huataiSwift;
+			sourceTree = "<group>";
+		};
+		3A50C1E620747BE1002171F4 /* huataiSwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				3A50C1E720747BE1002171F4 /* huataiSwiftTests.swift */,
+				3A50C1E920747BE1002171F4 /* Info.plist */,
+			);
+			path = huataiSwiftTests;
+			sourceTree = "<group>";
+		};
+		3A50C1F120747BE1002171F4 /* huataiSwiftUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3A50C1F220747BE1002171F4 /* huataiSwiftUITests.swift */,
+				3A50C1F420747BE1002171F4 /* Info.plist */,
+			);
+			path = huataiSwiftUITests;
+			sourceTree = "<group>";
+		};
+		3A50C20020747C07002171F4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3A50C20120747C07002171F4 /* LocalAuthentication.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3A945C4A209C6131005414BE /* LoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3A945C48209C5E01005414BE /* LoginViewController.storyboard */,
+				3A945C4C209C6180005414BE /* LoginViewController.swift */,
+				3A945C4E209C6289005414BE /* LoginViewCollectionViewCell.swift */,
+				3A975754209FDFE8007C1EC2 /* LoginViewPageViewController.swift */,
+				3A97575A20A01A96007C1EC2 /* GeneralLoginViewController */,
+				3A97575920A01A7F007C1EC2 /* QuickLoginViewController */,
+			);
+			path = LoginViewController;
+			sourceTree = "<group>";
+		};
+		3A975756209FF581007C1EC2 /* GestureUnlockViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3A975757209FF594007C1EC2 /* GestureUnlockViewController.swift */,
+			);
+			path = GestureUnlockViewController;
+			sourceTree = "<group>";
+		};
+		3A97575920A01A7F007C1EC2 /* QuickLoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3A975750209FDEBF007C1EC2 /* QuickLoginViewController.swift */,
+				3A97576020A0348A007C1EC2 /* QuickLoginViewPageViewController.swift */,
+				3A97576220A035AA007C1EC2 /* BiometricViewController */,
+				3A975756209FF581007C1EC2 /* GestureUnlockViewController */,
+			);
+			path = QuickLoginViewController;
+			sourceTree = "<group>";
+		};
+		3A97575A20A01A96007C1EC2 /* GeneralLoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3A97575B20A01B1C007C1EC2 /* GeneralLoginViewController.swift */,
+				3A97593D20A29A68007C1EC2 /* CreditCardMembershipViewController */,
+			);
+			path = GeneralLoginViewController;
+			sourceTree = "<group>";
+		};
+		3A97576220A035AA007C1EC2 /* BiometricViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3A97576320A05567007C1EC2 /* BiometricViewController.swift */,
+			);
+			path = BiometricViewController;
+			sourceTree = "<group>";
+		};
+		3A97576520A06038007C1EC2 /* QRCodePaymentViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3A97576920A0617F007C1EC2 /* QRCodePaymentViewController.storyboard */,
+				3A97576720A06133007C1EC2 /* QRCodePaymentViewController.swift */,
+			);
+			path = QRCodePaymentViewController;
+			sourceTree = "<group>";
+		};
+		3A97576620A060D3007C1EC2 /* MoreViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3A945C42209C45D4005414BE /* MoreViewController.storyboard */,
+				3A97577720A18064007C1EC2 /* MoreViewController.swift */,
+				3A97577920A18A39007C1EC2 /* MoreViewTableViewCell.swift */,
+			);
+			path = MoreViewController;
+			sourceTree = "<group>";
+		};
+		3A97576B20A063BA007C1EC2 /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3A97577120A15C0E007C1EC2 /* MainViewController.storyboard */,
+				3A97576E20A063E7007C1EC2 /* MainViewController.swift */,
+			);
+			path = MainViewController;
+			sourceTree = "<group>";
+		};
+		3A97577020A15B8D007C1EC2 /* MainTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				3A50C1D620747BE0002171F4 /* Main.storyboard */,
+				3A945C44209C52B9005414BE /* MainTabBarController.swift */,
+			);
+			path = MainTabBarController;
+			sourceTree = "<group>";
+		};
+		3A97593D20A29A68007C1EC2 /* CreditCardMembershipViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3A97593E20A29B77007C1EC2 /* CreditCardMembershipViewController.swift */,
+				3A97594220A2D3D5007C1EC2 /* CreditCardInstructionsTableViewCell.swift */,
+				3A97594420A2D444007C1EC2 /* CreditCardPublicTextFieldTableViewCell.swift */,
+			);
+			path = CreditCardMembershipViewController;
+			sourceTree = "<group>";
+		};
+		3AF56DF420998CFB0021C42E /* M */ = {
+			isa = PBXGroup;
+			children = (
+				3AF56E11209AFCD70021C42E /* Singleton.swift */,
+				3AF56DF0209957940021C42E /* ProjectAPI.swift */,
+				3A50C1D220747BE0002171F4 /* AppDelegate.swift */,
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		3AF56DF820998D2F0021C42E /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				3A50C1D420747BE0002171F4 /* ViewController.swift */,
+				3A50C1DB20747BE1002171F4 /* LaunchScreen.storyboard */,
+				3A97577020A15B8D007C1EC2 /* MainTabBarController */,
+				3A97576B20A063BA007C1EC2 /* MainViewController */,
+				3A97576520A06038007C1EC2 /* QRCodePaymentViewController */,
+				3AF56E0E209AE9410021C42E /* MapViewController */,
+				3A97576620A060D3007C1EC2 /* MoreViewController */,
+				3A945C4A209C6131005414BE /* LoginViewController */,
+				3AF56E13209B08240021C42E /* ScanQRCodeViewController */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		3AF56E0B2099AAB30021C42E /* ImageFile */ = {
+			isa = PBXGroup;
+			children = (
+				3A50C1D920747BE1002171F4 /* Assets.xcassets */,
+				3A945C40209C456F005414BE /* TabBarImages.xcassets */,
+				3AF56E0C2099AADF0021C42E /* MainViewImage.xcassets */,
+				3A97577B20A19FCF007C1EC2 /* MoreViewController.xcassets */,
+				3A97577520A17C94007C1EC2 /* NavigationItemImage.xcassets */,
+				3A97575D20A02EB1007C1EC2 /* GestureUnlockViewImage.xcassets */,
+			);
+			path = ImageFile;
+			sourceTree = "<group>";
+		};
+		3AF56E0E209AE9410021C42E /* MapViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3AF56DF220998CB70021C42E /* MapViewController.storyboard */,
+				3AF56DF920998D6F0021C42E /* MapViewController.swift */,
+				3AF56E0F209AE9880021C42E /* MapViewCollectionViewCell.swift */,
+			);
+			path = MapViewController;
+			sourceTree = "<group>";
+		};
+		3AF56E13209B08240021C42E /* ScanQRCodeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3AF56E18209B17FE0021C42E /* ScanQRCodeViewController.storyboard */,
+				3AF56E14209B088A0021C42E /* ScanQRCodeViewController.swift */,
+				3A945C3E209C2B62005414BE /* EffectiveScanningRangeView.swift */,
+			);
+			path = ScanQRCodeViewController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3A50C1CE20747BE0002171F4 /* huataiSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A50C1F720747BE1002171F4 /* Build configuration list for PBXNativeTarget "huataiSwift" */;
+			buildPhases = (
+				3A50C1CB20747BE0002171F4 /* Sources */,
+				3A50C1CC20747BE0002171F4 /* Frameworks */,
+				3A50C1CD20747BE0002171F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = huataiSwift;
+			productName = huataiSwift;
+			productReference = 3A50C1CF20747BE0002171F4 /* huataiSwift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3A50C1E220747BE1002171F4 /* huataiSwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A50C1FA20747BE1002171F4 /* Build configuration list for PBXNativeTarget "huataiSwiftTests" */;
+			buildPhases = (
+				3A50C1DF20747BE1002171F4 /* Sources */,
+				3A50C1E020747BE1002171F4 /* Frameworks */,
+				3A50C1E120747BE1002171F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3A50C1E520747BE1002171F4 /* PBXTargetDependency */,
+			);
+			name = huataiSwiftTests;
+			productName = huataiSwiftTests;
+			productReference = 3A50C1E320747BE1002171F4 /* huataiSwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3A50C1ED20747BE1002171F4 /* huataiSwiftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A50C1FD20747BE1002171F4 /* Build configuration list for PBXNativeTarget "huataiSwiftUITests" */;
+			buildPhases = (
+				3A50C1EA20747BE1002171F4 /* Sources */,
+				3A50C1EB20747BE1002171F4 /* Frameworks */,
+				3A50C1EC20747BE1002171F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3A50C1F020747BE1002171F4 /* PBXTargetDependency */,
+			);
+			name = huataiSwiftUITests;
+			productName = huataiSwiftUITests;
+			productReference = 3A50C1EE20747BE1002171F4 /* huataiSwiftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3A50C1C720747BE0002171F4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "U-Sync";
+				TargetAttributes = {
+					3A50C1CE20747BE0002171F4 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					3A50C1E220747BE1002171F4 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = 3A50C1CE20747BE0002171F4;
+					};
+					3A50C1ED20747BE1002171F4 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = 3A50C1CE20747BE0002171F4;
+					};
+				};
+			};
+			buildConfigurationList = 3A50C1CA20747BE0002171F4 /* Build configuration list for PBXProject "huataiSwift" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"zh-Hant",
+			);
+			mainGroup = 3A50C1C620747BE0002171F4;
+			productRefGroup = 3A50C1D020747BE0002171F4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3A50C1CE20747BE0002171F4 /* huataiSwift */,
+				3A50C1E220747BE1002171F4 /* huataiSwiftTests */,
+				3A50C1ED20747BE1002171F4 /* huataiSwiftUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3A50C1CD20747BE0002171F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A97575E20A02EB1007C1EC2 /* GestureUnlockViewImage.xcassets in Resources */,
+				3AF56DF320998CB70021C42E /* MapViewController.storyboard in Resources */,
+				3A97577620A17C94007C1EC2 /* NavigationItemImage.xcassets in Resources */,
+				3A945C41209C456F005414BE /* TabBarImages.xcassets in Resources */,
+				3A975B0720A4131D007C1EC2 /* .gitignore in Resources */,
+				3AF56E0520999C4C0021C42E /* Localizable.strings in Resources */,
+				3A50C1DD20747BE1002171F4 /* LaunchScreen.storyboard in Resources */,
+				3A50C1DA20747BE1002171F4 /* Assets.xcassets in Resources */,
+				3A97577320A15C0E007C1EC2 /* MainViewController.storyboard in Resources */,
+				3AF56E19209B17FE0021C42E /* ScanQRCodeViewController.storyboard in Resources */,
+				3A97577C20A19FCF007C1EC2 /* MoreViewController.xcassets in Resources */,
+				3A945C43209C45D4005414BE /* MoreViewController.storyboard in Resources */,
+				3A945C49209C5E01005414BE /* LoginViewController.storyboard in Resources */,
+				3A50C1D820747BE0002171F4 /* Main.storyboard in Resources */,
+				3AF56E0D2099AADF0021C42E /* MainViewImage.xcassets in Resources */,
+				3AF56DFD20999BE20021C42E /* InfoPlist.strings in Resources */,
+				3A97576A20A0617F007C1EC2 /* QRCodePaymentViewController.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A50C1E120747BE1002171F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A50C1EC20747BE1002171F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3A50C1CB20747BE0002171F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A97577820A18064007C1EC2 /* MoreViewController.swift in Sources */,
+				3A945C4D209C6180005414BE /* LoginViewController.swift in Sources */,
+				3A975751209FDEBF007C1EC2 /* QuickLoginViewController.swift in Sources */,
+				3A97575C20A01B1C007C1EC2 /* GeneralLoginViewController.swift in Sources */,
+				3AF56DF1209957940021C42E /* ProjectAPI.swift in Sources */,
+				3AF56E12209AFCD70021C42E /* Singleton.swift in Sources */,
+				3A945C45209C52B9005414BE /* MainTabBarController.swift in Sources */,
+				3A97594520A2D444007C1EC2 /* CreditCardPublicTextFieldTableViewCell.swift in Sources */,
+				3AF56E15209B088A0021C42E /* ScanQRCodeViewController.swift in Sources */,
+				3A945C3F209C2B62005414BE /* EffectiveScanningRangeView.swift in Sources */,
+				3A97576420A05567007C1EC2 /* BiometricViewController.swift in Sources */,
+				3A97577A20A18A39007C1EC2 /* MoreViewTableViewCell.swift in Sources */,
+				3A97593F20A29B77007C1EC2 /* CreditCardMembershipViewController.swift in Sources */,
+				3A975755209FDFE8007C1EC2 /* LoginViewPageViewController.swift in Sources */,
+				3A97576120A0348A007C1EC2 /* QuickLoginViewPageViewController.swift in Sources */,
+				3A50C1D520747BE0002171F4 /* ViewController.swift in Sources */,
+				3A50C1D320747BE0002171F4 /* AppDelegate.swift in Sources */,
+				3A975758209FF594007C1EC2 /* GestureUnlockViewController.swift in Sources */,
+				3AF56E10209AE9880021C42E /* MapViewCollectionViewCell.swift in Sources */,
+				3A945C4F209C6289005414BE /* LoginViewCollectionViewCell.swift in Sources */,
+				3A97576820A06133007C1EC2 /* QRCodePaymentViewController.swift in Sources */,
+				3A97594320A2D3D5007C1EC2 /* CreditCardInstructionsTableViewCell.swift in Sources */,
+				3AF56DFA20998D6F0021C42E /* MapViewController.swift in Sources */,
+				3A97576F20A063E7007C1EC2 /* MainViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A50C1DF20747BE1002171F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A50C1E820747BE1002171F4 /* huataiSwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A50C1EA20747BE1002171F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A50C1F320747BE1002171F4 /* huataiSwiftUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3A50C1E520747BE1002171F4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A50C1CE20747BE0002171F4 /* huataiSwift */;
+			targetProxy = 3A50C1E420747BE1002171F4 /* PBXContainerItemProxy */;
+		};
+		3A50C1F020747BE1002171F4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A50C1CE20747BE0002171F4 /* huataiSwift */;
+			targetProxy = 3A50C1EF20747BE1002171F4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3A50C1D620747BE0002171F4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A50C1D720747BE0002171F4 /* Base */,
+				3AF56E0020999C260021C42E /* zh-Hant */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3A50C1DB20747BE1002171F4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A50C1DC20747BE1002171F4 /* Base */,
+				3AF56E0120999C260021C42E /* zh-Hant */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		3A97577120A15C0E007C1EC2 /* MainViewController.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A97577220A15C0E007C1EC2 /* Base */,
+			);
+			name = MainViewController.storyboard;
+			sourceTree = "<group>";
+		};
+		3AF56DFF20999BE20021C42E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3AF56DFE20999BE20021C42E /* en */,
+				3AF56E0220999C260021C42E /* zh-Hant */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3AF56E0720999C4C0021C42E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3AF56E0620999C4C0021C42E /* en */,
+				3AF56E0820999C4E0021C42E /* zh-Hant */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3A50C1F520747BE1002171F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3A50C1F620747BE1002171F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3A50C1F820747BE1002171F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VN24ZWQUQ3;
+				INFOPLIST_FILE = huataiSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.usync.ent.hwatai;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3A50C1F920747BE1002171F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VN24ZWQUQ3;
+				INFOPLIST_FILE = huataiSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.usync.ent.hwatai;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3A50C1FB20747BE1002171F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VN24ZWQUQ3;
+				INFOPLIST_FILE = huataiSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.usync.huataiSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/huataiSwift.app/huataiSwift";
+			};
+			name = Debug;
+		};
+		3A50C1FC20747BE1002171F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VN24ZWQUQ3;
+				INFOPLIST_FILE = huataiSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.usync.huataiSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/huataiSwift.app/huataiSwift";
+			};
+			name = Release;
+		};
+		3A50C1FE20747BE1002171F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VN24ZWQUQ3;
+				INFOPLIST_FILE = huataiSwiftUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.usync.huataiSwiftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = huataiSwift;
+			};
+			name = Debug;
+		};
+		3A50C1FF20747BE1002171F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VN24ZWQUQ3;
+				INFOPLIST_FILE = huataiSwiftUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.usync.huataiSwiftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = huataiSwift;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3A50C1CA20747BE0002171F4 /* Build configuration list for PBXProject "huataiSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A50C1F520747BE1002171F4 /* Debug */,
+				3A50C1F620747BE1002171F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A50C1F720747BE1002171F4 /* Build configuration list for PBXNativeTarget "huataiSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A50C1F820747BE1002171F4 /* Debug */,
+				3A50C1F920747BE1002171F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A50C1FA20747BE1002171F4 /* Build configuration list for PBXNativeTarget "huataiSwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A50C1FB20747BE1002171F4 /* Debug */,
+				3A50C1FC20747BE1002171F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A50C1FD20747BE1002171F4 /* Build configuration list for PBXNativeTarget "huataiSwiftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A50C1FE20747BE1002171F4 /* Debug */,
+				3A50C1FF20747BE1002171F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3A50C1C720747BE0002171F4 /* Project object */;
+}

@@ -1,0 +1,12 @@
+/* 
+  InfoPlist.strings
+  huataiSwift
+
+  Created by Bryan on 2018/5/2.
+  Copyright © 2018年 U-Sync. All rights reserved.
+*/
+
+"NSLocationWhenInUseUsageDescription" = "我們需要通過取得您的地理位置來獲取周邊資訊並顯示在地圖上，而且在背景執行時一樣會取得您的地理位置與周邊資訊。";
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "我們需要通過取得您的地理位置來獲取周邊資訊並顯示在地圖上，而且在背景執行時一樣會取得您的地理位置與周邊資訊。";
+
+"NSCameraUsageDescription" = "需要取用您的相機功能以便使用 QR Code 掃描。";
