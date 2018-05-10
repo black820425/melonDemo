@@ -26,11 +26,17 @@
                                         <rect key="frame" x="0.0" y="0.0" width="169" height="130"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="-30" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" image="ic_掃描qr"/>
+                                        <connections>
+                                            <action selector="scanPaymentButtonAction:" destination="sv7-wT-o2R" eventType="touchUpInside" id="9jg-pt-dzc"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S4R-V9-Ykq">
                                         <rect key="frame" x="169" y="0.0" width="169" height="130"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="-30" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" image="ic_條碼收款"/>
+                                        <connections>
+                                            <action selector="barcodeReceiptButtonAction:" destination="sv7-wT-o2R" eventType="touchUpInside" id="eFf-eC-9QA"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="掃描支付" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V8A-dG-q6A">
                                         <rect key="frame" x="56.5" y="91" width="56" height="20"/>

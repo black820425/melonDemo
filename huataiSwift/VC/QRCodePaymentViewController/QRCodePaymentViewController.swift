@@ -16,7 +16,6 @@ class QRCodePaymentViewController: UIViewController {
     super.viewDidLoad()
     
     backgroundView.layer.cornerRadius = 4.0
-
     navigationController?.navigationBar.topItem?.title = ""
     navigationController?.navigationBar.backIndicatorImage = UIImage(named: "ic_com_Left_pressed")
     navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "ic_com_Left_pressed")
@@ -41,6 +40,17 @@ class QRCodePaymentViewController: UIViewController {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
+  
+  
+  @IBAction func scanPaymentButtonAction(_ sender: Any) {
+    
+  }
+  
+  
+  @IBAction func barcodeReceiptButtonAction(_ sender: Any) {
+    
+  }
+  
   
   
   /*
