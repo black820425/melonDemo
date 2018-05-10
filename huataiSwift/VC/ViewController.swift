@@ -9,8 +9,6 @@
 import UIKit
 import LocalAuthentication
 
-
-
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
   var menuView: UIView?
