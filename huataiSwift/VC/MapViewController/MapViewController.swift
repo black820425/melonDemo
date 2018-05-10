@@ -18,7 +18,7 @@ UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlow
   
   var contentArray = [String]()
   let locationManager = CLLocationManager()
-  var previousCollectionCell:MapViewCollectionViewCell?
+  var previousCollectionCell: MapViewCollectionViewCell?
   
   override func viewDidLoad() {
     super.viewDidLoad()
