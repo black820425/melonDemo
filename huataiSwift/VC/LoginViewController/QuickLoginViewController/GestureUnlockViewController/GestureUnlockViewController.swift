@@ -12,6 +12,8 @@ class GestureUnlockViewController: UIViewController {
   
   @IBOutlet weak var customizeDrawImageView: UIImageView!
   
+  var drawFlag = false
+
   //設定線條顏色與寬度
   var drawLineWidth: CGFloat!
   var drawLinecolor: UIColor!
@@ -23,8 +25,6 @@ class GestureUnlockViewController: UIViewController {
   //所有按鈕與選中的按鈕
   var buttonArray = [UIButton]()
   var selectedButtonsArray = [UIButton]()
-  
-  var drawFlag:Bool = false
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -157,38 +157,40 @@ class GestureUnlockViewController: UIViewController {
     UIGraphicsBeginImageContext(customizeDrawImageView.frame.size)
     
     //一個不透明型的Quzrtz 2D繪畫環境，相當於一個畫布，你可以在上面任意繪畫
-    let context = UIGraphicsGetCurrentContext()
-    //設置畫線寬度和顏色
-    context?.setLineWidth(width)
-    context?.setStrokeColor(color.cgColor)
-    
-    /**
-     * CGLineCap
-     *  kCGLineCapButt   //和第三個一樣
-     *  kCGLineCapRound  //端點是圓的
-     *  kCGLineCapSquare //正方形
-     */
-    //設置線的端點形狀
-    context?.setLineCap(CGLineCap.round)
-    //設置線的起始位置
-    context?.move(to: CGPoint(x: lineStartPoint.x, y: lineStartPoint.y))
-    //將選中的點連接起來
-    for btn in selectedButtonsArray {
-      btnCenter = btn.center
-      btn.setImage(UIImage.init(named:"圖形鎖_紅"), for:.normal)
-      context?.addLine(to: CGPoint(x: btnCenter.x, y: btnCenter.y))
+    if let context = UIGraphicsGetCurrentContext() {
+      //設置畫線寬度和顏色
+      context.setLineWidth(width)
+      context.setStrokeColor(color.cgColor)
+      
+      /**
+       * CGLineCap
+       *  kCGLineCapButt   //和第三個一樣
+       *  kCGLineCapRound  //端點是圓的
+       *  kCGLineCapSquare //正方形
+       */
+      //設置線的端點形狀
+      context.setLineCap(CGLineCap.round)
+      //設置線的起始位置
+      context.move(to: CGPoint(x: lineStartPoint.x, y: lineStartPoint.y))
+      //將選中的點連接起來
+      for btn in selectedButtonsArray {
+        btnCenter = btn.center
+        btn.setImage(UIImage.init(named:"圖形鎖_紅"), for:.normal)
+        context.addLine(to: CGPoint(x: btnCenter.x, y: btnCenter.y))
+      }
+      //结束位置
+      context.addLine(to: CGPoint(x: lineEndPoint.x, y: lineEndPoint.y))
+      
+      context.strokePath()
+      
+      customizeImage = UIGraphicsGetImageFromCurrentImageContext()
+      
+      UIGraphicsEndImageContext();
+      //追加到畫板
+      customizeDrawImageView.image = customizeImage
+      customizeImage = nil
     }
-    //结束位置
-    context?.addLine(to: CGPoint(x: lineEndPoint.x, y: lineEndPoint.y))
     
-    context?.strokePath()
-    
-    customizeImage = UIGraphicsGetImageFromCurrentImageContext()
-    
-    UIGraphicsEndImageContext();
-    //追加到畫板
-    customizeDrawImageView.image = customizeImage
-    customizeImage = nil
   }
   
   func touchEndDrawLineColor(color:UIColor, width:CGFloat) {
@@ -198,34 +200,35 @@ class GestureUnlockViewController: UIViewController {
     UIGraphicsBeginImageContext(customizeDrawImageView.frame.size)
     
     //一個不透明型的Quzrtz 2D繪畫環境，相當於一個畫布，你可以在上面任意繪畫
-    let context = UIGraphicsGetCurrentContext()
-    //設置畫線寬度和顏色
-    context?.setLineWidth(width)
-    context?.setStrokeColor(color.cgColor)
-    
-    /**
-     * CGLineCap
-     *  kCGLineCapButt   //和第三個一樣
-     *  kCGLineCapRound  //端點是圓的
-     *  kCGLineCapSquare //正方形
-     */
-    //設置線的端點形狀
-    context?.setLineCap(CGLineCap.round)
-    //設置線的起始位置
-    context?.move(to: CGPoint(x: lineStartPoint.x, y: lineStartPoint.y))
-    //將選中的點連接起來
-    for btn in selectedButtonsArray {
+    if let context = UIGraphicsGetCurrentContext() {
+      //設置畫線寬度和顏色
+      context.setLineWidth(width)
+      context.setStrokeColor(color.cgColor)
+      
+      /**
+       * CGLineCap
+       *  kCGLineCapButt   //和第三個一樣
+       *  kCGLineCapRound  //端點是圓的
+       *  kCGLineCapSquare //正方形
+       */
+      //設置線的端點形狀
+      context.setLineCap(CGLineCap.round)
+      //設置線的起始位置
+      context.move(to: CGPoint(x: lineStartPoint.x, y: lineStartPoint.y))
+      //將選中的點連接起來
+      for btn in selectedButtonsArray {
         btnCenter = btn.center
-        context?.addLine(to: CGPoint(x: btnCenter.x, y: btnCenter.y))
+        context.addLine(to: CGPoint(x: btnCenter.x, y: btnCenter.y))
+      }
+      context.strokePath()
+      
+      customizeImage = UIGraphicsGetImageFromCurrentImageContext()
+      
+      UIGraphicsEndImageContext();
+      //追加到畫板
+      customizeDrawImageView.image = customizeImage
+      customizeImage = nil
     }
-    context?.strokePath()
-    
-    customizeImage = UIGraphicsGetImageFromCurrentImageContext()
-    
-    UIGraphicsEndImageContext();
-    //追加到畫板
-    customizeDrawImageView.image = customizeImage
-    customizeImage = nil
   }
   
   override func didReceiveMemoryWarning() {

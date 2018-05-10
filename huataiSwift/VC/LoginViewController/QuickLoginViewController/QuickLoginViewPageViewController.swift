@@ -12,7 +12,6 @@ class QuickLoginViewPageViewController: UIPageViewController {
   
   var showPagePreviousIndex: Int = 0
   var viewControllersArray = [UIViewController]()
-  var quickLoginViewController: QuickLoginViewController!
   
   
   override func viewDidLoad() {
@@ -23,6 +22,36 @@ class QuickLoginViewPageViewController: UIPageViewController {
     
     viewControllersArray = [biometricViewController,gestureUnlockViewController] as! [UIViewController]
   }
+  
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
+  }
+  
+  func showPage(index:Int) {
+    let view = viewControllersArray[index]
+    
+    if(showPagePreviousIndex < index) {
+      showPagePreviousIndex = index
+      self.setViewControllers([view], direction: .forward, animated: true, completion: nil)
+      
+    } else {
+      showPagePreviousIndex = index
+      self.setViewControllers([view], direction: .reverse, animated: true, completion: nil)
+    }
+  }
+  
+  /*
+   // MARK: - Navigation
+   // In a storyboard-based application, you will often want to do a little preparation before navigation
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+   // Get the new view controller using segue.destinationViewController.
+   // Pass the selected object to the new view controller.
+   }
+   */
+}
+
+extension QuickLoginViewPageViewController:UIPageViewControllerDataSource {
   
   func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
     
@@ -46,34 +75,6 @@ class QuickLoginViewPageViewController: UIPageViewController {
     }
     return nil
   }
-  
-  func showPage(index:NSInteger) {
-    let view = viewControllersArray[index]
-    
-    if(showPagePreviousIndex < index) {
-      showPagePreviousIndex = index
-      self.setViewControllers([view], direction: .forward, animated: true, completion: nil)
-      
-    } else {
-      showPagePreviousIndex = index
-      self.setViewControllers([view], direction: .reverse, animated: true, completion: nil)
-    }
-  }
-  
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
-  
-  
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using segue.destinationViewController.
-   // Pass the selected object to the new view controller.
-   }
-   */
-  
 }
+
+

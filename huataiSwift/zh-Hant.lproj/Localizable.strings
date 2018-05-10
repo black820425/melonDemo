@@ -9,6 +9,10 @@
 "QuickLoginTitle" = "快速登入";
 "GeneralLoginTitle" = "一般登入";
 
+//MapViewController
+"HwataiBranchesTitle" = "華泰分行";
+"ATMTitle" = "ATM";
+
 //MoreViewController
 "MessageTitle" = "訊息";
 "AppVersionTitle" = "版本";
@@ -21,4 +25,7 @@
 //NavigaitonControllerTitle
 "NavigationControllerMoreTitle" = "更多";
 "NavigationControllerMapTitle" = "服務據點";
+"NavigationControllerQRCodePaymentTitle" = "QR Code收付";
 "NavigationControllerCreditCardMemberShipApplicationTitle" = "信用卡會員申請";
+
+

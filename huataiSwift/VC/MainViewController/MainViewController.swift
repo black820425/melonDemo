@@ -24,6 +24,11 @@ class MainViewController: UIViewController,WKNavigationDelegate{
     wkWebView.load(customRequest)
   }
   
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
+  }
+  
   func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
     
   }
@@ -39,11 +44,6 @@ class MainViewController: UIViewController,WKNavigationDelegate{
   
   func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
     print("WKWebView didFail Error --> \(error)")
-  }
-  
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
   }
   
   

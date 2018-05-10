@@ -8,16 +8,14 @@
 
 import UIKit
 
-class LoginViewPageViewController: UIPageViewController,UIPageViewControllerDelegate,UIPageViewControllerDataSource {
+class LoginViewPageViewController: UIPageViewController {
   
-  var showPagePreviousIndex: Int = 0
+  var showPagePreviousIndex = 0
   var loginViewController: LoginViewController!
   var viewControllersArray = [UIViewController]()
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    //self.delegate = self
-    //self.dataSource = self
     
     let generalLoginViewController = storyboard?.instantiateViewController(withIdentifier: "GeneralLoginViewController")
     let biometricsViewController = storyboard?.instantiateViewController(withIdentifier: "BiometricsViewController")
@@ -27,28 +25,9 @@ class LoginViewPageViewController: UIPageViewController,UIPageViewControllerDele
     self.setViewControllers([generalLoginViewController!], direction: .forward, animated: false, completion: nil)
   }
   
-  
-  func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-    
-    if var previousIndex = viewControllersArray.index(of: viewController) {
-      previousIndex = previousIndex-1
-      if(previousIndex >= 0 && previousIndex < (viewControllersArray.count)) {
-        return viewControllersArray[previousIndex]
-      }
-    }
-    return nil
-  }
-  
-  
-  func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-    
-    if var nextIndex = viewControllersArray.index(of: viewController) {
-      nextIndex = nextIndex+1
-      if(nextIndex < viewControllersArray.count) {
-        return viewControllersArray[nextIndex]
-      }
-    }
-    return nil
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
   }
   
   func showPage(index:NSInteger) {
@@ -64,12 +43,6 @@ class LoginViewPageViewController: UIPageViewController,UIPageViewControllerDele
     }
   }
   
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
-  
-  
   /*
    // MARK: - Navigation
    
@@ -79,5 +52,29 @@ class LoginViewPageViewController: UIPageViewController,UIPageViewControllerDele
    // Pass the selected object to the new view controller.
    }
    */
+}
+
+extension LoginViewPageViewController: UIPageViewControllerDataSource {
   
+  func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+    
+    if var previousIndex = viewControllersArray.index(of: viewController) {
+      previousIndex = previousIndex-1
+      if(previousIndex >= 0 && previousIndex < (viewControllersArray.count)) {
+        return viewControllersArray[previousIndex]
+      }
+    }
+    return nil
+  }
+  
+  func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+    
+    if var nextIndex = viewControllersArray.index(of: viewController) {
+      nextIndex = nextIndex+1
+      if(nextIndex < viewControllersArray.count) {
+        return viewControllersArray[nextIndex]
+      }
+    }
+    return nil
+  }
 }

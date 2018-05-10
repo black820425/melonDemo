@@ -17,7 +17,9 @@ class MoreViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
     moreViewTableView.layer.cornerRadius = 10
+    
     imageNameArray = ["更多_利匯率",
                       "更多_服務據點",
                       "更多_版本",
@@ -40,15 +42,11 @@ class MoreViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     
-    self.navigationItem.title = NSLocalizedString("NavigationControllerMoreTitle", comment: "");
+    navigationItem.title = NSLocalizedString("NavigationControllerMoreTitle", comment: "");
   }
   
   @IBAction func dimissViewButtonAction(_ sender: Any) {
     dismiss(animated: true, completion: nil)
-  }
-  
-  func numberOfSections(in tableView: UITableView) -> Int {
-    return 1
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -59,11 +57,13 @@ class MoreViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     let moreViewTableViewCell = tableView.dequeueReusableCell(withIdentifier: "MoreViewTableViewCell") as! MoreViewTableViewCell
     moreViewTableViewCell.customizeImageView.image = UIImage(named: imageNameArray[indexPath.row])
     moreViewTableViewCell.customizeTitleLabel.text = titleNameArray[indexPath.row]
+    
     if(indexPath.row % 2 == 0) {
       moreViewTableViewCell.backgroundColor = .white
     } else {
       moreViewTableViewCell.backgroundColor = Singleton.sharedInstance().getThemColorR250xG250xB250()
     }
+    
     return moreViewTableViewCell
   }
   
@@ -101,29 +101,37 @@ class MoreViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     "OnlineBusinessBidTitle" = "線上業務申辦";
     "UserPrivacyStatementTitle" = "使用者隱私聲明";*/
     switch moreViewTableViewCell.customizeTitleLabel.text {
+      
     case NSLocalizedString("MessageTitle", comment: ""):
       break
+      
     case NSLocalizedString("AppVersionTitle", comment: ""):
       break
+      
     case NSLocalizedString("InterestRateTitle", comment: ""):
       break
+      
     case NSLocalizedString("ServiceLocationTitle", comment: ""):
       let storyboard = UIStoryboard.init(name: "MapViewController", bundle: nil)
       let mapViewController = storyboard.instantiateViewController(withIdentifier: "MapViewController")
       present(mapViewController, animated: true, completion: nil)
       break
+      
     case NSLocalizedString("QRCodePaymentTitle", comment: ""):
       break
+      
     case NSLocalizedString("OnlineBusinessBidTitle", comment: ""):
       break
+      
     case NSLocalizedString("UserPrivacyStatementTitle", comment: ""):
       break
+      
     default:
-      //..
       break
     }
     
     if(indexPath.row == 7) {
+      Singleton.sharedInstance().setTestLogin(bool: false)
       dismiss(animated: true, completion: nil)
       NotificationCenter.default.post(name: NSNotification.Name.init("TestSingOutSuccess"), object: nil)
     }

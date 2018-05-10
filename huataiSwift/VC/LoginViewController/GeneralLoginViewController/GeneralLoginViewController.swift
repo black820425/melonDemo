@@ -8,10 +8,8 @@
 
 import UIKit
 
-class GeneralLoginViewController: UIViewController,UITextFieldDelegate,UIScrollViewDelegate {
-  
-  @IBOutlet weak var customizeScrollView: UIScrollView!
-  
+class GeneralLoginViewController: UIViewController {
+
   @IBOutlet weak var userLoginButton: UIButton!
   @IBOutlet weak var userCrdSignButton: UIButton!
   
@@ -25,19 +23,23 @@ class GeneralLoginViewController: UIViewController,UITextFieldDelegate,UIScrollV
   @IBOutlet weak var userCodeTextField: UITextField!
   @IBOutlet weak var userConfimppTextField: UITextField!
   
-    override func viewDidLoad() {
-        super.viewDidLoad()
-      userppTextField.delegate = self
-      identityTextField.delegate = self
-      userCodeTextField.delegate = self
-      userConfimppTextField.delegate = self
-      repareTextFieldAndButtonRadious()
-    }
+  @IBOutlet weak var customizeScrollView: UIScrollView!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    userppTextField.delegate = self
+    identityTextField.delegate = self
+    userCodeTextField.delegate = self
+    userConfimppTextField.delegate = self
+    
+    repareTextFieldAndButtonRadious()
+  }
   
   override func viewDidLayoutSubviews() {
     customizeScrollView.contentSize = CGSize(width: self.view.frame.width, height: customizeScrollView.contentSize.height)
   }
-
+  
   @IBAction func CreditCardMemApplyButtonAction(_ sender: Any) {
     if let creditCardMembershipViewController = storyboard?.instantiateViewController(withIdentifier: "CreditCardMembershipViewController") {
       present(creditCardMembershipViewController, animated: true, completion: nil)
@@ -45,25 +47,9 @@ class GeneralLoginViewController: UIViewController,UITextFieldDelegate,UIScrollV
   }
   
   @IBAction func testLoginButtonAction(_ sender: Any) {
+    Singleton.sharedInstance().setTestLogin(bool: true)
     NotificationCenter.default.post(name: NSNotification.Name.init("TestLoginSuccess"), object: nil)
-    
-  }
-  
-  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    textField.resignFirstResponder()
-    return true
-  }
-  
-  override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
-    userppTextField.resignFirstResponder()
-    identityTextField.resignFirstResponder()
-    userCodeTextField.resignFirstResponder()
-    userConfimppTextField.resignFirstResponder()
-    return true
-  }
-  
-  func textFieldDidEndEditing(_ textField: UITextField) {
-    
+    NotificationCenter.default.post(name: NSNotification.Name.init("TestLoginSuccessToPopLoginView"), object: nil)
   }
   
   func repareTextFieldAndButtonRadious() {
@@ -88,21 +74,44 @@ class GeneralLoginViewController: UIViewController,UITextFieldDelegate,UIScrollV
     userconfimppBackgroundView.layer.cornerRadius = 8.0
     userconfimppBackgroundView.layer.borderColor = Singleton.sharedInstance().getThemeColorR232xG232xB232().cgColor
   }
+  
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
+  }
+  
+  /*
+   // MARK: - Navigation
+   // In a storyboard-based application, you will often want to do a little preparation before navigation
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+   // Get the new view controller using segue.destinationViewController.
+   // Pass the selected object to the new view controller.
+   }
+   */
+}
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+extension GeneralLoginViewController: UITextFieldDelegate {
+  
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    textField.resignFirstResponder()
+    return true
+  }
+  
+  func textFieldDidEndEditing(_ textField: UITextField) {
     
+  }
+  
+  override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+    userppTextField.resignFirstResponder()
+    identityTextField.resignFirstResponder()
+    userCodeTextField.resignFirstResponder()
+    userConfimppTextField.resignFirstResponder()
+    return true
+  }
+  
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+extension GeneralLoginViewController: UIScrollViewDelegate {
+  
 }
 

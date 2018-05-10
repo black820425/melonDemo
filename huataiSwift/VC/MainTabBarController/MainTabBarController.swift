@@ -17,7 +17,7 @@ class MainTabBarController: UITabBarController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.tabBar.unselectedItemTintColor = UIColor.white
+    self.tabBar.unselectedItemTintColor = .white
     
     NotificationCenter.default.addObserver(self, selector: #selector(reloadTabBarControllerIfSuccessLogin), name: NSNotification.Name(rawValue: "TestLoginSuccess"), object: nil)
     
@@ -32,11 +32,16 @@ class MainTabBarController: UITabBarController {
     self.selectedIndex = 0
   }
   
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewDidDisappear(animated)
+    
+    NotificationCenter.default.removeObserver(self)
+  }
+  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     
   }
-  
   
   @objc func reloadTabBarControllerIfSuccessLogin() {
     self.setViewControllers([mainViewController,qRCodePaymentViewController,mapViewController,moreViewController], animated: true)
@@ -47,7 +52,7 @@ class MainTabBarController: UITabBarController {
   }
   
   func imageWithColor(color: UIColor, size: CGSize) -> UIImage {
-    let rect: CGRect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+    let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
     UIGraphicsBeginImageContextWithOptions(size, false, 0)
     color.setFill()
     UIRectFill(rect)
@@ -62,34 +67,36 @@ class MainTabBarController: UITabBarController {
     let tabBarItemSize = CGSize(width: tabBar.frame.width / numberOfItems, height: tabBar.frame.height)
     let selectionIndicatorImage = self.imageWithColor(color:.red, size: tabBarItemSize).resizableImage(withCapInsets: .zero)
     self.tabBar.selectionIndicatorImage = selectionIndicatorImage
-    //    UIView.animate(withDuration: 0.3) {
-    //    }
     
-    var storyboard = UIStoryboard()
+    var storyboard:UIStoryboard
     switch item.title {
-    case "服務據點":
+      
+    case NSLocalizedString("ServiceLocationTitle", comment: ""):
       storyboard = UIStoryboard.init(name: "MapViewController", bundle: nil)
       let mapViewController = storyboard.instantiateViewController(withIdentifier: "MapViewController")
       present(mapViewController, animated: true, completion: nil)
       break
-    case "更多":
+      
+    case NSLocalizedString("NavigationControllerMoreTitle", comment: ""):
       storyboard = UIStoryboard.init(name: "MoreViewController", bundle: nil)
       let moreViewController = storyboard.instantiateViewController(withIdentifier: "MoreViewController")
       present(moreViewController, animated: true, completion: nil)
       break
+      
     default:
       break
     }
   }
   
   func prepareTabBarViewControllers() {
-    var storyboard = UIStoryboard()
+    var storyboard:UIStoryboard
     
     storyboard = UIStoryboard.init(name: "MainViewController", bundle: nil)
     mainViewController = storyboard.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
     
     storyboard = UIStoryboard.init(name: "QRCodePaymentViewController", bundle: nil)
-    qRCodePaymentViewController = storyboard.instantiateViewController(withIdentifier: "QRCodePaymentViewController") as! UINavigationController
+    qRCodePaymentViewController =
+      storyboard.instantiateViewController(withIdentifier: "QRCodePaymentViewController") as! UINavigationController
     
     storyboard = UIStoryboard.init(name: "MapViewController", bundle: nil)
     mapViewController = storyboard.instantiateViewController(withIdentifier: "MapViewTabBarController")

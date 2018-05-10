@@ -8,9 +8,11 @@
 
 import UIKit
 
-class Singleton: NSObject {
+class Singleton {
   
   private static var object:Singleton?
+  
+  var testLoginBoolValue = false
   
   static func sharedInstance() -> Singleton {
     if object == nil {
@@ -19,6 +21,15 @@ class Singleton: NSObject {
     }
     return object!
   }
+  
+  func setTestLogin(bool:Bool) {
+    testLoginBoolValue = bool
+  }
+  
+  func getTestLogin() ->Bool {
+    return testLoginBoolValue
+  }
+  
   func getThemColorR250xG250xB250() -> UIColor {
     return UIColor(red: 250.0/255.0, green: 250.0/255.0, blue: 250.0/255.0, alpha: 1.0)
   }
@@ -55,7 +66,7 @@ class Singleton: NSObject {
     return UIColor(red: 226.0/255.0, green: 75.0/255.0, blue: 91.0/255.0, alpha: 1.0)
   }
   
-  func getGrayColor() -> UIColor {
+  func getThemeColorR155xG155xB155() -> UIColor {
     return UIColor(red: 155.0/255.0, green: 155.0/255.0, blue: 155.0/255.0, alpha: 1.0)
   }
   

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,14 +18,81 @@
                     <view key="view" contentMode="scaleToFill" id="Pef-zQ-1cQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w8c-EM-PXE">
+                                <rect key="frame" x="18" y="94" width="338" height="130"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qpl-lb-cGs">
+                                        <rect key="frame" x="0.0" y="0.0" width="169" height="130"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="-30" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" image="ic_掃描qr"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S4R-V9-Ykq">
+                                        <rect key="frame" x="169" y="0.0" width="169" height="130"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="-30" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" image="ic_條碼收款"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="掃描支付" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V8A-dG-q6A">
+                                        <rect key="frame" x="56.5" y="91" width="56" height="20"/>
+                                        <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="條碼收款" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g26-si-pXD">
+                                        <rect key="frame" x="226" y="91" width="56" height="20"/>
+                                        <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gko-VS-a6v">
+                                        <rect key="frame" x="168" y="10" width="2" height="110"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="2" id="H3b-sX-LdP"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.81176470590000005" green="0.070588235289999995" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="S4R-V9-Ykq" firstAttribute="top" secondItem="w8c-EM-PXE" secondAttribute="top" id="2ba-eS-4TM"/>
+                                    <constraint firstItem="qpl-lb-cGs" firstAttribute="top" secondItem="w8c-EM-PXE" secondAttribute="top" id="BxB-6a-HnT"/>
+                                    <constraint firstAttribute="height" constant="130" id="D0c-dn-DFZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="V8A-dG-q6A" secondAttribute="bottom" constant="19" id="D8H-SL-lpY"/>
+                                    <constraint firstItem="gko-VS-a6v" firstAttribute="top" secondItem="w8c-EM-PXE" secondAttribute="top" constant="10" id="Goc-Gl-Mgr"/>
+                                    <constraint firstItem="S4R-V9-Ykq" firstAttribute="width" secondItem="qpl-lb-cGs" secondAttribute="width" id="H0x-vs-EpB"/>
+                                    <constraint firstItem="S4R-V9-Ykq" firstAttribute="leading" secondItem="qpl-lb-cGs" secondAttribute="trailing" id="Iqu-1I-LLC"/>
+                                    <constraint firstItem="qpl-lb-cGs" firstAttribute="width" secondItem="w8c-EM-PXE" secondAttribute="width" multiplier="1/2" id="LXo-UQ-0JM"/>
+                                    <constraint firstAttribute="bottom" secondItem="gko-VS-a6v" secondAttribute="bottom" constant="10" id="Rym-Cz-Da3"/>
+                                    <constraint firstAttribute="bottom" secondItem="g26-si-pXD" secondAttribute="bottom" constant="19" id="V6g-Ab-Uqh"/>
+                                    <constraint firstItem="V8A-dG-q6A" firstAttribute="centerX" secondItem="qpl-lb-cGs" secondAttribute="centerX" id="aD7-WZ-TPE"/>
+                                    <constraint firstItem="qpl-lb-cGs" firstAttribute="height" secondItem="w8c-EM-PXE" secondAttribute="height" id="ad8-Cb-C3G"/>
+                                    <constraint firstAttribute="width" constant="338" id="iZK-3u-bt3"/>
+                                    <constraint firstItem="gko-VS-a6v" firstAttribute="centerX" secondItem="w8c-EM-PXE" secondAttribute="centerX" id="owS-2p-yKe"/>
+                                    <constraint firstItem="S4R-V9-Ykq" firstAttribute="height" secondItem="qpl-lb-cGs" secondAttribute="height" id="pBq-CE-rg5"/>
+                                    <constraint firstItem="g26-si-pXD" firstAttribute="centerX" secondItem="S4R-V9-Ykq" secondAttribute="centerX" id="pb4-mN-hHV"/>
+                                    <constraint firstItem="qpl-lb-cGs" firstAttribute="leading" secondItem="w8c-EM-PXE" secondAttribute="leading" id="y60-u2-E7R"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="w8c-EM-PXE" firstAttribute="centerX" secondItem="Pef-zQ-1cQ" secondAttribute="centerX" id="fwc-iY-bKw"/>
+                            <constraint firstItem="w8c-EM-PXE" firstAttribute="top" secondItem="xva-YD-3tE" secondAttribute="top" constant="30" id="ghH-iS-QVL"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="xva-YD-3tE"/>
                     </view>
-                    <navigationItem key="navigationItem" id="37U-jB-afY"/>
+                    <navigationItem key="navigationItem" id="37U-jB-afY">
+                        <barButtonItem key="rightBarButtonItem" image="ic_收款紀錄" id="FvP-7a-tYO">
+                            <color key="tintColor" red="0.5490196078431373" green="0.5490196078431373" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="backgroundView" destination="w8c-EM-PXE" id="YNA-p8-O3e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ga1-FR-rhn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1823" y="-132"/>
+            <point key="canvasLocation" x="1821.5999999999999" y="-132.68365817091455"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Aab-Zg-tne">
@@ -32,6 +100,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="4Uo-hM-OQf" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AYX-IJ-XmO">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -65,5 +134,8 @@
     </scenes>
     <resources>
         <image name="ic_qr code收付" width="28" height="29"/>
+        <image name="ic_掃描qr" width="60" height="60"/>
+        <image name="ic_收款紀錄" width="18" height="22"/>
+        <image name="ic_條碼收款" width="60" height="60"/>
     </resources>
 </document>

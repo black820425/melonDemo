@@ -13,5 +13,4 @@ class MapViewCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var customizeTopLineView: UIView!
     
     @IBOutlet weak var customizeLabelTitle: UILabel!
-    
 }

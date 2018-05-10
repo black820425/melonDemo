@@ -10,22 +10,29 @@ import UIKit
 
 class QRCodePaymentViewController: UIViewController {
   
+  @IBOutlet weak var backgroundView: UIView!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    backgroundView.layer.cornerRadius = 4.0
+
     navigationController?.navigationBar.topItem?.title = ""
     navigationController?.navigationBar.backIndicatorImage = UIImage(named: "ic_com_Left_pressed")
     navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "ic_com_Left_pressed")
   }
   
   override func viewWillAppear(_ animated: Bool) {
-    
+    navigationItem.title = NSLocalizedString("NavigationControllerQRCodePaymentTitle", comment: "")
   }
   
   override func viewDidAppear(_ animated: Bool) {
-    if let viewController = UIStoryboard(name: "LoginViewController", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
-      if let navigator = navigationController {
-        navigator.pushViewController(viewController, animated: true)
+    
+    if(!Singleton.sharedInstance().getTestLogin()) {
+      if let viewController = UIStoryboard(name: "LoginViewController", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
+        if let navigator = navigationController {
+          navigator.pushViewController(viewController, animated: true)
+        }
       }
     }
   }

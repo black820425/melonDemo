@@ -41,6 +41,7 @@
 		3A97594320A2D3D5007C1EC2 /* CreditCardInstructionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A97594220A2D3D5007C1EC2 /* CreditCardInstructionsTableViewCell.swift */; };
 		3A97594520A2D444007C1EC2 /* CreditCardPublicTextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A97594420A2D444007C1EC2 /* CreditCardPublicTextFieldTableViewCell.swift */; };
 		3A975B0720A4131D007C1EC2 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3A975B0620A4131D007C1EC2 /* .gitignore */; };
+		3A975B0920A43C54007C1EC2 /* QRCodePaymentViewImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A975B0820A43C54007C1EC2 /* QRCodePaymentViewImages.xcassets */; };
 		3AF56DF1209957940021C42E /* ProjectAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF56DF0209957940021C42E /* ProjectAPI.swift */; };
 		3AF56DF320998CB70021C42E /* MapViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AF56DF220998CB70021C42E /* MapViewController.storyboard */; };
 		3AF56DFA20998D6F0021C42E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF56DF920998D6F0021C42E /* MapViewController.swift */; };
@@ -111,6 +112,7 @@
 		3A97594220A2D3D5007C1EC2 /* CreditCardInstructionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardInstructionsTableViewCell.swift; sourceTree = "<group>"; };
 		3A97594420A2D444007C1EC2 /* CreditCardPublicTextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardPublicTextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		3A975B0620A4131D007C1EC2 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		3A975B0820A43C54007C1EC2 /* QRCodePaymentViewImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = QRCodePaymentViewImages.xcassets; sourceTree = "<group>"; };
 		3AF56DF0209957940021C42E /* ProjectAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectAPI.swift; sourceTree = "<group>"; };
 		3AF56DF220998CB70021C42E /* MapViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapViewController.storyboard; sourceTree = "<group>"; };
 		3AF56DF920998D6F0021C42E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 				3A97577B20A19FCF007C1EC2 /* MoreViewController.xcassets */,
 				3A97577520A17C94007C1EC2 /* NavigationItemImage.xcassets */,
 				3A97575D20A02EB1007C1EC2 /* GestureUnlockViewImage.xcassets */,
+				3A975B0820A43C54007C1EC2 /* QRCodePaymentViewImages.xcassets */,
 			);
 			path = ImageFile;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A975B0920A43C54007C1EC2 /* QRCodePaymentViewImages.xcassets in Resources */,
 				3A97575E20A02EB1007C1EC2 /* GestureUnlockViewImage.xcassets in Resources */,
 				3AF56DF320998CB70021C42E /* MapViewController.storyboard in Resources */,
 				3A97577620A17C94007C1EC2 /* NavigationItemImage.xcassets in Resources */,

@@ -17,26 +17,29 @@ class QuickLoginViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
     prepareButtonRadious()
+  }
+  
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
   }
   
   @IBAction func biometricButtonAction(_ sender: Any) {
     let button = sender as! UIButton
-    
-    biometricsButton.backgroundColor = Singleton.sharedInstance().getThemeColorR224xG224xB224()
-    graphicLockButton.backgroundColor = UIColor.clear
-    
     quickLoginViewPageViewController.showPage(index: button.tag)
+
+    biometricsButton.backgroundColor = Singleton.sharedInstance().getThemeColorR224xG224xB224()
+    graphicLockButton.backgroundColor = .clear
+    
   }
   
   @IBAction func grpahicLockButtonAction(_ sender: Any) {
     let button = sender as! UIButton
-    
-    graphicLockButton.backgroundColor = Singleton.sharedInstance().getThemeColorR224xG224xB224()
-    biometricsButton.backgroundColor = UIColor.clear
-    
     quickLoginViewPageViewController.showPage(index: button.tag)
+
+    graphicLockButton.backgroundColor = Singleton.sharedInstance().getThemeColorR224xG224xB224()
+    biometricsButton.backgroundColor = .clear
   }
   
   
@@ -48,14 +51,6 @@ class QuickLoginViewController: UIViewController {
     graphicLockButton.layer.cornerRadius = 15.5
     graphicLockButton.layer.borderColor = Singleton.sharedInstance().getThemeColorR151xG151xB151().cgColor
   }
-  
-  
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
-  
-  
   
   // MARK: - Navigation
   
