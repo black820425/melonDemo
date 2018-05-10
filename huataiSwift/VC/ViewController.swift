@@ -13,10 +13,10 @@ import LocalAuthentication
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
-  var menuView:UIView?
-  var fullScreenBounds:CGRect?
-  var menuViewOriginX:CGFloat?
-  var menuViewOriginY:CGFloat?
+  var menuView: UIView?
+  var fullScreenBounds: CGRect?
+  var menuViewOriginX: CGFloat?
+  var menuViewOriginY: CGFloat?
   
   var panGestureRecognizer:UIPanGestureRecognizer?
     override func viewDidLoad() {
