@@ -11,7 +11,7 @@ import LocalAuthentication
 
 
 
-class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
   var menuView:UIView?
   var fullScreenBounds:CGRect?
