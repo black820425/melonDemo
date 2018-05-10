@@ -13,12 +13,15 @@ class ProjectAPI {
   
   typealias PassArrayBlock = ([Int]) -> Void
   
-  func connectAPIWithUrl(closures:PassArrayBlock){
+  func connectAPIWithUrl(closures: PassArrayBlock){
     let str = "Hello"
-    let myData = str.data(using:.utf8)
+    let myData = str.data(using: .utf8)
     
-    let url = NSURL(string:"https://appcms.u-sync.com/cms-user/v1/ntua/news")!
-    var request = URLRequest(url:url as URL, cachePolicy: NSURLRequest.CachePolicy.reloadIgnoringCacheData, timeoutInterval: 10)
+    let url = URL(string: "https://appcms.u-sync.com/cms-user/v1/ntua/news")
+    guard let _ = url else { return }
+    var request = URLRequest(url: url!,
+                             cachePolicy:  NSURLRequest.CachePolicy.reloadIgnoringCacheData,
+                             timeoutInterval: 10)
     request.httpMethod = "POST"
     request.httpBody = myData
     
@@ -32,10 +35,13 @@ class ProjectAPI {
       
       print("response = \(String(describing: response))")
       
-      //將收到的資料轉成字串print出來看看
-      let responseString:String = String(data: data!, encoding:.utf8)!
-      print("responseString = \(responseString)")
-      //let contentArray:Array = Array(data:data!,encod)
+      if let data = data {
+        //將收到的資料轉成字串print出來看看
+        let responseString = String(data: data, encoding: .utf8)
+        print("responseString = \(responseString ?? "")")
+        //let contentArray:Array = Array(data:data!,encod)
+      }
+      
     }
     task.resume()
     
