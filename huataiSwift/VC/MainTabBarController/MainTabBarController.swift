@@ -10,10 +10,10 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
   
-  var mainViewController = MainViewController()
-  var qRCodePaymentViewController = UINavigationController()
   var mapViewController = UIViewController()
   var moreViewController = UIViewController()
+  var mainViewController = MainViewController()
+  var qRCodePaymentViewController = UINavigationController()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -50,6 +50,8 @@ class MainTabBarController: UITabBarController {
   @objc func TestSingOutSuccess() {
     self.setViewControllers([qRCodePaymentViewController,mapViewController,moreViewController], animated: true)
   }
+  
+  
   
   func imageWithColor(color: UIColor, size: CGSize) -> UIImage {
     let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
