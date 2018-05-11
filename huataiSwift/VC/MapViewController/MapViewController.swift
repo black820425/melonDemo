@@ -191,6 +191,8 @@ extension MapViewController: UICollectionViewDelegate {
       }
     }
     
+    
+    
     let mapViewCollectionViewCell = collectionView.cellForItem(at: indexPath) as! MapViewCollectionViewCell
     UIView.animate(withDuration: 0.5) {
       mapViewCollectionViewCell.customizeLabelTitle.textColor = Singleton.sharedInstance().getThemColorR234xG90xB90()
