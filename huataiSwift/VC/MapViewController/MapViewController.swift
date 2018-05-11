@@ -51,23 +51,17 @@ class MapViewController: UIViewController {
     case 0:
       button.tag = 1
       customizeMapView.userTrackingMode = .none
-      UIView.animate(withDuration: 0.5) {
-        button.setImage(UIImage.init(named: "服務據點_定位"), for: .normal)
-      }
+        button.setImage(UIImage(named: "服務據點_定位"), for: .normal)
       break
     case 1:
       button.tag = 2
       customizeMapView.userTrackingMode = .follow
-      UIView.animate(withDuration: 0.5) {
-        button.setImage(UIImage.init(named: "服務據點_定位_按下"), for: .normal)
-      }
+        button.setImage(UIImage(named: "服務據點_定位_按下"), for: .normal)
       break
     case 2:
       button.tag = 0
       customizeMapView.userTrackingMode = .followWithHeading
-      UIView.animate(withDuration: 0.5) {
-        button.setImage(UIImage.init(named: "服務據點_定位_方向"), for: .normal)
-      }
+        button.setImage(UIImage(named: "服務據點_定位_方向"), for: .normal)
       break
     default:
       break
