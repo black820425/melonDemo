@@ -43,12 +43,12 @@ class QRCodePaymentViewController: UIViewController {
   
   
   @IBAction func scanPaymentButtonAction(_ sender: Any) {
-    
+    performSegue(withIdentifier: "scan", sender: nil)
   }
   
   
   @IBAction func barcodeReceiptButtonAction(_ sender: Any) {
-    
+    performSegue(withIdentifier: "bar", sender: nil)
   }
   
   
