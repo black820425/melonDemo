@@ -16,11 +16,11 @@
             <objects>
                 <viewController id="sv7-wT-o2R" customClass="QRCodePaymentViewController" customModule="huataiSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pef-zQ-1cQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w8c-EM-PXE">
-                                <rect key="frame" x="18" y="94" width="338" height="130"/>
+                                <rect key="frame" x="18" y="30" width="338" height="130"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qpl-lb-cGs">
                                         <rect key="frame" x="0.0" y="0.0" width="169" height="130"/>
@@ -107,7 +107,7 @@
             <objects>
                 <viewController id="76f-MX-bTt" customClass="QRCodeBarViewController" customModule="huataiSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qhF-Ff-SRd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="3kW-My-aqT"/>
@@ -115,6 +115,9 @@
                     <navigationItem key="navigationItem" title="條碼收款" id="CmQ-Rv-nln">
                         <barButtonItem key="leftBarButtonItem" image="Shape" id="KDi-gQ-CpU">
                             <color key="tintColor" red="0.5490196078431373" green="0.5490196078431373" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="backButtonTapped:" destination="76f-MX-bTt" id="hUm-PF-UKn"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
@@ -127,7 +130,7 @@
             <objects>
                 <viewController id="EY0-Pr-A2Y" customClass="QRCodeScanViewController" customModule="huataiSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AXk-RQ-B1p">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="m2V-xP-obW"/>
@@ -135,6 +138,9 @@
                     <navigationItem key="navigationItem" title="掃描支付" id="Dob-aZ-XHN">
                         <barButtonItem key="leftBarButtonItem" image="Shape" id="Wen-eb-LBA">
                             <color key="tintColor" red="0.54901960780000003" green="0.54901960780000003" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="backButtonTapped:" destination="EY0-Pr-A2Y" id="Xap-MB-IjJ"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
@@ -166,7 +172,7 @@
                 <navigationController storyboardIdentifier="QRCodePaymentViewController" automaticallyAdjustsScrollViewInsets="NO" id="dQj-Ke-4g2" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="QR code收付" image="ic_qr code收付" id="S82-t5-B9a"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Jon-dH-rmI">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Jon-dH-rmI">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

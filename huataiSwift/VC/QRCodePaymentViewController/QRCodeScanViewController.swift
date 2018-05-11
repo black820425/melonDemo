@@ -22,6 +22,9 @@ class QRCodeScanViewController: UIViewController {
     // Dispose of any resources that can be recreated.
   }
   
+  @IBAction func backButtonTapped(_ sender: UIBarButtonItem) {
+    _ = navigationController?.popViewController(animated: true)
+  }
   
   /*
    // MARK: - Navigation
