@@ -25,7 +25,7 @@ class LoginViewController: UIViewController {
   }
   
   override func viewWillAppear(_ animated: Bool) {
-    self.navigationItem.setHidesBackButton(true, animated:true);
+    self.navigationItem.setHidesBackButton(true, animated:true)
     
   }
   
