@@ -28,6 +28,7 @@ class MainViewController: UIViewController,WKNavigationDelegate{
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
+
   
   func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
     

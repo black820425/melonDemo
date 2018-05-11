@@ -31,9 +31,11 @@ UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlow
   }
   
   override func viewWillAppear(_ animated: Bool) {
+    
     super.viewWillAppear(animated)
     self.navigationItem.title = NSLocalizedString("NavigationControllerMapTitle", comment: "");
   }
+  
   
   @IBAction func searchButtonAction(_ sender: Any) {
     let searchControler = UISearchController.init(searchResultsController: nil)
@@ -74,6 +76,27 @@ UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlow
       }
     }
   }
+  
+  @IBAction func userTrackingModeButtonAction(_ sender: Any) {
+    let button = sender as! UIButton
+    switch button.tag {
+    case 0:
+      customizeMapView.userTrackingMode = .none
+      button.tag = 1
+      break
+    case 1:
+      customizeMapView.userTrackingMode = .follow
+      button.tag = 2
+      break
+    case 2:
+      customizeMapView.userTrackingMode = .followWithHeading
+      button.tag = 0
+      break
+    default:
+      break
+    }
+  }
+  
   
   @IBAction func dimissButtonAction(_ sender: Any) {
     dismiss(animated: true, completion: nil)

@@ -9,7 +9,9 @@
 import UIKit
 
 class GeneralLoginViewController: UIViewController {
-
+  @IBOutlet weak var rememberMeButton: UIButton!
+  @IBOutlet weak var refreshConfimppButton: UIButton!
+  
   @IBOutlet weak var userLoginButton: UIButton!
   @IBOutlet weak var userCrdSignButton: UIButton!
   
@@ -39,6 +41,24 @@ class GeneralLoginViewController: UIViewController {
   override func viewDidLayoutSubviews() {
     customizeScrollView.contentSize = CGSize(width: self.view.frame.width, height: customizeScrollView.contentSize.height)
   }
+  
+  @IBAction func rememberMeButtonAction(_ sender: Any) {
+    
+    let button = sender as! UIButton
+    if(button.tag == 0) {
+      button.tag = 1
+      button.setImage(UIImage.init(named: "check box"), for: .normal)
+      
+    } else {
+      button.tag = 0
+      button.setImage(UIImage.init(named: "check box_空心"), for: .normal)
+    }
+  }
+  
+  @IBAction func refreshButtonAction(_ sender: Any) {
+    
+  }
+  
   
   @IBAction func CreditCardMemApplyButtonAction(_ sender: Any) {
     if let creditCardMembershipViewController = storyboard?.instantiateViewController(withIdentifier: "CreditCardMembershipViewController") {

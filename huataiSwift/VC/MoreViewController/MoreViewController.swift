@@ -27,6 +27,7 @@ class MoreViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                       "更多_線上業務申辦",
                       "更多_使用者隱私聲明",
                       "更多_QR Code收付",
+                      "更多_設定",
                       "更多_使用者隱私聲明"]
     
     titleNameArray = [NSLocalizedString("InterestRateTitle", comment: ""),
@@ -35,6 +36,7 @@ class MoreViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                       NSLocalizedString("QRCodePaymentTitle", comment: ""),
                       NSLocalizedString("OnlineBusinessBidTitle", comment: ""),
                       NSLocalizedString("UserPrivacyStatementTitle", comment: ""),
+                      NSLocalizedString("SettingTitle", comment: ""),
                       NSLocalizedString("AppVersionTitle", comment: ""),
                       "測試登出"]
   }
@@ -93,13 +95,16 @@ class MoreViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     tableView.deselectRow(at: indexPath, animated: true)
     let moreViewTableViewCell = tableView.cellForRow(at: indexPath) as! MoreViewTableViewCell
     
-    /*"MessageTitle" = "訊息";
+    /*
+     "SettingTitle" = "設定"
+     "MessageTitle" = "訊息";
     "AppVersionTitle" = "版本";
     "InterestRateTitle" = "利匯率";
     "ServiceLocationTitle" = "服務據點";
     "QRCodePaymentTitle" = "QR Code收付";
     "OnlineBusinessBidTitle" = "線上業務申辦";
     "UserPrivacyStatementTitle" = "使用者隱私聲明";*/
+    var storyboard:UIStoryboard
     switch moreViewTableViewCell.customizeTitleLabel.text {
       
     case NSLocalizedString("MessageTitle", comment: ""):
@@ -112,7 +117,7 @@ class MoreViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
       break
       
     case NSLocalizedString("ServiceLocationTitle", comment: ""):
-      let storyboard = UIStoryboard.init(name: "MapViewController", bundle: nil)
+      storyboard = UIStoryboard.init(name: "MapViewController", bundle: nil)
       let mapViewController = storyboard.instantiateViewController(withIdentifier: "MapViewController")
       present(mapViewController, animated: true, completion: nil)
       break
@@ -126,11 +131,17 @@ class MoreViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     case NSLocalizedString("UserPrivacyStatementTitle", comment: ""):
       break
       
+    case NSLocalizedString("SettingTitle", comment: ""):
+      storyboard = UIStoryboard.init(name: "SettingViewController", bundle: nil)
+      let quickLoginSettingViewController = storyboard.instantiateViewController(withIdentifier: "QuickLoginSettingViewController")
+      navigationController?.pushViewController(quickLoginSettingViewController, animated: true)
+      break
+      
     default:
       break
     }
     
-    if(indexPath.row == 7) {
+    if(indexPath.row == 8) {
       Singleton.sharedInstance().setTestLogin(bool: false)
       dismiss(animated: true, completion: nil)
       NotificationCenter.default.post(name: NSNotification.Name.init("TestSingOutSuccess"), object: nil)

@@ -15,6 +15,7 @@
 
 //MoreViewController
 "MessageTitle" = "訊息";
+"SettingTitle" = "設定";
 "AppVersionTitle" = "版本";
 "InterestRateTitle" = "利匯率";
 "ServiceLocationTitle" = "服務據點";
@@ -22,10 +23,23 @@
 "OnlineBusinessBidTitle" = "線上業務申辦";
 "UserPrivacyStatementTitle" = "使用者隱私聲明";
 
+//QuickLoginSettingViewController
+"UseFaceIDTitle" = "使用Face ID";
+"UseGraphicPasswordTitle" = "使用圖形密碼";
+"UseFingerprintRecognitionTitle" = "使用指紋辨識";
+
 //NavigaitonControllerTitle
 "NavigationControllerMoreTitle" = "更多";
 "NavigationControllerMapTitle" = "服務據點";
 "NavigationControllerQRCodePaymentTitle" = "QR Code收付";
+"NavigationControllerQuickLoginSettingTitle" = "快速登入設定";
 "NavigationControllerCreditCardMemberShipApplicationTitle" = "信用卡會員申請";
+
+//TabBarControllerTitle
+"TabBarControllerMainViewTitle" = "主頁面";
+"TabBarControllerQRCodePaymentTitle" = "QR code收付";
+"TabBarControllerMapTitle" = "服務據點";
+"TabBarControllerMoreTitle" = "更多";
+
 
 

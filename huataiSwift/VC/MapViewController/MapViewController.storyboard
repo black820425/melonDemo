@@ -105,10 +105,18 @@
                                     <outlet property="prefetchDataSource" destination="nm6-5n-ymk" id="dMe-7z-6VZ"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HjG-mV-2SG">
+                                <rect key="frame" x="260" y="74" width="52" height="58"/>
+                                <state key="normal" image="服務據點_定位"/>
+                                <connections>
+                                    <action selector="userTrackingModeButtonAction:" destination="nm6-5n-ymk" eventType="touchUpInside" id="RK6-vz-vWj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="mNb-NN-gtB" firstAttribute="trailing" secondItem="sF4-g6-Tdf" secondAttribute="trailing" id="1HH-k6-n3y"/>
+                            <constraint firstItem="HjG-mV-2SG" firstAttribute="leading" secondItem="fmn-hK-RRn" secondAttribute="trailing" constant="40" id="41e-ej-9Eu"/>
                             <constraint firstItem="ypu-cW-jdk" firstAttribute="top" secondItem="mNb-NN-gtB" secondAttribute="top" constant="16" id="FIq-Ye-hVO"/>
                             <constraint firstItem="ypu-cW-jdk" firstAttribute="leading" secondItem="mNb-NN-gtB" secondAttribute="leading" constant="16" id="OwJ-Gh-uAN"/>
                             <constraint firstItem="sF4-g6-Tdf" firstAttribute="leading" secondItem="mNb-NN-gtB" secondAttribute="leading" id="R8D-Nk-nef"/>
@@ -118,6 +126,7 @@
                             <constraint firstItem="fmn-hK-RRn" firstAttribute="leading" secondItem="ypu-cW-jdk" secondAttribute="trailing" constant="4" id="bDL-13-gX6"/>
                             <constraint firstItem="sF4-g6-Tdf" firstAttribute="top" secondItem="mNb-NN-gtB" secondAttribute="top" id="iUV-bK-FZE"/>
                             <constraint firstItem="wMF-Xe-wFs" firstAttribute="bottom" secondItem="mNb-NN-gtB" secondAttribute="bottom" id="mmO-uX-2Rm"/>
+                            <constraint firstItem="HjG-mV-2SG" firstAttribute="top" secondItem="mNb-NN-gtB" secondAttribute="top" constant="10" id="sq5-Dw-BJu"/>
                             <constraint firstItem="mNb-NN-gtB" firstAttribute="trailing" secondItem="wMF-Xe-wFs" secondAttribute="trailing" id="xk0-Zr-IYR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mNb-NN-gtB"/>
@@ -357,5 +366,6 @@ hhGIEYoRkxGYEZ4RphGoEaoRrBGuEbMRuyMnIykjLiM8I0AjRyNMI1kjXCNpI24jdiN5I34jhiOJI5sj
 niOjAAAAAAAAAgEAAAAAAAAAWQAAAAAAAAAAAAAAAAAAI6U
 </mutableData>
         </image>
+        <image name="服務據點_定位" width="52" height="58"/>
     </resources>
 </document>

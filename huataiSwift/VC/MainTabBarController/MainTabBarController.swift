@@ -35,7 +35,7 @@ class MainTabBarController: UITabBarController {
   override func viewWillDisappear(_ animated: Bool) {
     super.viewDidDisappear(animated)
     
-    NotificationCenter.default.removeObserver(self)
+    //NotificationCenter.default.removeObserver(self)
   }
   
   override func didReceiveMemoryWarning() {
@@ -93,16 +93,21 @@ class MainTabBarController: UITabBarController {
     
     storyboard = UIStoryboard.init(name: "MainViewController", bundle: nil)
     mainViewController = storyboard.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
-    
+    mainViewController.title = NSLocalizedString("TabBarControllerMainViewTitle", comment: "")
+
     storyboard = UIStoryboard.init(name: "QRCodePaymentViewController", bundle: nil)
     qRCodePaymentViewController =
       storyboard.instantiateViewController(withIdentifier: "QRCodePaymentViewController") as! UINavigationController
-    
+    qRCodePaymentViewController.title = NSLocalizedString("TabBarControllerQRCodePaymentTitle", comment: "")
+
     storyboard = UIStoryboard.init(name: "MapViewController", bundle: nil)
     mapViewController = storyboard.instantiateViewController(withIdentifier: "MapViewTabBarController")
-    
+    mapViewController.title = NSLocalizedString("TabBarControllerMapTitle", comment: "")
+
     storyboard = UIStoryboard.init(name: "MoreViewController", bundle: nil)
     moreViewController = storyboard.instantiateViewController(withIdentifier: "MoreViewTabBarController")
+    moreViewController.title = NSLocalizedString("TabBarControllerMoreTitle", comment: "")
+
     
     self.viewControllers = [qRCodePaymentViewController,mapViewController,moreViewController]
   }
