@@ -27,6 +27,7 @@ class LoginViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     self.navigationItem.setHidesBackButton(true, animated:true);
     self.navigationItem.titleView = UIImageView(image:UIImage(named: "logo"))
+
   }
   
   override func viewDidAppear(_ animated: Bool) {
