@@ -112,6 +112,34 @@ class GeneralLoginViewController: UIViewController {
 
 extension GeneralLoginViewController: UITextFieldDelegate {
   
+  func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    /*
+     0 --> identityTextField
+     1 --> userppTextField
+     2 --> userCodeTextField
+     3 --> userConfimppTextField
+     */
+    switch textField.tag {
+    case 0:
+      let maxLength = 10
+      let currentString: NSString = textField.text! as NSString
+      let newString: NSString = currentString.replacingCharacters(in: range, with: string) as NSString
+      return newString.length <= maxLength
+    case 1:
+      let maxLength = 12
+      let currentString: NSString = textField.text! as NSString
+      let newString: NSString = currentString.replacingCharacters(in: range, with: string) as NSString
+      return newString.length <= maxLength
+    case 2:
+      break
+    case 3:
+      break
+    default:
+      break
+    }
+    return true
+  }
+  
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     textField.resignFirstResponder()
     return true

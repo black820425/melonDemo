@@ -105,7 +105,7 @@
                                     <outlet property="prefetchDataSource" destination="nm6-5n-ymk" id="dMe-7z-6VZ"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HjG-mV-2SG">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HjG-mV-2SG">
                                 <rect key="frame" x="260" y="74" width="52" height="58"/>
                                 <state key="normal" image="服務據點_定位"/>
                                 <connections>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MoreViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class MoreViewController: UIViewController {
   
   @IBOutlet weak var moreViewTableView: UITableView!
   
@@ -51,6 +51,24 @@ class MoreViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     dismiss(animated: true, completion: nil)
   }
   
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
+  }
+  
+  /*
+   // MARK: - Navigation
+   
+   // In a storyboard-based application, you will often want to do a little preparation before navigation
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+   // Get the new view controller using segue.destinationViewController.
+   // Pass the selected object to the new view controller.
+   }
+   */
+}
+
+extension MoreViewController: UITableViewDataSource {
+  
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return imageNameArray.count == titleNameArray.count ? imageNameArray.count : 0
   }
@@ -68,6 +86,9 @@ class MoreViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     return moreViewTableViewCell
   }
+}
+
+extension MoreViewController: UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     let headerView = UIView()
@@ -89,8 +110,6 @@ class MoreViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
   }
   
-  
-  
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
     let moreViewTableViewCell = tableView.cellForRow(at: indexPath) as! MoreViewTableViewCell
@@ -98,12 +117,12 @@ class MoreViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     /*
      "SettingTitle" = "設定"
      "MessageTitle" = "訊息";
-    "AppVersionTitle" = "版本";
-    "InterestRateTitle" = "利匯率";
-    "ServiceLocationTitle" = "服務據點";
-    "QRCodePaymentTitle" = "QR Code收付";
-    "OnlineBusinessBidTitle" = "線上業務申辦";
-    "UserPrivacyStatementTitle" = "使用者隱私聲明";*/
+     "AppVersionTitle" = "版本";
+     "InterestRateTitle" = "利匯率";
+     "ServiceLocationTitle" = "服務據點";
+     "QRCodePaymentTitle" = "QR Code收付";
+     "OnlineBusinessBidTitle" = "線上業務申辦";
+     "UserPrivacyStatementTitle" = "使用者隱私聲明";*/
     var storyboard:UIStoryboard
     switch moreViewTableViewCell.customizeTitleLabel.text {
       
@@ -147,21 +166,5 @@ class MoreViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
       NotificationCenter.default.post(name: NSNotification.Name.init("TestSingOutSuccess"), object: nil)
     }
   }
-  
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
-  
-  
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using segue.destinationViewController.
-   // Pass the selected object to the new view controller.
-   }
-   */
   
 }

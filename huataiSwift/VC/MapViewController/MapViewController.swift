@@ -9,8 +9,7 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController,CLLocationManagerDelegate,UISearchBarDelegate,
-UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+class MapViewController: UIViewController {
   
   @IBOutlet weak var customizeMapView: MKMapView!
   @IBOutlet weak var nearBranchesButton: UIButton!
@@ -25,7 +24,6 @@ UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlow
     
     contentArray = [NSLocalizedString("HwataiBranchesTitle", comment: ""),
                     NSLocalizedString("ATMTitle", comment: "")]
-    
     prepareUseUserLocation()
     setButtonRadious()
   }
@@ -36,12 +34,93 @@ UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlow
     self.navigationItem.title = NSLocalizedString("NavigationControllerMapTitle", comment: "");
   }
   
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
+  }
   
   @IBAction func searchButtonAction(_ sender: Any) {
     let searchControler = UISearchController.init(searchResultsController: nil)
     searchControler.searchBar.delegate = self
     self.present(searchControler, animated: true, completion: nil)
   }
+  
+  @IBAction func userTrackingModeButtonAction(_ sender: Any) {
+    let button = sender as! UIButton
+    switch button.tag {
+    case 0:
+      button.tag = 1
+      customizeMapView.userTrackingMode = .none
+      UIView.animate(withDuration: 0.5) {
+        button.setImage(UIImage.init(named: "服務據點_定位"), for: .normal)
+      }
+      break
+    case 1:
+      button.tag = 2
+      customizeMapView.userTrackingMode = .follow
+      UIView.animate(withDuration: 0.5) {
+        button.setImage(UIImage.init(named: "服務據點_定位_按下"), for: .normal)
+      }
+      break
+    case 2:
+      button.tag = 0
+      customizeMapView.userTrackingMode = .followWithHeading
+      UIView.animate(withDuration: 0.5) {
+        button.setImage(UIImage.init(named: "服務據點_定位_方向"), for: .normal)
+      }
+      break
+    default:
+      break
+    }
+  }
+  
+  @IBAction func dimissButtonAction(_ sender: Any) {
+    dismiss(animated: true, completion: nil)
+  }
+  
+  func setButtonRadious() {
+    searchRegionButton.layer.cornerRadius = 5
+    searchRegionButton.layer.borderWidth = 2
+    searchRegionButton.layer.borderColor = UIColor.white.cgColor
+    
+    nearBranchesButton.layer.cornerRadius = 5
+    nearBranchesButton.layer.borderWidth = 2
+    nearBranchesButton.layer.borderColor = Singleton.sharedInstance().getThemColorR234xG90xB90().cgColor
+  }
+  
+  /*
+   // MARK: - Navigation
+   
+   // In a storyboard-based application, you will often want to do a little preparation before navigation
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+   // Get the new view controller using segue.destinationViewController.
+   // Pass the selected object to the new view controller.
+   }
+   */
+  
+}
+
+extension MapViewController: CLLocationManagerDelegate {
+  
+  func prepareUseUserLocation() {
+    //給授權者
+    locationManager.delegate = self;
+    //詢問使用者
+    locationManager.requestAlwaysAuthorization()
+    //設定準確性
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    //設定類型
+    locationManager.activityType = .otherNavigation
+    //准許於背景執行
+    //locationManager.allowsBackgroundLocationUpdates = true
+    //開始回報位置
+    locationManager.startUpdatingLocation()
+    //追蹤座標模式
+    customizeMapView.userTrackingMode = .follow
+  }
+}
+
+extension MapViewController: UISearchBarDelegate {
   
   func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
     let searchRequest = MKLocalSearchRequest()
@@ -77,30 +156,9 @@ UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlow
     }
   }
   
-  @IBAction func userTrackingModeButtonAction(_ sender: Any) {
-    let button = sender as! UIButton
-    switch button.tag {
-    case 0:
-      customizeMapView.userTrackingMode = .none
-      button.tag = 1
-      break
-    case 1:
-      customizeMapView.userTrackingMode = .follow
-      button.tag = 2
-      break
-    case 2:
-      customizeMapView.userTrackingMode = .followWithHeading
-      button.tag = 0
-      break
-    default:
-      break
-    }
-  }
-  
-  
-  @IBAction func dimissButtonAction(_ sender: Any) {
-    dismiss(animated: true, completion: nil)
-  }
+}
+
+extension MapViewController: UICollectionViewDataSource {
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return contentArray.count;
@@ -121,6 +179,9 @@ UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlow
     
     return mapViewCollectionViewCell
   }
+}
+
+extension MapViewController: UICollectionViewDelegate {
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     if(previousCollectionCell != nil) {
@@ -138,6 +199,9 @@ UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlow
     
     previousCollectionCell = mapViewCollectionViewCell
   }
+}
+
+extension MapViewController: UICollectionViewDelegateFlowLayout {
   
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     
@@ -153,48 +217,4 @@ UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlow
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
     return 0
   }
-  
-  func prepareUseUserLocation() {
-    //給授權者
-    locationManager.delegate = self;
-    //詢問使用者
-    locationManager.requestAlwaysAuthorization()
-    //設定準確性
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest
-    //設定類型
-    locationManager.activityType = .otherNavigation
-    //准許於背景執行
-    //locationManager.allowsBackgroundLocationUpdates = true
-    //開始回報位置
-    locationManager.startUpdatingLocation()
-    //追蹤座標模式
-    customizeMapView.userTrackingMode = .follow
-  }
-  
-  func setButtonRadious() {
-    searchRegionButton.layer.cornerRadius = 5
-    searchRegionButton.layer.borderWidth = 2
-    searchRegionButton.layer.borderColor = UIColor.white.cgColor
-    
-    nearBranchesButton.layer.cornerRadius = 5
-    nearBranchesButton.layer.borderWidth = 2
-    nearBranchesButton.layer.borderColor = Singleton.sharedInstance().getThemColorR234xG90xB90().cgColor
-  }
-  
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
-  
-  
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using segue.destinationViewController.
-   // Pass the selected object to the new view controller.
-   }
-   */
-  
 }
