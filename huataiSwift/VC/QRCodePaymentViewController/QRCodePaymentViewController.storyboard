@@ -105,7 +105,7 @@
         <!--條碼收款-->
         <scene sceneID="kZe-g0-BHL">
             <objects>
-                <viewController id="76f-MX-bTt" sceneMemberID="viewController">
+                <viewController id="76f-MX-bTt" customClass="QRCodeBarViewController" customModule="huataiSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qhF-Ff-SRd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -125,7 +125,7 @@
         <!--掃描支付-->
         <scene sceneID="Ohv-Z7-x0X">
             <objects>
-                <viewController id="EY0-Pr-A2Y" sceneMemberID="viewController">
+                <viewController id="EY0-Pr-A2Y" customClass="QRCodeScanViewController" customModule="huataiSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AXk-RQ-B1p">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
