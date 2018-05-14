@@ -41,6 +41,7 @@ class QRCodePaymentViewController: UIViewController {
   }
   
   @IBAction func scanPaymentButtonAction(_ sender: Any) {
+    
   }
   
   

@@ -9,6 +9,9 @@
 import UIKit
 
 class GeneralLoginViewController: UIViewController {
+  
+  @IBOutlet weak var customizeScrollView: UIScrollView!
+  
   @IBOutlet weak var rememberMeButton: UIButton!
   @IBOutlet weak var refreshConfimppButton: UIButton!
   
@@ -25,8 +28,6 @@ class GeneralLoginViewController: UIViewController {
   @IBOutlet weak var userCodeTextField: UITextField!
   @IBOutlet weak var userConfimppTextField: UITextField!
   
-  @IBOutlet weak var customizeScrollView: UIScrollView!
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -36,6 +37,19 @@ class GeneralLoginViewController: UIViewController {
     userConfimppTextField.delegate = self
     
     repareTextFieldAndButtonRadious()
+    
+    // 註冊tab事件，點選瑩幕任一處可關閉瑩幕小鍵盤
+    let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+    self.view.addGestureRecognizer(tap)
+  }
+  
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
+  }
+  
+  @objc func dismissKeyboard() {
+    self.view.endEditing(true)
   }
   
   override func viewDidLayoutSubviews() {
@@ -43,15 +57,14 @@ class GeneralLoginViewController: UIViewController {
   }
   
   @IBAction func rememberMeButtonAction(_ sender: Any) {
-    
     let button = sender as! UIButton
     if(button.tag == 0) {
       button.tag = 1
-      button.setImage(UIImage.init(named: "check box"), for: .normal)
+      button.setImage(UIImage(named: "check box"), for: .normal)
       
     } else {
       button.tag = 0
-      button.setImage(UIImage.init(named: "check box_空心"), for: .normal)
+      button.setImage(UIImage(named: "check box_空心"), for: .normal)
     }
   }
   
@@ -95,11 +108,6 @@ class GeneralLoginViewController: UIViewController {
     userconfimppBackgroundView.layer.borderColor = Singleton.sharedInstance().getThemeColorR232xG232xB232().cgColor
   }
   
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
-  
   /*
    // MARK: - Navigation
    // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -113,6 +121,23 @@ class GeneralLoginViewController: UIViewController {
 extension GeneralLoginViewController: UITextFieldDelegate {
   
   func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+
+    //是否含有注音
+    if string.isContainsPhoneticCharacters() {
+      return false
+    }
+    
+    //是否含有中文字元
+    if string.isContainsChineseCharacters() {
+      return false
+    }
+    
+    //是否含有空白字元
+    if string.isContainsSpaceCharacters() {
+      return false
+    }
+    
+    
     /*
      0 --> identityTextField
      1 --> userppTextField
@@ -121,6 +146,15 @@ extension GeneralLoginViewController: UITextFieldDelegate {
      */
     switch textField.tag {
     case 0:
+      //第一個字轉大寫
+      if(string != "") {
+        if range.location == 0 && !string.isContainsPhoneticCharacters()  {
+          let index = string.index(string.startIndex, offsetBy: 1)
+          textField.text = String(string[..<index]).uppercased()
+          return false
+        }
+      }
+      
       let maxLength = 10
       let currentString: NSString = textField.text! as NSString
       let newString: NSString = currentString.replacingCharacters(in: range, with: string) as NSString
@@ -155,6 +189,40 @@ extension GeneralLoginViewController: UITextFieldDelegate {
     userCodeTextField.resignFirstResponder()
     userConfimppTextField.resignFirstResponder()
     return true
+  }
+  
+}
+
+extension String {
+  
+  //是否含有注音
+  func isContainsPhoneticCharacters() -> Bool {
+    for scalar in self.unicodeScalars {
+      if (scalar.value >= 12549 && scalar.value <= 12582) || (scalar.value == 12584 || scalar.value == 12585 || scalar.value == 19968) {
+        return true
+      }
+    }
+    return false
+  }
+  
+  //是否含有中文字元
+  func isContainsChineseCharacters() -> Bool {
+    for scalar in self.unicodeScalars {
+      if scalar.value >= 19968 && scalar.value <= 171941 {
+        return true
+      }
+    }
+    return false
+  }
+  
+  //是否含有空白字元
+  func isContainsSpaceCharacters() -> Bool {
+    for scalar in self.unicodeScalars {
+      if scalar.value == 32 {
+        return true
+      }
+    }
+    return false
   }
   
 }

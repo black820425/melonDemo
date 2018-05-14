@@ -177,7 +177,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="frr-Kr-glR"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="服務據點" image="ic_服務據點" id="kTI-pr-BDS"/>
+                    <tabBarItem key="tabBarItem" title="服務據點" image="ic_服務據點" id="kTI-pr-BDS">
+                        <inset key="imageInsets" minX="0.0" minY="-2" maxX="0.0" maxY="0.0"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VCY-Bg-aEL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

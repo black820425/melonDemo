@@ -20,7 +20,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="EHh-LC-Cyx"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="主頁面" id="Taj-Fh-ESm"/>
+                    <tabBarItem key="tabBarItem" title="主頁面" image="ic_Home" id="Taj-Fh-ESm">
+                        <inset key="imageInsets" minX="0.0" minY="-2" maxX="0.0" maxY="0.0"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" id="tJv-uq-asy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vKF-6A-LeH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -33,6 +35,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="s3d-gY-Cm5" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1M2-cv-doV">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -45,4 +48,7 @@
             <point key="canvasLocation" x="1820" y="31.934032983508249"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_Home" width="33" height="31"/>
+    </resources>
 </document>

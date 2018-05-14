@@ -41,5 +41,16 @@
 "TabBarControllerMapTitle" = "服務據點";
 "TabBarControllerMoreTitle" = "更多";
 
+//BiometricViewController
+"NoPasswordSetTitle" = "未設定密碼";
+"SuccessfulVerificationTitle" = "驗證成功";
+"PleaseVerifyYourFingerprintTitle" = "使用指紋辨識登入";
+"NoFingerprintIdentificationTitle" = "未設定指紋辨識";
+"UnableToUseFingerprintRecognitionTitle" = "無法使用指紋辨識";
+
+"MoreThanRetriesTitle" = "超過重試次數";
+"TouchIDIsLockedTitle" = "Touch ID 已被鎖定";
+"PleaseGoToSettingsAndSelectTouchIDAndPasswordToUnlockThePasswordMessage" = "請到「 設定 」選擇「 Touch ID 與密碼 」輸入密碼解鎖。";
+
 
 

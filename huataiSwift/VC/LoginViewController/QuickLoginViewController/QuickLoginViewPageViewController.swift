@@ -23,6 +23,7 @@ class QuickLoginViewPageViewController: UIPageViewController {
     viewControllersArray = [biometricViewController,gestureUnlockViewController] as! [UIViewController]
   }
   
+  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.

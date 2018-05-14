@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LocalAuthentication
 
 class QuickLoginViewController: UIViewController {
   
@@ -15,9 +16,14 @@ class QuickLoginViewController: UIViewController {
   
   var quickLoginViewPageViewController: QuickLoginViewPageViewController!
   
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     prepareButtonRadious()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+
   }
   
   override func didReceiveMemoryWarning() {
@@ -26,12 +32,12 @@ class QuickLoginViewController: UIViewController {
   }
   
   @IBAction func biometricButtonAction(_ sender: Any) {
+    
     let button = sender as! UIButton
     quickLoginViewPageViewController.showPage(index: button.tag)
 
     biometricsButton.backgroundColor = Singleton.sharedInstance().getThemeColorR224xG224xB224()
     graphicLockButton.backgroundColor = .clear
-    
   }
   
   @IBAction func grpahicLockButtonAction(_ sender: Any) {
@@ -41,7 +47,6 @@ class QuickLoginViewController: UIViewController {
     graphicLockButton.backgroundColor = Singleton.sharedInstance().getThemeColorR224xG224xB224()
     biometricsButton.backgroundColor = .clear
   }
-  
   
   func prepareButtonRadious() {
     biometricsButton.layer.borderWidth = 1
@@ -53,7 +58,6 @@ class QuickLoginViewController: UIViewController {
   }
   
   // MARK: - Navigation
-  
   // In a storyboard-based application, you will often want to do a little preparation before navigation
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if(segue.identifier == "QuickLoginViewPageViewSegue") {
