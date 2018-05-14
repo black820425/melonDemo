@@ -10,6 +10,7 @@ import UIKit
 
 class QRCodeBarViewController: UIViewController {
   
+  @IBOutlet weak var qrcodeImageView: UIImageView!
   override func viewDidLoad() {
     super.viewDidLoad()
     
