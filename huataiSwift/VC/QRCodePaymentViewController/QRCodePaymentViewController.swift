@@ -53,14 +53,15 @@ class QRCodePaymentViewController: UIViewController {
   
   
   
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using segue.destinationViewController.
-   // Pass the selected object to the new view controller.
-   }
-   */
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "scan" {
+      let destination = segue.destination as! QRCodeScanViewController
+      destination.hidesBottomBarWhenPushed = true
+    } else if segue.identifier == "bar" {
+      let destination = segue.destination as! QRCodeBarViewController
+      destination.hidesBottomBarWhenPushed = true
+    }
+  }
   
 }
