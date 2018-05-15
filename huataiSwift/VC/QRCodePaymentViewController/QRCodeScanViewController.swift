@@ -18,8 +18,8 @@ class QRCodeScanViewController: UIViewController, AVCaptureMetadataOutputObjects
     super.viewDidLoad()
     
     view.backgroundColor = UIColor.black
-    
-    
+    //qrcodeScanner()
+    addUI()
     
     // Do any additional setup after loading the view.
   }
@@ -66,6 +66,44 @@ class QRCodeScanViewController: UIViewController, AVCaptureMetadataOutputObjects
     view.layer.addSublayer(previewLayer)
     
     captureSession.startRunning()
+    addUI()
+  }
+  
+  func addUI(){
+    let descriptionLabel = UILabel()
+    descriptionLabel.backgroundColor = UIColor.black
+    descriptionLabel.textColor = UIColor.white
+    descriptionLabel.text = "對準QRCode後，即能自動讀取"
+    descriptionLabel.textAlignment = .center
+    descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+    descriptionLabel.layer.cornerRadius = 25.0
+    //descriptionLabel.layer.borderColor = UIColor.white as? CGColor
+
+    let centerX = NSLayoutConstraint(item: descriptionLabel,
+                                     attribute: .centerX,
+                                     relatedBy: .equal,
+                                     toItem: self.view,
+                                     attribute: .centerX,
+                                     multiplier: 1.0,
+                                     constant: 0.0)
+    let bottom = NSLayoutConstraint(item: descriptionLabel,
+                                     attribute: .bottom,
+                                     relatedBy: .equal,
+                                     toItem: self.view,
+                                     attribute: .bottom,
+                                     multiplier: 1.0,
+                                     constant: -55.0)
+    NSLayoutConstraint(item: descriptionLabel,
+                       attribute: .width,
+                       relatedBy: .equal,
+                       toItem: nil,
+                       attribute: .notAnAttribute,
+                       multiplier: 1.0,
+                       constant: 276.0).isActive = true
+    
+    self.view.addSubview(descriptionLabel)
+
+    NSLayoutConstraint.activate([centerX, bottom])
   }
   
   func failed() {
