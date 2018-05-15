@@ -147,7 +147,7 @@ class QRCodeScanViewController: UIViewController, AVCaptureMetadataOutputObjects
                                    attribute: .centerX,
                                    multiplier: 1.0,
                                    constant: 0.0)
-
+    
     let height = NSLayoutConstraint(item: focusImageView,
                                    attribute: .height,
                                    relatedBy: .equal,
