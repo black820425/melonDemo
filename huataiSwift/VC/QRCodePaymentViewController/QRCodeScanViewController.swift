@@ -18,7 +18,7 @@ class QRCodeScanViewController: UIViewController, AVCaptureMetadataOutputObjects
     super.viewDidLoad()
     
     view.backgroundColor = UIColor.black
-    //qrcodeScanner()
+    qrcodeScanner()
     addUI()
     
     // Do any additional setup after loading the view.
@@ -66,18 +66,27 @@ class QRCodeScanViewController: UIViewController, AVCaptureMetadataOutputObjects
     view.layer.addSublayer(previewLayer)
     
     captureSession.startRunning()
-    addUI()
   }
   
-  func addUI(){
+  func addUI() {
+    addDescriptionLabelUI()
+    addFocusImageView()
+  }
+  
+  func addDescriptionLabelUI(){
+    
     let descriptionLabel = UILabel()
-    descriptionLabel.backgroundColor = UIColor.black
-    descriptionLabel.textColor = UIColor.white
-    descriptionLabel.text = "對準QRCode後，即能自動讀取"
-    descriptionLabel.textAlignment = .center
     descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+
+    descriptionLabel.backgroundColor = nil
+    descriptionLabel.text = "對準QRCode後，即能自動讀取"
+    descriptionLabel.font = UIFont(name: "PingFangTC-Semibold", size: 14.0)
+    descriptionLabel.textColor = UIColor.white
+    descriptionLabel.textAlignment = .center
+    
     descriptionLabel.layer.cornerRadius = 25.0
-    //descriptionLabel.layer.borderColor = UIColor.white as? CGColor
+    descriptionLabel.layer.borderWidth = 1.0
+    descriptionLabel.layer.borderColor = UIColor.white.cgColor
 
     let centerX = NSLayoutConstraint(item: descriptionLabel,
                                      attribute: .centerX,
@@ -86,6 +95,7 @@ class QRCodeScanViewController: UIViewController, AVCaptureMetadataOutputObjects
                                      attribute: .centerX,
                                      multiplier: 1.0,
                                      constant: 0.0)
+    
     let bottom = NSLayoutConstraint(item: descriptionLabel,
                                      attribute: .bottom,
                                      relatedBy: .equal,
@@ -93,6 +103,15 @@ class QRCodeScanViewController: UIViewController, AVCaptureMetadataOutputObjects
                                      attribute: .bottom,
                                      multiplier: 1.0,
                                      constant: -55.0)
+    
+    let height = NSLayoutConstraint(item: descriptionLabel,
+                                    attribute: .height,
+                                    relatedBy: .equal,
+                                    toItem: nil,
+                                    attribute: .notAnAttribute,
+                                    multiplier: 1.0,
+                                    constant: 45.0)
+    
     NSLayoutConstraint(item: descriptionLabel,
                        attribute: .width,
                        relatedBy: .equal,
@@ -101,9 +120,54 @@ class QRCodeScanViewController: UIViewController, AVCaptureMetadataOutputObjects
                        multiplier: 1.0,
                        constant: 276.0).isActive = true
     
+    
     self.view.addSubview(descriptionLabel)
 
-    NSLayoutConstraint.activate([centerX, bottom])
+    NSLayoutConstraint.activate([centerX, bottom, height])
+  }
+  
+  func addFocusImageView(){
+    let focusImageView = UIImageView()
+    focusImageView.translatesAutoresizingMaskIntoConstraints = false
+    
+    focusImageView.image = UIImage(named: "ic_掃描qr")
+    
+    let top = NSLayoutConstraint(item: focusImageView,
+                                 attribute: .top,
+                                 relatedBy: .equal,
+                                 toItem: self.view,
+                                 attribute: .top,
+                                 multiplier: 1.0,
+                                 constant: 130.0)
+    
+    let centerX = NSLayoutConstraint(item: focusImageView,
+                                   attribute: .centerX,
+                                   relatedBy: .equal,
+                                   toItem: self.view,
+                                   attribute: .centerX,
+                                   multiplier: 1.0,
+                                   constant: 0.0)
+
+    let height = NSLayoutConstraint(item: focusImageView,
+                                   attribute: .height,
+                                   relatedBy: .equal,
+                                   toItem: nil,
+                                   attribute: .notAnAttribute,
+                                   multiplier: 1.0,
+                                   constant: 280.0)
+    
+    let width = NSLayoutConstraint(item: focusImageView,
+                                   attribute: .width,
+                                   relatedBy: .equal,
+                                   toItem: nil,
+                                   attribute: .notAnAttribute,
+                                   multiplier: 1.0,
+                                   constant: 280.0)
+
+  
+    
+    self.view.addSubview(focusImageView)
+    NSLayoutConstraint.activate([top, centerX, width, height])
   }
   
   func failed() {
