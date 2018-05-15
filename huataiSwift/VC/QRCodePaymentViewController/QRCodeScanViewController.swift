@@ -32,7 +32,7 @@ class QRCodeScanViewController: UIViewController, AVCaptureMetadataOutputObjects
   func qrcodeScanner(){
     captureSession = AVCaptureSession()
 
-    guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else { return }
+    guard let videoCaptureDevice =  AVCaptureDevice.default(for: .video) else { return }
     let videoInput: AVCaptureDeviceInput
     
     do {
