@@ -38,7 +38,7 @@ class GeneralLoginViewController: UIViewController {
     
     repareTextFieldAndButtonRadious()
     
-    // 註冊tab事件，點選瑩幕任一處可關閉瑩幕小鍵盤
+    //註冊tap事件，點選瑩幕任一處可關閉瑩幕小鍵盤
     let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
     self.view.addGestureRecognizer(tap)
   }
@@ -48,12 +48,13 @@ class GeneralLoginViewController: UIViewController {
     // Dispose of any resources that can be recreated.
   }
   
-  @objc func dismissKeyboard() {
-    self.view.endEditing(true)
-  }
-  
+
   override func viewDidLayoutSubviews() {
     customizeScrollView.contentSize = CGSize(width: self.view.frame.width, height: customizeScrollView.contentSize.height)
+  }
+  
+  @objc func dismissKeyboard() {
+    self.view.endEditing(true)
   }
   
   @IBAction func rememberMeButtonAction(_ sender: Any) {
@@ -80,9 +81,13 @@ class GeneralLoginViewController: UIViewController {
   }
   
   @IBAction func testLoginButtonAction(_ sender: Any) {
+    
     Singleton.sharedInstance().setTestLogin(bool: true)
-    NotificationCenter.default.post(name: NSNotification.Name.init("TestLoginSuccess"), object: nil)
-    NotificationCenter.default.post(name: NSNotification.Name.init("TestLoginSuccessToPopLoginView"), object: nil)
+    
+    ProjectAPI.Object().connectAPIWithUrl { (array) in
+      NotificationCenter.default.post(name: NSNotification.Name.init("TestLoginSuccess"), object: nil)
+      NotificationCenter.default.post(name: NSNotification.Name.init("TestLoginSuccessToPopLoginView"), object: nil)
+    }
   }
   
   func repareTextFieldAndButtonRadious() {

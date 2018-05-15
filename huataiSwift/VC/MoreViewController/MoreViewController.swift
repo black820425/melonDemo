@@ -47,14 +47,15 @@ class MoreViewController: UIViewController {
     navigationItem.title = NSLocalizedString("NavigationControllerMoreTitle", comment: "");
   }
   
-  @IBAction func dimissViewButtonAction(_ sender: Any) {
-    dismiss(animated: true, completion: nil)
-  }
-  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
+  
+  @IBAction func dimissViewButtonAction(_ sender: Any) {
+    dismiss(animated: true, completion: nil)
+  }
+  
   
   /*
    // MARK: - Navigation
@@ -163,7 +164,7 @@ extension MoreViewController: UITableViewDelegate {
     if(indexPath.row == 8) {
       Singleton.sharedInstance().setTestLogin(bool: false)
       dismiss(animated: true, completion: nil)
-      NotificationCenter.default.post(name: NSNotification.Name.init("TestSingOutSuccess"), object: nil)
+      NotificationCenter.default.post(name: NSNotification.Name.init("TestSignOutSuccess"), object: nil)
     }
   }
   

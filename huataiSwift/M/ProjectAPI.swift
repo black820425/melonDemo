@@ -11,13 +11,23 @@ import UIKit
 
 class ProjectAPI {
   
-  typealias PassArrayBlock = ([Int]) -> Void
+  private static var object:ProjectAPI?
   
+  static func Object() -> ProjectAPI {
+    if object == nil {
+      object = ProjectAPI()
+      
+    }
+    return object!
+  }
+  
+  typealias PassArrayBlock = ([Int]) -> Void
+
   func connectAPIWithUrl(closures: PassArrayBlock){
     let str = "Hello"
     let myData = str.data(using: .utf8)
     
-    let url = URL(string: "https://appcms.u-sync.com/cms-user/v1/ntua/news")
+    let url = URL(string: "http://meimen.esappdiy.com/cms-user/api/content/contentlist")
     guard let _ = url else { return }
     var request = URLRequest(url: url!,
                              cachePolicy:  NSURLRequest.CachePolicy.reloadIgnoringCacheData,

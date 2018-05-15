@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A11C56C20AA82BE008B1C09 /* GestureUnlockSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A11C56B20AA82BE008B1C09 /* GestureUnlockSettingViewController.swift */; };
+		3A11C56E20AA8831008B1C09 /* QuickLoginSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A11C56D20AA8831008B1C09 /* QuickLoginSettingViewController.swift */; };
 		3A50C1D320747BE0002171F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50C1D220747BE0002171F4 /* AppDelegate.swift */; };
 		3A50C1D520747BE0002171F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50C1D420747BE0002171F4 /* ViewController.swift */; };
 		3A50C1D820747BE0002171F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A50C1D620747BE0002171F4 /* Main.storyboard */; };
@@ -28,7 +30,6 @@
 		3A97575C20A01B1C007C1EC2 /* GeneralLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A97575B20A01B1C007C1EC2 /* GeneralLoginViewController.swift */; };
 		3A97575E20A02EB1007C1EC2 /* GestureUnlockViewImage.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A97575D20A02EB1007C1EC2 /* GestureUnlockViewImage.xcassets */; };
 		3A97576120A0348A007C1EC2 /* QuickLoginViewPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A97576020A0348A007C1EC2 /* QuickLoginViewPageViewController.swift */; };
-		3A97576420A05567007C1EC2 /* BiometricViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A97576320A05567007C1EC2 /* BiometricViewController.swift */; };
 		3A97576820A06133007C1EC2 /* QRCodePaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A97576720A06133007C1EC2 /* QRCodePaymentViewController.swift */; };
 		3A97576A20A0617F007C1EC2 /* QRCodePaymentViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A97576920A0617F007C1EC2 /* QRCodePaymentViewController.storyboard */; };
 		3A97576F20A063E7007C1EC2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A97576E20A063E7007C1EC2 /* MainViewController.swift */; };
@@ -42,13 +43,15 @@
 		3A97594520A2D444007C1EC2 /* CreditCardPublicTextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A97594420A2D444007C1EC2 /* CreditCardPublicTextFieldTableViewCell.swift */; };
 		3A975B0720A4131D007C1EC2 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3A975B0620A4131D007C1EC2 /* .gitignore */; };
 		3A975B0920A43C54007C1EC2 /* QRCodePaymentViewImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A975B0820A43C54007C1EC2 /* QRCodePaymentViewImages.xcassets */; };
-		3A975B0C20A526B5007C1EC2 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A975B0B20A526B5007C1EC2 /* SettingViewController.swift */; };
 		3A975B0E20A526E1007C1EC2 /* SettingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A975B0D20A526E1007C1EC2 /* SettingViewController.storyboard */; };
 		3A975B1020A52BD2007C1EC2 /* SettingViewImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A975B0F20A52BD2007C1EC2 /* SettingViewImages.xcassets */; };
-		3A975B1220A53DC2007C1EC2 /* QuickLoginSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A975B1120A53DC2007C1EC2 /* QuickLoginSettingViewController.swift */; };
-		3A975B1420A53EF4007C1EC2 /* QuickLoginSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A975B1320A53EF4007C1EC2 /* QuickLoginSettingTableViewCell.swift */; };
+		3A975B1220A53DC2007C1EC2 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A975B1120A53DC2007C1EC2 /* SettingViewController.swift */; };
+		3A975B1420A53EF4007C1EC2 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A975B1320A53EF4007C1EC2 /* SettingTableViewCell.swift */; };
 		3A975B1620A545FE007C1EC2 /* GeneralLoginViewImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A975B1520A545FE007C1EC2 /* GeneralLoginViewImages.xcassets */; };
 		3A975B1820A5463B007C1EC2 /* MapViewImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A975B1720A5463B007C1EC2 /* MapViewImages.xcassets */; };
+		3A975CDC20A97979007C1EC2 /* TimerApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A975CDB20A97978007C1EC2 /* TimerApplication.swift */; };
+		3A975CDE20A97D45007C1EC2 /* BiometricViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A975CDD20A97D45007C1EC2 /* BiometricViewController.swift */; };
+		3A975CE020A9872D007C1EC2 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A975CDF20A9872D007C1EC2 /* main.swift */; };
 		3AF56DF1209957940021C42E /* ProjectAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF56DF0209957940021C42E /* ProjectAPI.swift */; };
 		3AF56DF320998CB70021C42E /* MapViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AF56DF220998CB70021C42E /* MapViewController.storyboard */; };
 		3AF56DFA20998D6F0021C42E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF56DF920998D6F0021C42E /* MapViewController.swift */; };
@@ -79,6 +82,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A11C56B20AA82BE008B1C09 /* GestureUnlockSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureUnlockSettingViewController.swift; sourceTree = "<group>"; };
+		3A11C56D20AA8831008B1C09 /* QuickLoginSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickLoginSettingViewController.swift; sourceTree = "<group>"; };
 		3A50C1CF20747BE0002171F4 /* huataiSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = huataiSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A50C1D220747BE0002171F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A50C1D420747BE0002171F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,7 +111,6 @@
 		3A97575B20A01B1C007C1EC2 /* GeneralLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralLoginViewController.swift; sourceTree = "<group>"; };
 		3A97575D20A02EB1007C1EC2 /* GestureUnlockViewImage.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = GestureUnlockViewImage.xcassets; sourceTree = "<group>"; };
 		3A97576020A0348A007C1EC2 /* QuickLoginViewPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickLoginViewPageViewController.swift; sourceTree = "<group>"; };
-		3A97576320A05567007C1EC2 /* BiometricViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricViewController.swift; sourceTree = "<group>"; };
 		3A97576720A06133007C1EC2 /* QRCodePaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodePaymentViewController.swift; sourceTree = "<group>"; };
 		3A97576920A0617F007C1EC2 /* QRCodePaymentViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QRCodePaymentViewController.storyboard; sourceTree = "<group>"; };
 		3A97576E20A063E7007C1EC2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -120,13 +124,15 @@
 		3A97594420A2D444007C1EC2 /* CreditCardPublicTextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardPublicTextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		3A975B0620A4131D007C1EC2 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		3A975B0820A43C54007C1EC2 /* QRCodePaymentViewImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = QRCodePaymentViewImages.xcassets; sourceTree = "<group>"; };
-		3A975B0B20A526B5007C1EC2 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		3A975B0D20A526E1007C1EC2 /* SettingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingViewController.storyboard; sourceTree = "<group>"; };
 		3A975B0F20A52BD2007C1EC2 /* SettingViewImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SettingViewImages.xcassets; sourceTree = "<group>"; };
-		3A975B1120A53DC2007C1EC2 /* QuickLoginSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickLoginSettingViewController.swift; sourceTree = "<group>"; };
-		3A975B1320A53EF4007C1EC2 /* QuickLoginSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickLoginSettingTableViewCell.swift; sourceTree = "<group>"; };
+		3A975B1120A53DC2007C1EC2 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		3A975B1320A53EF4007C1EC2 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		3A975B1520A545FE007C1EC2 /* GeneralLoginViewImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = GeneralLoginViewImages.xcassets; sourceTree = "<group>"; };
 		3A975B1720A5463B007C1EC2 /* MapViewImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MapViewImages.xcassets; sourceTree = "<group>"; };
+		3A975CDB20A97978007C1EC2 /* TimerApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerApplication.swift; sourceTree = "<group>"; };
+		3A975CDD20A97D45007C1EC2 /* BiometricViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiometricViewController.swift; sourceTree = "<group>"; };
+		3A975CDF20A9872D007C1EC2 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		3AF56DF0209957940021C42E /* ProjectAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectAPI.swift; sourceTree = "<group>"; };
 		3AF56DF220998CB70021C42E /* MapViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapViewController.storyboard; sourceTree = "<group>"; };
 		3AF56DF920998D6F0021C42E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +175,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A11C56A20AA829B008B1C09 /* GestureUnlockSettingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3A11C56B20AA82BE008B1C09 /* GestureUnlockSettingViewController.swift */,
+			);
+			path = GestureUnlockSettingViewController;
+			sourceTree = "<group>";
+		};
+		3A11C56F20AA883F008B1C09 /* QuickLoginSettingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3A11C56D20AA8831008B1C09 /* QuickLoginSettingViewController.swift */,
+				3A11C56A20AA829B008B1C09 /* GestureUnlockSettingViewController */,
+			);
+			path = QuickLoginSettingViewController;
+			sourceTree = "<group>";
+		};
 		3A50C1C620747BE0002171F4 = {
 			isa = PBXGroup;
 			children = (
@@ -274,7 +297,7 @@
 		3A97576220A035AA007C1EC2 /* BiometricViewController */ = {
 			isa = PBXGroup;
 			children = (
-				3A97576320A05567007C1EC2 /* BiometricViewController.swift */,
+				3A975CDD20A97D45007C1EC2 /* BiometricViewController.swift */,
 			);
 			path = BiometricViewController;
 			sourceTree = "<group>";
@@ -329,10 +352,10 @@
 		3A975B0A20A52426007C1EC2 /* SettingViewController */ = {
 			isa = PBXGroup;
 			children = (
-				3A975B0B20A526B5007C1EC2 /* SettingViewController.swift */,
-				3A975B1120A53DC2007C1EC2 /* QuickLoginSettingViewController.swift */,
-				3A975B1320A53EF4007C1EC2 /* QuickLoginSettingTableViewCell.swift */,
 				3A975B0D20A526E1007C1EC2 /* SettingViewController.storyboard */,
+				3A975B1120A53DC2007C1EC2 /* SettingViewController.swift */,
+				3A975B1320A53EF4007C1EC2 /* SettingTableViewCell.swift */,
+				3A11C56F20AA883F008B1C09 /* QuickLoginSettingViewController */,
 			);
 			path = SettingViewController;
 			sourceTree = "<group>";
@@ -340,9 +363,11 @@
 		3AF56DF420998CFB0021C42E /* M */ = {
 			isa = PBXGroup;
 			children = (
+				3A975CDF20A9872D007C1EC2 /* main.swift */,
 				3AF56E11209AFCD70021C42E /* Singleton.swift */,
 				3AF56DF0209957940021C42E /* ProjectAPI.swift */,
 				3A50C1D220747BE0002171F4 /* AppDelegate.swift */,
+				3A975CDB20A97978007C1EC2 /* TimerApplication.swift */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -469,6 +494,11 @@
 				TargetAttributes = {
 					3A50C1CE20747BE0002171F4 = {
 						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					3A50C1E220747BE1002171F4 = {
 						CreatedOnToolsVersion = 9.3;
@@ -560,13 +590,16 @@
 				3AF56E12209AFCD70021C42E /* Singleton.swift in Sources */,
 				3A945C45209C52B9005414BE /* MainTabBarController.swift in Sources */,
 				3A97594520A2D444007C1EC2 /* CreditCardPublicTextFieldTableViewCell.swift in Sources */,
-				3A975B1420A53EF4007C1EC2 /* QuickLoginSettingTableViewCell.swift in Sources */,
+				3A975CE020A9872D007C1EC2 /* main.swift in Sources */,
+				3A975B1420A53EF4007C1EC2 /* SettingTableViewCell.swift in Sources */,
+				3A975CDE20A97D45007C1EC2 /* BiometricViewController.swift in Sources */,
+				3A11C56C20AA82BE008B1C09 /* GestureUnlockSettingViewController.swift in Sources */,
 				3AF56E15209B088A0021C42E /* ScanQRCodeViewController.swift in Sources */,
 				3A945C3F209C2B62005414BE /* EffectiveScanningRangeView.swift in Sources */,
-				3A975B0C20A526B5007C1EC2 /* SettingViewController.swift in Sources */,
-				3A97576420A05567007C1EC2 /* BiometricViewController.swift in Sources */,
 				3A97577A20A18A39007C1EC2 /* MoreViewTableViewCell.swift in Sources */,
+				3A975CDC20A97979007C1EC2 /* TimerApplication.swift in Sources */,
 				3A97593F20A29B77007C1EC2 /* CreditCardMembershipViewController.swift in Sources */,
+				3A11C56E20AA8831008B1C09 /* QuickLoginSettingViewController.swift in Sources */,
 				3A975755209FDFE8007C1EC2 /* LoginViewPageViewController.swift in Sources */,
 				3A97576120A0348A007C1EC2 /* QuickLoginViewPageViewController.swift in Sources */,
 				3A50C1D520747BE0002171F4 /* ViewController.swift in Sources */,
@@ -578,7 +611,7 @@
 				3A97594320A2D3D5007C1EC2 /* CreditCardInstructionsTableViewCell.swift in Sources */,
 				3AF56DFA20998D6F0021C42E /* MapViewController.swift in Sources */,
 				3A97576F20A063E7007C1EC2 /* MainViewController.swift in Sources */,
-				3A975B1220A53DC2007C1EC2 /* QuickLoginSettingViewController.swift in Sources */,
+				3A975B1220A53DC2007C1EC2 /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -784,6 +817,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VN24ZWQUQ3;
 				INFOPLIST_FILE = huataiSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -802,6 +836,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VN24ZWQUQ3;
 				INFOPLIST_FILE = huataiSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

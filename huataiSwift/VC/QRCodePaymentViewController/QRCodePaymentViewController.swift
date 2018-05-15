@@ -10,6 +10,9 @@ import UIKit
 
 class QRCodePaymentViewController: UIViewController {
   
+  var timer: Timer!
+  var sixSec = 0
+  
   @IBOutlet weak var backgroundView: UIView!
   
   override func viewDidLoad() {
@@ -19,6 +22,8 @@ class QRCodePaymentViewController: UIViewController {
     navigationController?.navigationBar.topItem?.title = ""
     navigationController?.navigationBar.backIndicatorImage = UIImage(named: "ic_com_Left_pressed")
     navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "ic_com_Left_pressed")
+    
+    NotificationCenter.default.addObserver(self, selector: #selector(callTimerOutSignOut), name: NSNotification.Name(rawValue: "TestSignOutSuccess"), object: nil)
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -26,12 +31,9 @@ class QRCodePaymentViewController: UIViewController {
   }
   
   override func viewDidAppear(_ animated: Bool) {
-    
     if(!Singleton.sharedInstance().getTestLogin()) {
       if let viewController = UIStoryboard(name: "LoginViewController", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
-        if let navigator = navigationController {
-          navigator.pushViewController(viewController, animated: true)
-        }
+        self.navigationController?.pushViewController(viewController, animated: true)
       }
     }
   }
@@ -40,17 +42,26 @@ class QRCodePaymentViewController: UIViewController {
     super.didReceiveMemoryWarning()
   }
   
+  deinit {
+    NotificationCenter.default.removeObserver(self)
+  }
+  
   @IBAction func scanPaymentButtonAction(_ sender: Any) {
     
   }
   
   
   @IBAction func barcodeReceiptButtonAction(_ sender: Any) {
-    
+
   }
   
-  
-  
+  @objc func callTimerOutSignOut() {
+    Singleton.sharedInstance().setTestLogin(bool: false)
+    if let viewController = UIStoryboard(name: "LoginViewController", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
+      self.navigationController?.pushViewController(viewController, animated: true)
+    }
+  }
+
   /*
    // MARK: - Navigation
    

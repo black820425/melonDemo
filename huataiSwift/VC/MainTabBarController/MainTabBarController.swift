@@ -10,6 +10,7 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
   
+  var tabBarItmeTitleArray = [String]()
   var mapViewController = UIViewController()
   var moreViewController = UIViewController()
   var mainViewController = MainViewController()
@@ -17,11 +18,17 @@ class MainTabBarController: UITabBarController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    tabBarItmeTitleArray = [NSLocalizedString("TabBarControllerMainViewTitle", comment: ""),
+                            NSLocalizedString("TabBarControllerQRCodePaymentTitle", comment: ""),
+                            NSLocalizedString("TabBarControllerMapTitle", comment: ""),
+                            NSLocalizedString("TabBarControllerMoreTitle", comment: "")]
+    
     self.tabBar.unselectedItemTintColor = .white
     
     NotificationCenter.default.addObserver(self, selector: #selector(reloadTabBarControllerIfSuccessLogin), name: NSNotification.Name(rawValue: "TestLoginSuccess"), object: nil)
     
-    NotificationCenter.default.addObserver(self, selector: #selector(TestSingOutSuccess), name: NSNotification.Name(rawValue: "TestSingOutSuccess"), object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(TestSingOutSuccess), name: NSNotification.Name(rawValue: "TestSignOutSuccess"), object: nil)
     
     prepareTabBarViewControllers()
   }
@@ -35,12 +42,15 @@ class MainTabBarController: UITabBarController {
   override func viewWillDisappear(_ animated: Bool) {
     super.viewDidDisappear(animated)
     
-    //NotificationCenter.default.removeObserver(self)
   }
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     
+  }
+  
+  deinit {
+    NotificationCenter.default.removeObserver(self)
   }
   
   @objc func reloadTabBarControllerIfSuccessLogin() {
@@ -50,13 +60,6 @@ class MainTabBarController: UITabBarController {
   @objc func TestSingOutSuccess() {
     self.setViewControllers([qRCodePaymentViewController,mapViewController,moreViewController], animated: true)
   }
-  
-  
-  
-  
-  
-  
-  
   
   func imageWithColor(color: UIColor, size: CGSize) -> UIImage {
     let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
@@ -96,25 +99,26 @@ class MainTabBarController: UITabBarController {
   }
   
   func prepareTabBarViewControllers() {
+    
     var storyboard:UIStoryboard
     
     storyboard = UIStoryboard.init(name: "MainViewController", bundle: nil)
     mainViewController = storyboard.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
-    mainViewController.title = NSLocalizedString("TabBarControllerMainViewTitle", comment: "")
-
+    
     storyboard = UIStoryboard.init(name: "QRCodePaymentViewController", bundle: nil)
     qRCodePaymentViewController =
       storyboard.instantiateViewController(withIdentifier: "QRCodePaymentViewController") as! UINavigationController
-    qRCodePaymentViewController.title = NSLocalizedString("TabBarControllerQRCodePaymentTitle", comment: "")
-
+    
     storyboard = UIStoryboard.init(name: "MapViewController", bundle: nil)
     mapViewController = storyboard.instantiateViewController(withIdentifier: "MapViewTabBarController")
-    mapViewController.title = NSLocalizedString("TabBarControllerMapTitle", comment: "")
-
+    
     storyboard = UIStoryboard.init(name: "MoreViewController", bundle: nil)
     moreViewController = storyboard.instantiateViewController(withIdentifier: "MoreViewTabBarController")
-    moreViewController.title = NSLocalizedString("TabBarControllerMoreTitle", comment: "")
-
+    
+    mainViewController.title = tabBarItmeTitleArray[0]
+    qRCodePaymentViewController.title = tabBarItmeTitleArray[1]
+    mapViewController.title = tabBarItmeTitleArray[2]
+    moreViewController.title = tabBarItmeTitleArray[3]
     
     self.viewControllers = [qRCodePaymentViewController,mapViewController,moreViewController]
   }

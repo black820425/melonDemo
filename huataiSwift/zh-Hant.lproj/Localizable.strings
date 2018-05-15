@@ -52,5 +52,11 @@
 "TouchIDIsLockedTitle" = "Touch ID 已被鎖定";
 "PleaseGoToSettingsAndSelectTouchIDAndPasswordToUnlockThePasswordMessage" = "請到「 設定 」選擇「 Touch ID 與密碼 」輸入密碼解鎖。";
 
+//GestureUnlockSettingViewController
+"ResetTitle" = "重新設定";
+"ContinueTitle" = "繼續";
+"PleaseDrawSixPointsInARowTitle" = "請連續畫出六個點";
+"PleaeClickContinueToSetting" = "請點擊「 繼續 」進行設定";
+
 
 

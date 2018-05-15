@@ -9,13 +9,11 @@
 import UIKit
 import LocalAuthentication
 
-
 class BiometricViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // Do any additional setup after loading the view.
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -28,6 +26,7 @@ class BiometricViewController: UIViewController {
       locationAuth.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: NSLocalizedString("PleaseVerifyYourFingerprintTitle", comment: "")) { (success, evaluatePolicyError) in
         if success {
           //..
+          
         } else {
           switch evaluatePolicyError?.localizedDescription {
           case "Biometry is locked out.":
@@ -49,20 +48,34 @@ class BiometricViewController: UIViewController {
       }
       
     }else {
-      switch authError?.code {
-      case LAError.biometryLockout.rawValue:
-        setAlertViewContrllerOfTitle(
-          title:NSLocalizedString("TouchIDIsLockedTitle", comment: ""),
-          message:NSLocalizedString("PleaseGoToSettingsAndSelectTouchIDAndPasswordToUnlockThePasswordMessage", comment: ""))
-        break
-      case LAError.biometryNotEnrolled.rawValue:
-        setAlertViewContrllerOfTitle(title: NSLocalizedString("NoFingerprintIdentificationTitle", comment: ""), message: "")
-        break
-      case LAError.passcodeNotSet.rawValue:
-        setAlertViewContrllerOfTitle(title: NSLocalizedString("NoPasswordSetTitle", comment: ""), message: "")
-        break
-      default:
-        break
+      if #available(iOS 11.0, *) {
+        switch authError?.code {
+        case LAError.biometryLockout.rawValue:
+          setAlertViewContrllerOfTitle(
+            title:NSLocalizedString("TouchIDIsLockedTitle", comment: ""),
+            message:NSLocalizedString("PleaseGoToSettingsAndSelectTouchIDAndPasswordToUnlockThePasswordMessage", comment: ""))
+          break
+        case LAError.biometryNotEnrolled.rawValue:
+          setAlertViewContrllerOfTitle(title: NSLocalizedString("NoFingerprintIdentificationTitle", comment: ""), message: "")
+          break
+        case LAError.passcodeNotSet.rawValue:
+          setAlertViewContrllerOfTitle(title: NSLocalizedString("NoPasswordSetTitle", comment: ""), message: "")
+          break
+        default:
+          break
+        }
+        
+      } else {
+        switch authError?.code {
+        case LAError.touchIDLockout.rawValue:
+          break
+        case LAError.touchIDNotEnrolled.rawValue:
+          break
+        case LAError.passcodeNotSet.rawValue:
+          break
+        default:
+          break
+        }
       }
       print("authError message --> \(String(describing: authError?.debugDescription))")
     }
@@ -71,6 +84,10 @@ class BiometricViewController: UIViewController {
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
+  }
+  
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    //..
   }
   
   func setAlertViewContrllerOfTitle(title:String, message:String) {

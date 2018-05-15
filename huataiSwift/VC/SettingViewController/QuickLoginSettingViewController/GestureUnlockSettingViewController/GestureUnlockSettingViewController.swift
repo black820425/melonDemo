@@ -1,19 +1,25 @@
 //
-//  GestureUnlockViewController.swift
+//  GestureUnlockSettingViewController.swift
 //  huataiSwift
 //
-//  Created by Bryan on 2018/5/7.
+//  Created by Bryan on 2018/5/15.
 //  Copyright © 2018年 U-Sync. All rights reserved.
 //
 
 import UIKit
 
-class GestureUnlockViewController: UIViewController {
+class GestureUnlockSettingViewController: UIViewController {
   
+  @IBOutlet weak var layoutContrainDrawImageView: NSLayoutConstraint!
+  @IBOutlet weak var layoutContrainResetButton: NSLayoutConstraint!
+  
+  @IBOutlet weak var resetButton: UIButton!
+  @IBOutlet weak var finishButton: UIButton!
+  @IBOutlet weak var customizeTitleLabel: UILabel!
   @IBOutlet weak var customizeDrawImageView: UIImageView!
   
   var drawFlag = false
-
+  
   //設定線條顏色與寬度
   var drawLineWidth: CGFloat!
   var drawLinecolor: UIColor!
@@ -26,10 +32,61 @@ class GestureUnlockViewController: UIViewController {
   var buttonArray = [UIButton]()
   var selectedButtonsArray = [UIButton]()
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+      
+      loadButtons()
+
+      resetButton.layer.borderWidth = 1.5
+      resetButton.layer.cornerRadius = 8.0
+      resetButton.layer.borderColor = Singleton.sharedInstance().getThemeColorR226xG75xB91().cgColor
+      
+      resetButton.setTitle(NSLocalizedString("ResetTitle", comment: ""), for: .normal)
+      resetButton.setTitleColor(Singleton.sharedInstance().getThemeColorR226xG75xB91(), for: .normal)
+
+      
+      finishButton.layer.borderWidth = 1.5
+      finishButton.layer.cornerRadius = 8.0
+      finishButton.layer.borderColor = Singleton.sharedInstance().getThemeColorR226xG75xB91().cgColor
+      
+      finishButton.setTitle(NSLocalizedString("ContinueTitle", comment: ""), for: .normal)
+      finishButton.backgroundColor = Singleton.sharedInstance().getThemeColorR226xG75xB91()
+      finishButton.setTitleColor(.white, for: .normal)
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+  
+  override func viewDidLayoutSubviews() {
+    let bounds = UIScreen.main.bounds
+    let height = bounds.size.height
+    //判斷4寸螢幕的話更改間距
+    if(height == 568) {
+      layoutContrainDrawImageView.constant = 26
+      layoutContrainResetButton.constant = 26
+    }
+  }
+  
+  @IBAction func resetButtonAction(_ sender: Any) {
     
-    loadButtons()
+    if(selectedButtonsArray.count != 0) {
+      for btn in selectedButtonsArray {
+        btn.setImage(UIImage.init(named:"圖形鎖_灰"), for:.normal)
+      }
+      selectedButtonsArray.removeAll()
+    }
+    
+    if(drawLinecolor != nil) {
+      touchEndDrawLineColor(color: drawLinecolor, width: drawLineWidth)
+    }
+    
+    customizeTitleLabel.text = NSLocalizedString(NSLocalizedString("PleaseDrawSixPointsInARowTitle", comment: ""), comment: "")
+  }
+  
+  @IBAction func finishButtonAction(_ sender: Any) {
+    
   }
   
   func loadButtons() {
@@ -148,8 +205,13 @@ class GestureUnlockViewController: UIViewController {
     if(drawLinecolor != nil) {
       touchEndDrawLineColor(color: drawLinecolor, width: drawLineWidth)
     }
+    
     drawFlag = false
     //判斷手勢密碼是否正確
+    if(selectedButtonsArray.count >= 6) {
+      customizeTitleLabel.text = NSLocalizedString("PleaeClickContinueToSetting", comment: "")
+      customizeTitleLabel.isEnabled = true
+    }
   }
   
   func drawLineWithColor(color:UIColor, width:CGFloat) {
@@ -233,20 +295,15 @@ class GestureUnlockViewController: UIViewController {
     }
   }
   
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
-  
-  
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using segue.destinationViewController.
-   // Pass the selected object to the new view controller.
-   }
-   */
-  
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
 }

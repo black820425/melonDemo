@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QuickLoginSettingTableViewCell: UITableViewCell {
+class SettingTableViewCell: UITableViewCell {
   
   @IBOutlet weak var customizeTitleLabel: UILabel!
   
