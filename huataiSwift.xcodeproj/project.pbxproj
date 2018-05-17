@@ -62,6 +62,8 @@
 		3AF56E12209AFCD70021C42E /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF56E11209AFCD70021C42E /* Singleton.swift */; };
 		3AF56E15209B088A0021C42E /* ScanQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF56E14209B088A0021C42E /* ScanQRCodeViewController.swift */; };
 		3AF56E19209B17FE0021C42E /* ScanQRCodeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AF56E18209B17FE0021C42E /* ScanQRCodeViewController.storyboard */; };
+		AEF160F820A58D6800BDDC60 /* QRCodeScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF160F720A58D6800BDDC60 /* QRCodeScanViewController.swift */; };
+		AEF160FA20A58D7700BDDC60 /* QRCodeBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF160F920A58D7700BDDC60 /* QRCodeBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +149,8 @@
 		3AF56E11209AFCD70021C42E /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		3AF56E14209B088A0021C42E /* ScanQRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanQRCodeViewController.swift; sourceTree = "<group>"; };
 		3AF56E18209B17FE0021C42E /* ScanQRCodeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ScanQRCodeViewController.storyboard; sourceTree = "<group>"; };
+		AEF160F720A58D6800BDDC60 /* QRCodeScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScanViewController.swift; sourceTree = "<group>"; };
+		AEF160F920A58D7700BDDC60 /* QRCodeBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -307,6 +311,8 @@
 			children = (
 				3A97576920A0617F007C1EC2 /* QRCodePaymentViewController.storyboard */,
 				3A97576720A06133007C1EC2 /* QRCodePaymentViewController.swift */,
+				AEF160F720A58D6800BDDC60 /* QRCodeScanViewController.swift */,
+				AEF160F920A58D7700BDDC60 /* QRCodeBarViewController.swift */,
 			);
 			path = QRCodePaymentViewController;
 			sourceTree = "<group>";
@@ -582,6 +588,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEF160FA20A58D7700BDDC60 /* QRCodeBarViewController.swift in Sources */,
 				3A97577820A18064007C1EC2 /* MoreViewController.swift in Sources */,
 				3A945C4D209C6180005414BE /* LoginViewController.swift in Sources */,
 				3A975751209FDEBF007C1EC2 /* QuickLoginViewController.swift in Sources */,
@@ -610,6 +617,7 @@
 				3A97576820A06133007C1EC2 /* QRCodePaymentViewController.swift in Sources */,
 				3A97594320A2D3D5007C1EC2 /* CreditCardInstructionsTableViewCell.swift in Sources */,
 				3AF56DFA20998D6F0021C42E /* MapViewController.swift in Sources */,
+				AEF160F820A58D6800BDDC60 /* QRCodeScanViewController.swift in Sources */,
 				3A97576F20A063E7007C1EC2 /* MainViewController.swift in Sources */,
 				3A975B1220A53DC2007C1EC2 /* SettingViewController.swift in Sources */,
 			);
