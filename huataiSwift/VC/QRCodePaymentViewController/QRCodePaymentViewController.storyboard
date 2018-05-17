@@ -82,8 +82,10 @@
                         </subviews>
                         <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="xva-YD-3tE" firstAttribute="trailing" secondItem="w8c-EM-PXE" secondAttribute="trailing" constant="19" id="1cs-83-UbX"/>
+                            <constraint firstItem="w8c-EM-PXE" firstAttribute="leading" secondItem="xva-YD-3tE" secondAttribute="leading" constant="18" id="Tgo-tk-EIw"/>
                             <constraint firstItem="w8c-EM-PXE" firstAttribute="centerX" secondItem="Pef-zQ-1cQ" secondAttribute="centerX" id="fwc-iY-bKw"/>
-                            <constraint firstItem="w8c-EM-PXE" firstAttribute="top" secondItem="xva-YD-3tE" secondAttribute="top" constant="30" id="ghH-iS-QVL"/>
+                            <constraint firstItem="w8c-EM-PXE" firstAttribute="top" secondItem="xva-YD-3tE" secondAttribute="top" constant="30" id="lCX-e4-eF6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xva-YD-3tE"/>
                     </view>

@@ -10,10 +10,10 @@ import UIKit
 import AVFoundation
 
 class QRCodeScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
-
+  
   var captureSession: AVCaptureSession!
   var previewLayer: AVCaptureVideoPreviewLayer!
-
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -122,7 +122,7 @@ class QRCodeScanViewController: UIViewController, AVCaptureMetadataOutputObjects
     
     
     self.view.addSubview(descriptionLabel)
-
+    
     NSLayoutConstraint.activate([centerX, bottom, height])
   }
   
@@ -130,7 +130,7 @@ class QRCodeScanViewController: UIViewController, AVCaptureMetadataOutputObjects
     let focusImageView = UIImageView()
     focusImageView.translatesAutoresizingMaskIntoConstraints = false
     
-    focusImageView.image = UIImage(named: "ic_掃描qr")
+    focusImageView.image = UIImage(named: "掃描區域")
     
     let top = NSLayoutConstraint(item: focusImageView,
                                  attribute: .top,
@@ -163,8 +163,6 @@ class QRCodeScanViewController: UIViewController, AVCaptureMetadataOutputObjects
                                    attribute: .notAnAttribute,
                                    multiplier: 1.0,
                                    constant: 280.0)
-
-  
     
     self.view.addSubview(focusImageView)
     NSLayoutConstraint.activate([top, centerX, width, height])
