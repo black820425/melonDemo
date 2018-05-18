@@ -23,7 +23,6 @@ class QRCodePaymentViewController: UIViewController {
     navigationController?.navigationBar.backIndicatorImage = UIImage(named: "ic_com_Left_pressed")
     navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "ic_com_Left_pressed")
     
-    NotificationCenter.default.addObserver(self, selector: #selector(callTimerOutSignOut), name: NSNotification.Name(rawValue: "TestSignOutSuccess"), object: nil)
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -47,29 +46,25 @@ class QRCodePaymentViewController: UIViewController {
   }
   
   @IBAction func scanPaymentButtonAction(_ sender: Any) {
-    
+    performSegue(withIdentifier: "scan", sender: nil)
   }
   
   
   @IBAction func barcodeReceiptButtonAction(_ sender: Any) {
-
+    performSegue(withIdentifier: "bar", sender: nil)
   }
   
-  @objc func callTimerOutSignOut() {
-    Singleton.sharedInstance().setTestLogin(bool: false)
-    if let viewController = UIStoryboard(name: "LoginViewController", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
-      self.navigationController?.pushViewController(viewController, animated: true)
+  
+  
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "scan" {
+      let destination = segue.destination as! QRCodeScanViewController
+      destination.hidesBottomBarWhenPushed = true
+    } else if segue.identifier == "bar" {
+      let destination = segue.destination as! QRCodeBarViewController
+      destination.hidesBottomBarWhenPushed = true
     }
   }
-
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using segue.destinationViewController.
-   // Pass the selected object to the new view controller.
-   }
-   */
   
 }

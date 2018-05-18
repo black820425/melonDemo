@@ -4,8 +4,8 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,11 +16,11 @@
             <objects>
                 <viewController id="sv7-wT-o2R" customClass="QRCodePaymentViewController" customModule="huataiSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pef-zQ-1cQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w8c-EM-PXE">
-                                <rect key="frame" x="18" y="94" width="338" height="130"/>
+                                <rect key="frame" x="18" y="30" width="338" height="130"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qpl-lb-cGs">
                                         <rect key="frame" x="0.0" y="0.0" width="169" height="130"/>
@@ -82,8 +82,10 @@
                         </subviews>
                         <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="xva-YD-3tE" firstAttribute="trailing" secondItem="w8c-EM-PXE" secondAttribute="trailing" constant="19" id="1cs-83-UbX"/>
+                            <constraint firstItem="w8c-EM-PXE" firstAttribute="leading" secondItem="xva-YD-3tE" secondAttribute="leading" constant="18" id="Tgo-tk-EIw"/>
                             <constraint firstItem="w8c-EM-PXE" firstAttribute="centerX" secondItem="Pef-zQ-1cQ" secondAttribute="centerX" id="fwc-iY-bKw"/>
-                            <constraint firstItem="w8c-EM-PXE" firstAttribute="top" secondItem="xva-YD-3tE" secondAttribute="top" constant="30" id="ghH-iS-QVL"/>
+                            <constraint firstItem="w8c-EM-PXE" firstAttribute="top" secondItem="xva-YD-3tE" secondAttribute="top" constant="30" id="lCX-e4-eF6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xva-YD-3tE"/>
                     </view>
@@ -94,11 +96,76 @@
                     </navigationItem>
                     <connections>
                         <outlet property="backgroundView" destination="w8c-EM-PXE" id="YNA-p8-O3e"/>
+                        <segue destination="EY0-Pr-A2Y" kind="show" identifier="scan" id="H4J-yj-Zl6"/>
+                        <segue destination="76f-MX-bTt" kind="show" identifier="bar" id="QGy-k6-01g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ga1-FR-rhn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1821.5999999999999" y="-132.68365817091455"/>
+        </scene>
+        <!--條碼收款-->
+        <scene sceneID="kZe-g0-BHL">
+            <objects>
+                <viewController id="76f-MX-bTt" customClass="QRCodeBarViewController" customModule="huataiSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qhF-Ff-SRd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CDU-rk-E2t">
+                                <rect key="frame" x="55" y="111" width="265" height="265"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="CDU-rk-E2t" secondAttribute="height" multiplier="1:1" id="iN8-HV-70K"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="CDU-rk-E2t" firstAttribute="leading" secondItem="3kW-My-aqT" secondAttribute="leading" constant="55" id="3Re-gx-GzG"/>
+                            <constraint firstItem="CDU-rk-E2t" firstAttribute="top" secondItem="3kW-My-aqT" secondAttribute="top" constant="111" id="Gin-4f-HbU"/>
+                            <constraint firstItem="3kW-My-aqT" firstAttribute="trailing" secondItem="CDU-rk-E2t" secondAttribute="trailing" constant="55" id="iWa-yC-YKz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3kW-My-aqT"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="條碼收款" id="CmQ-Rv-nln">
+                        <barButtonItem key="leftBarButtonItem" image="Shape" id="KDi-gQ-CpU">
+                            <color key="tintColor" red="0.5490196078431373" green="0.5490196078431373" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="backButtonTapped:" destination="76f-MX-bTt" id="hUm-PF-UKn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="qrcodeImageView" destination="CDU-rk-E2t" id="4ti-Tn-iqO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nkR-5D-COe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2688.8000000000002" y="223.53823088455775"/>
+        </scene>
+        <!--掃描支付-->
+        <scene sceneID="Ohv-Z7-x0X">
+            <objects>
+                <viewController id="EY0-Pr-A2Y" customClass="QRCodeScanViewController" customModule="huataiSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AXk-RQ-B1p">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="m2V-xP-obW"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="掃描支付" id="Dob-aZ-XHN">
+                        <barButtonItem key="leftBarButtonItem" image="Shape" id="Wen-eb-LBA">
+                            <color key="tintColor" red="0.54901960780000003" green="0.54901960780000003" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="backButtonTapped:" destination="EY0-Pr-A2Y" id="Xap-MB-IjJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="29b-X3-aHi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2689" y="-477"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Aab-Zg-tne">
@@ -126,7 +193,7 @@
                         <inset key="imageInsets" minX="0.0" minY="-2" maxX="0.0" maxY="0.0"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Jon-dH-rmI">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Jon-dH-rmI">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -141,6 +208,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Shape" width="16" height="16"/>
         <image name="ic_qr code收付" width="28" height="29"/>
         <image name="ic_掃描qr" width="60" height="60"/>
         <image name="ic_收款紀錄" width="18" height="22"/>
