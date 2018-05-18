@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3A11C56C20AA82BE008B1C09 /* GestureUnlockSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A11C56B20AA82BE008B1C09 /* GestureUnlockSettingViewController.swift */; };
 		3A11C56E20AA8831008B1C09 /* QuickLoginSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A11C56D20AA8831008B1C09 /* QuickLoginSettingViewController.swift */; };
+		3A11C85020AD8341008B1C09 /* RegionListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A11C84F20AD8340008B1C09 /* RegionListTableViewController.swift */; };
+		3A11C85220AD85CA008B1C09 /* RegionListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A11C85120AD85CA008B1C09 /* RegionListTableViewCell.swift */; };
 		3A50C1D320747BE0002171F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50C1D220747BE0002171F4 /* AppDelegate.swift */; };
 		3A50C1D520747BE0002171F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50C1D420747BE0002171F4 /* ViewController.swift */; };
 		3A50C1D820747BE0002171F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A50C1D620747BE0002171F4 /* Main.storyboard */; };
@@ -84,6 +86,8 @@
 /* Begin PBXFileReference section */
 		3A11C56B20AA82BE008B1C09 /* GestureUnlockSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureUnlockSettingViewController.swift; sourceTree = "<group>"; };
 		3A11C56D20AA8831008B1C09 /* QuickLoginSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickLoginSettingViewController.swift; sourceTree = "<group>"; };
+		3A11C84F20AD8340008B1C09 /* RegionListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionListTableViewController.swift; sourceTree = "<group>"; };
+		3A11C85120AD85CA008B1C09 /* RegionListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionListTableViewCell.swift; sourceTree = "<group>"; };
 		3A50C1CF20747BE0002171F4 /* huataiSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = huataiSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A50C1D220747BE0002171F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A50C1D420747BE0002171F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -190,6 +194,15 @@
 				3A11C56A20AA829B008B1C09 /* GestureUnlockSettingViewController */,
 			);
 			path = QuickLoginSettingViewController;
+			sourceTree = "<group>";
+		};
+		3A11C6FD20AD7FCE008B1C09 /* RegionListTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3A11C84F20AD8340008B1C09 /* RegionListTableViewController.swift */,
+				3A11C85120AD85CA008B1C09 /* RegionListTableViewCell.swift */,
+			);
+			path = RegionListTableViewController;
 			sourceTree = "<group>";
 		};
 		3A50C1C620747BE0002171F4 = {
@@ -412,6 +425,7 @@
 				3AF56DF220998CB70021C42E /* MapViewController.storyboard */,
 				3AF56DF920998D6F0021C42E /* MapViewController.swift */,
 				3AF56E0F209AE9880021C42E /* MapViewCollectionViewCell.swift */,
+				3A11C6FD20AD7FCE008B1C09 /* RegionListTableViewController */,
 			);
 			path = MapViewController;
 			sourceTree = "<group>";
@@ -582,6 +596,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A11C85020AD8341008B1C09 /* RegionListTableViewController.swift in Sources */,
 				3A97577820A18064007C1EC2 /* MoreViewController.swift in Sources */,
 				3A945C4D209C6180005414BE /* LoginViewController.swift in Sources */,
 				3A975751209FDEBF007C1EC2 /* QuickLoginViewController.swift in Sources */,
@@ -608,6 +623,7 @@
 				3AF56E10209AE9880021C42E /* MapViewCollectionViewCell.swift in Sources */,
 				3A945C4F209C6289005414BE /* LoginViewCollectionViewCell.swift in Sources */,
 				3A97576820A06133007C1EC2 /* QRCodePaymentViewController.swift in Sources */,
+				3A11C85220AD85CA008B1C09 /* RegionListTableViewCell.swift in Sources */,
 				3A97594320A2D3D5007C1EC2 /* CreditCardInstructionsTableViewCell.swift in Sources */,
 				3AF56DFA20998D6F0021C42E /* MapViewController.swift in Sources */,
 				3A97576F20A063E7007C1EC2 /* MainViewController.swift in Sources */,

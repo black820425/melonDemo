@@ -70,5 +70,9 @@ class Singleton {
     return UIColor(red: 155.0/255.0, green: 155.0/255.0, blue: 155.0/255.0, alpha: 1.0)
   }
   
+  func getThemeColorR113xG113xB113() -> UIColor {
+    return UIColor(red: 113.0/255.0, green: 113.0/255.0, blue: 113.0/255.0, alpha: 1.0)
+  }
+  
   
 }

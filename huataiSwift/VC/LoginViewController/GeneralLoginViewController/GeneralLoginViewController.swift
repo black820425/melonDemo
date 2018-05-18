@@ -53,6 +53,7 @@ class GeneralLoginViewController: UIViewController {
     customizeScrollView.contentSize = CGSize(width: self.view.frame.width, height: customizeScrollView.contentSize.height)
   }
   
+  
   @objc func dismissKeyboard() {
     self.view.endEditing(true)
   }

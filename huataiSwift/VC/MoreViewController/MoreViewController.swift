@@ -20,6 +20,10 @@ class MoreViewController: UIViewController {
     
     moreViewTableView.layer.cornerRadius = 10
     
+    var AppVersion = ""
+    if let text = Bundle.main.infoDictionary?["CFBundleShortVersionString"]  as? String {
+      AppVersion = String(format: "%@%@",NSLocalizedString("AppVersionTitle", comment: ""),text)
+    }
     imageNameArray = ["更多_利匯率",
                       "更多_服務據點",
                       "更多_版本",
@@ -37,7 +41,7 @@ class MoreViewController: UIViewController {
                       NSLocalizedString("OnlineBusinessBidTitle", comment: ""),
                       NSLocalizedString("UserPrivacyStatementTitle", comment: ""),
                       NSLocalizedString("SettingTitle", comment: ""),
-                      NSLocalizedString("AppVersionTitle", comment: ""),
+                      AppVersion,
                       "測試登出"]
   }
   
@@ -167,5 +171,4 @@ extension MoreViewController: UITableViewDelegate {
       NotificationCenter.default.post(name: NSNotification.Name.init("TestSignOutSuccess"), object: nil)
     }
   }
-  
 }

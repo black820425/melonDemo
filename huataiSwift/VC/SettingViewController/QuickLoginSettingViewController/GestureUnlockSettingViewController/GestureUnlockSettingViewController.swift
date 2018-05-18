@@ -18,7 +18,10 @@ class GestureUnlockSettingViewController: UIViewController {
   @IBOutlet weak var customizeTitleLabel: UILabel!
   @IBOutlet weak var customizeDrawImageView: UIImageView!
   
+  var  bounds:CGRect!
   var drawFlag = false
+  var confirmPasswordBool = false
+  var firstSelectButtonArray = [UIButton]()
   
   //設定線條顏色與寬度
   var drawLineWidth: CGFloat!
@@ -32,44 +35,29 @@ class GestureUnlockSettingViewController: UIViewController {
   var buttonArray = [UIButton]()
   var selectedButtonsArray = [UIButton]()
   
-    override func viewDidLoad() {
-        super.viewDidLoad()
-      
-      loadButtons()
-
-      resetButton.layer.borderWidth = 1.5
-      resetButton.layer.cornerRadius = 8.0
-      resetButton.layer.borderColor = Singleton.sharedInstance().getThemeColorR226xG75xB91().cgColor
-      
-      resetButton.setTitle(NSLocalizedString("ResetTitle", comment: ""), for: .normal)
-      resetButton.setTitleColor(Singleton.sharedInstance().getThemeColorR226xG75xB91(), for: .normal)
-
-      
-      finishButton.layer.borderWidth = 1.5
-      finishButton.layer.cornerRadius = 8.0
-      finishButton.layer.borderColor = Singleton.sharedInstance().getThemeColorR226xG75xB91().cgColor
-      
-      finishButton.setTitle(NSLocalizedString("ContinueTitle", comment: ""), for: .normal)
-      finishButton.backgroundColor = Singleton.sharedInstance().getThemeColorR226xG75xB91()
-      finishButton.setTitleColor(.white, for: .normal)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    bounds = UIScreen.main.bounds
+    
+    loadButtons()
+    
+    setButtonLayer()
+  }
   
-  override func viewDidLayoutSubviews() {
-    let bounds = UIScreen.main.bounds
-    let height = bounds.size.height
-    //判斷4寸螢幕的話更改間距
-    if(height == 568) {
-      layoutContrainDrawImageView.constant = 26
-      layoutContrainResetButton.constant = 26
-    }
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
   }
   
   @IBAction func resetButtonAction(_ sender: Any) {
+    customizeTitleLabel.text = NSLocalizedString(NSLocalizedString("PleaseDrawSixPointsInARowTitle", comment: ""), comment: "")
+    
+    setButtonLayer()
+    
+    confirmPasswordBool = false
+    
+    firstSelectButtonArray.removeAll()
     
     if(selectedButtonsArray.count != 0) {
       for btn in selectedButtonsArray {
@@ -82,19 +70,73 @@ class GestureUnlockSettingViewController: UIViewController {
       touchEndDrawLineColor(color: drawLinecolor, width: drawLineWidth)
     }
     
-    customizeTitleLabel.text = NSLocalizedString(NSLocalizedString("PleaseDrawSixPointsInARowTitle", comment: ""), comment: "")
   }
   
   @IBAction func finishButtonAction(_ sender: Any) {
     
+    if(confirmPasswordBool) {
+      //..
+      navigationController?.popViewController(animated: true)
+    } else {
+      confirmPasswordBool = true
+      
+      customizeTitleLabel.text = NSLocalizedString(NSLocalizedString("PleaeCofirmPasswordTitle", comment: ""), comment: "")
+      finishButton.isEnabled = false
+      finishButton.setTitle(NSLocalizedString("FinishTitle", comment: ""), for: .normal)
+      finishButton.backgroundColor = Singleton.sharedInstance().getThemeColorR140xG140xB143()
+      finishButton.layer.borderColor = Singleton.sharedInstance().getThemeColorR140xG140xB143().cgColor
+      
+      firstSelectButtonArray = selectedButtonsArray
+      
+      if(selectedButtonsArray.count != 0) {
+        for btn in selectedButtonsArray {
+          btn.setImage(UIImage.init(named:"圖形鎖_灰"), for:.normal)
+        }
+        selectedButtonsArray.removeAll()
+      }
+      
+      if(drawLinecolor != nil) {
+        touchEndDrawLineColor(color: drawLinecolor, width: drawLineWidth)
+      }
+    }
   }
   
   func loadButtons() {
-    let w = 70
-    let h = 70
     var x = 0
     var y = 0
-    let space = 40
+    var w = 70
+    var h = 70
+    var space = 45
+    switch bounds.size.height {
+    case 568://SE
+      w = 60
+      h = 60
+      space = 40
+      break
+    case 667://i8
+      w = 70
+      h = 70
+      space = 45
+      break
+    case 736://plus
+      w = 70
+      h = 70
+      space = 60
+      break
+    case 812://iX
+      w = 70
+      h = 70
+      space = 45
+      break
+    default:
+      break
+    }
+    
+    if(bounds.size.height == 568) {
+      w = 60
+      h = 60
+      space = 40
+    }
     
     buttonArray = []
     for index in 0...8 {
@@ -143,6 +185,12 @@ class GestureUnlockSettingViewController: UIViewController {
   }
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    setButtonLayer()
+    
+    if(confirmPasswordBool) {
+      finishButton.setTitle(NSLocalizedString("FinishTitle", comment: ""), for: .normal)
+    }
+    
     if(selectedButtonsArray.count != 0) {
       for btn in selectedButtonsArray {
         btn.setImage(UIImage.init(named:"圖形鎖_灰"), for:.normal)
@@ -205,12 +253,56 @@ class GestureUnlockSettingViewController: UIViewController {
     if(drawLinecolor != nil) {
       touchEndDrawLineColor(color: drawLinecolor, width: drawLineWidth)
     }
-    
     drawFlag = false
+    
     //判斷手勢密碼是否正確
+    if(confirmPasswordBool) {
+      resetButton.isEnabled = true
+      resetButton.setTitleColor(Singleton.sharedInstance().getThemeColorR226xG75xB91(), for: .normal)
+      resetButton.layer.borderColor = Singleton.sharedInstance().getThemeColorR226xG75xB91().cgColor
+    }
+    
     if(selectedButtonsArray.count >= 6) {
-      customizeTitleLabel.text = NSLocalizedString("PleaeClickContinueToSetting", comment: "")
-      customizeTitleLabel.isEnabled = true
+      
+      if(confirmPasswordBool) {
+        
+        if(selectedButtonsArray.count == firstSelectButtonArray.count) {
+          var count = 0
+          for button in selectedButtonsArray {
+            let firstSelectButton = firstSelectButtonArray[count]
+            if(firstSelectButton.tag == button.tag) {
+            } else {
+              customizeTitleLabel.text = NSLocalizedString("InconsistentWithPreviousGraphicPasswordTitle", comment: "")
+              return
+            }
+            count += 1
+          }
+          
+          
+        } else {
+          customizeTitleLabel.text = NSLocalizedString("InconsistentWithPreviousGraphicPasswordTitle", comment: "")
+          return
+        }
+
+        
+        finishButton.isEnabled = true
+        finishButton.backgroundColor = Singleton.sharedInstance().getThemeColorR226xG75xB91()
+        finishButton.layer.borderColor = Singleton.sharedInstance().getThemeColorR226xG75xB91().cgColor
+        
+        resetButton.isEnabled = true
+        resetButton.setTitleColor(Singleton.sharedInstance().getThemeColorR226xG75xB91(), for: .normal)
+        resetButton.layer.borderColor = Singleton.sharedInstance().getThemeColorR226xG75xB91().cgColor
+        
+      } else {
+        customizeTitleLabel.text = NSLocalizedString("PleaeClickContinueToSetting", comment: "")
+        finishButton.isEnabled = true
+        finishButton.backgroundColor = Singleton.sharedInstance().getThemeColorR226xG75xB91()
+        finishButton.layer.borderColor = Singleton.sharedInstance().getThemeColorR226xG75xB91().cgColor
+        
+        resetButton.isEnabled = true
+        resetButton.setTitleColor(Singleton.sharedInstance().getThemeColorR226xG75xB91(), for: .normal)
+        resetButton.layer.borderColor = Singleton.sharedInstance().getThemeColorR226xG75xB91().cgColor
+      }
     }
   }
   
@@ -295,15 +387,32 @@ class GestureUnlockSettingViewController: UIViewController {
     }
   }
   
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+  func setButtonLayer() {
+    resetButton.isEnabled = false
+    resetButton.layer.borderWidth = 1.5
+    resetButton.layer.cornerRadius = 8.0
+    resetButton.layer.borderColor = Singleton.sharedInstance().getThemeColorR140xG140xB143().cgColor
+    resetButton.setTitle(NSLocalizedString("ResetTitle", comment: ""), for: .normal)
+    resetButton.setTitleColor(Singleton.sharedInstance().getThemeColorR140xG140xB143(), for: .normal)
+    
+    finishButton.isEnabled = false
+    finishButton.layer.borderWidth = 1.5
+    finishButton.layer.cornerRadius = 8.0
+    finishButton.layer.borderColor = Singleton.sharedInstance().getThemeColorR140xG140xB143().cgColor
+    finishButton.setTitle(NSLocalizedString("ContinueTitle", comment: ""), for: .normal)
+    finishButton.backgroundColor = Singleton.sharedInstance().getThemeColorR140xG140xB143()
+    finishButton.setTitleColor(.white, for: .normal)
+  }
+  
+  
+  /*
+   // MARK: - Navigation
+   
+   // In a storyboard-based application, you will often want to do a little preparation before navigation
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+   // Get the new view controller using segue.destinationViewController.
+   // Pass the selected object to the new view controller.
+   }
+   */
+  
 }
