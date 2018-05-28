@@ -18,8 +18,10 @@ class LoginViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    contentArray = [NSLocalizedString("GeneralLoginTitle", comment:"comment"),
-                    NSLocalizedString("QuickLoginTitle", comment:"comment")]
+    
+    contentArray = [LanguageTool.sharedInstance().customzieLocalizedString(key: "LoginViewController_GeneralLoginTitle", commit: ""),
+                    LanguageTool.sharedInstance().customzieLocalizedString(key: "LoginViewController_BiometricLoginTitle", commit: ""),
+                    LanguageTool.sharedInstance().customzieLocalizedString(key: "LoginViewController_GestureLoginTitle", commit: "")]
     
     NotificationCenter.default.addObserver(self, selector: #selector(popLoginView), name: NSNotification.Name(rawValue: "TestLoginSuccessToPopLoginView"), object: nil)
   }

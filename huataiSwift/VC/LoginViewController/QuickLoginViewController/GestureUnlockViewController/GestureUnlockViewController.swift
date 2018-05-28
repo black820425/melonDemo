@@ -10,27 +10,52 @@ import UIKit
 
 class GestureUnlockViewController: UIViewController {
   
+  @IBOutlet weak var customizeTitleLabel: UILabel!
+  
   @IBOutlet weak var customizeDrawImageView: UIImageView!
   
-  var drawFlag = false
-
+  private var errorCount = 0
+  
+  private var drawFlag = false
   //設定線條顏色與寬度
-  var drawLineWidth: CGFloat!
-  var drawLinecolor: UIColor!
-  
+  private var drawLineWidth: CGFloat!
+  private var drawLinecolor: UIColor!
   //起止點
-  var lineStartPoint: CGPoint!
-  var lineEndPoint: CGPoint!
-  
+  private var lineStartPoint: CGPoint!
+  private var lineEndPoint: CGPoint!
   //所有按鈕與選中的按鈕
-  var buttonArray = [UIButton]()
-  var selectedButtonsArray = [UIButton]()
+  private var buttonArray = [UIButton]()
+  private var selectedButtonsArray = [UIButton]()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    loadButtons()
   }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    
+    if(UserDefaults.standard.object(forKey: "confirmSelectArray") != nil) {
+      
+      if(UserDefaults.standard.bool(forKey: "GestureLockBool")) {
+        self.view.isHidden = true
+        setAlertViewContrllerOfTitle(title: LanguageTool.sharedInstance().customzieLocalizedString(key: "GestureUnlockSettingViewController_RepeatedInputErrorUpToFiveTimesMessageTitle", commit: ""), message: "")
+        
+      } else {
+        customizeTitleLabel.text = LanguageTool.sharedInstance().customzieLocalizedString(key:
+          "GestureUnlockViewController_PleaseEnterGestureCodeTitle", commit: "")
+        loadButtons()
+      }
+      
+    } else {
+      self.view.isHidden = true
+      setAlertViewContrllerOfTitle(title: LanguageTool.sharedInstance().customzieLocalizedString(key: "FirstLoginWithoutSetQuickAlertTitle", commit: ""), message: "")
+    }
+  }
+  
+  @IBAction func forgetPWButtonAction(_ sender: Any) {
+    
+  }
+  
   
   func loadButtons() {
     let w = 70
@@ -149,7 +174,69 @@ class GestureUnlockViewController: UIViewController {
       touchEndDrawLineColor(color: drawLinecolor, width: drawLineWidth)
     }
     drawFlag = false
+    
     //判斷手勢密碼是否正確
+    if(selectedButtonsArray.count >= 6) {
+      let confirmSelectArray = UserDefaults.standard.object(forKey: "confirmSelectArray") as! Array<Int>
+      if(selectedButtonsArray.count == confirmSelectArray.count) {
+        
+        var count = 0
+        for button in selectedButtonsArray {
+          let selectTag = confirmSelectArray[count]
+          if(button.tag == selectTag) {
+            //..
+          } else {
+            errorCount += 1
+            
+            if(errorCount == 5) {
+              setAlertViewContrllerOfTitle(title: LanguageTool.sharedInstance().customzieLocalizedString(key: "GestureUnlockSettingViewController_RepeatedInputErrorUpToFiveTimesMessageTitle", commit: ""), message: "")
+              
+              self.view.isHidden = true
+              UserDefaults.standard.set(true, forKey: "GestureLockBool")
+              UserDefaults.standard.synchronize()
+              
+            } else {
+              setAlertViewContrllerOfTitle(title: LanguageTool.sharedInstance().customzieLocalizedString(key: "GestureUnlockViewController_IncorrectPasswordTitle", commit: ""), message: "")
+            }
+            return
+          }
+          count += 1
+        }
+        
+        let alertController = UIAlertController.init(title: LanguageTool.sharedInstance().customzieLocalizedString(key: "GestureUnlockViewController_SuccessLoginTitle", commit: ""), message: "", preferredStyle: .alert)
+        
+        let confirm = UIAlertAction.init(title: LanguageTool.sharedInstance().customzieLocalizedString(key: "ConfirmTitle", commit: ""), style: .default) { (action) in
+          
+          Singleton.sharedInstance().setTestLogin(bool: true)
+          NotificationCenter.default.post(name: NSNotification.Name.init("TestLoginSuccess"), object: nil)
+          NotificationCenter.default.post(name: NSNotification.Name.init("TestLoginSuccessToPopLoginView"), object: nil)
+          
+          self.navigationController?.popViewController(animated: true)
+        }
+        
+        alertController.addAction(confirm)
+        self.present(alertController, animated: true, completion: nil)
+        
+        
+      } else {
+        errorCount += 1
+
+        if(errorCount == 5) {
+          setAlertViewContrllerOfTitle(title: LanguageTool.sharedInstance().customzieLocalizedString(key: "GestureUnlockSettingViewController_RepeatedInputErrorUpToFiveTimesMessageTitle", commit: ""), message: "")
+          
+          self.view.isHidden = true
+          UserDefaults.standard.set(true, forKey: "GestureLockBool")
+          UserDefaults.standard.synchronize()
+          
+        } else {
+          setAlertViewContrllerOfTitle(title: LanguageTool.sharedInstance().customzieLocalizedString(key: "GestureUnlockViewController_IncorrectPasswordTitle", commit: ""), message: "")
+        }
+      }
+      
+    } else {
+      setAlertViewContrllerOfTitle(title: LanguageTool.sharedInstance().customzieLocalizedString(key: "GestureUnlockViewController_PleaseEnterAtLeastSixDigitsTitle", commit: ""), message: "")
+    }
+
   }
   
   func drawLineWithColor(color:UIColor, width:CGFloat) {
@@ -236,6 +323,16 @@ class GestureUnlockViewController: UIViewController {
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
+  }
+  
+  func setAlertViewContrllerOfTitle(title:String, message:String) {
+    
+    let customAlertViewController = UIAlertController.init(title: title, message: message, preferredStyle: .alert)
+    
+    let okAlertAction = UIAlertAction.init(title: LanguageTool.sharedInstance().customzieLocalizedString(key: "ConfirmTitle", commit: ""), style: .default) { (action) in }
+    
+    customAlertViewController.addAction(okAlertAction)
+    present(customAlertViewController, animated: true, completion: nil)
   }
   
   

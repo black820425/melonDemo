@@ -80,7 +80,7 @@ class CreditCardMembershipViewController: UIViewController,UITableViewDelegate,U
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    self.navigationItem.title = NSLocalizedString("NavigationControllerCreditCardMemberShipApplicationTitle", comment: "")
+    self.navigationItem.title = LanguageTool.sharedInstance().customzieLocalizedString(key: "NavigaitonControllerTitle_CreditCardMemberShipApplicationTitle", commit: "")
   }
   
   override func didReceiveMemoryWarning() {

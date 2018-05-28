@@ -23,10 +23,12 @@ class QRCodePaymentViewController: UIViewController {
     navigationController?.navigationBar.backIndicatorImage = UIImage(named: "ic_com_Left_pressed")
     navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "ic_com_Left_pressed")
     
+//    NotificationCenter.default.addObserver(self, selector: #selector(TestSingOutSuccess), name: NSNotification.Name(rawValue: "TestSignOutSuccess"), object: nil)
+    
   }
   
   override func viewWillAppear(_ animated: Bool) {
-    navigationItem.title = NSLocalizedString("NavigationControllerQRCodePaymentTitle", comment: "")
+    navigationItem.title = LanguageTool.sharedInstance().customzieLocalizedString(key: "NavigaitonControllerTitle_QRCodePaymentTitle", commit: "")
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -44,6 +46,12 @@ class QRCodePaymentViewController: UIViewController {
   deinit {
     NotificationCenter.default.removeObserver(self)
   }
+//
+//  @objc func TestSingOutSuccess() {
+//    if let viewController = UIStoryboard(name: "LoginViewController", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
+//      self.navigationController?.pushViewController(viewController, animated: true)
+//    }
+//  }
   
   @IBAction func scanPaymentButtonAction(_ sender: Any) {
     performSegue(withIdentifier: "scan", sender: nil)
@@ -53,9 +61,6 @@ class QRCodePaymentViewController: UIViewController {
   @IBAction func barcodeReceiptButtonAction(_ sender: Any) {
     performSegue(withIdentifier: "bar", sender: nil)
   }
-  
-  
-  
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "scan" {

@@ -38,6 +38,8 @@ class GestureUnlockSettingViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    customizeTitleLabel.text = LanguageTool.sharedInstance().customzieLocalizedString(key: "GestureUnlockSettingViewController_PleaseDrawSixPointsInARowTitle", commit: "")
+    
     bounds = UIScreen.main.bounds
     
     loadButtons()
@@ -50,8 +52,12 @@ class GestureUnlockSettingViewController: UIViewController {
     // Dispose of any resources that can be recreated.
   }
   
+  @IBAction func popButtonAction(_ sender: Any) {
+    navigationController?.popViewController(animated: true)
+  }
+  
   @IBAction func resetButtonAction(_ sender: Any) {
-    customizeTitleLabel.text = NSLocalizedString(NSLocalizedString("PleaseDrawSixPointsInARowTitle", comment: ""), comment: "")
+    customizeTitleLabel.text = LanguageTool.sharedInstance().customzieLocalizedString(key: "GestureUnlockSettingViewController_PleaseDrawSixPointsInARowTitle", commit: "")
     
     setButtonLayer()
     
@@ -74,15 +80,24 @@ class GestureUnlockSettingViewController: UIViewController {
   
   @IBAction func finishButtonAction(_ sender: Any) {
     
+    var confirmSelectArray = [Int]()
     if(confirmPasswordBool) {
-      //..
+      for button in selectedButtonsArray {
+        confirmSelectArray.append(button.tag)
+      }
+      
+      UserDefaults.standard.set(false, forKey: "GestureLockBool")
+      UserDefaults.standard.set(confirmSelectArray, forKey: "confirmSelectArray")
+      UserDefaults.standard.synchronize()
+      
       navigationController?.popViewController(animated: true)
     } else {
       confirmPasswordBool = true
-      
-      customizeTitleLabel.text = NSLocalizedString(NSLocalizedString("PleaeCofirmPasswordTitle", comment: ""), comment: "")
+
+      customizeTitleLabel.text = LanguageTool.sharedInstance().customzieLocalizedString(key: "GestureUnlockSettingViewController_PleaeCofirmPasswordTitle", commit: "")
       finishButton.isEnabled = false
-      finishButton.setTitle(NSLocalizedString("FinishTitle", comment: ""), for: .normal)
+      finishButton.setTitle(LanguageTool.sharedInstance().customzieLocalizedString(key: "GestureUnlockSettingViewController_FinishTitle", commit: ""), for: .normal)
+      
       finishButton.backgroundColor = Singleton.sharedInstance().getThemeColorR140xG140xB143()
       finishButton.layer.borderColor = Singleton.sharedInstance().getThemeColorR140xG140xB143().cgColor
       
@@ -188,7 +203,7 @@ class GestureUnlockSettingViewController: UIViewController {
     setButtonLayer()
     
     if(confirmPasswordBool) {
-      finishButton.setTitle(NSLocalizedString("FinishTitle", comment: ""), for: .normal)
+      finishButton.setTitle(LanguageTool.sharedInstance().customzieLocalizedString(key: "GestureUnlockSettingViewController_FinishTitle", commit: ""), for: .normal)
     }
     
     if(selectedButtonsArray.count != 0) {
@@ -271,8 +286,9 @@ class GestureUnlockSettingViewController: UIViewController {
           for button in selectedButtonsArray {
             let firstSelectButton = firstSelectButtonArray[count]
             if(firstSelectButton.tag == button.tag) {
+              //..
             } else {
-              customizeTitleLabel.text = NSLocalizedString("InconsistentWithPreviousGraphicPasswordTitle", comment: "")
+              customizeTitleLabel.text = LanguageTool.sharedInstance().customzieLocalizedString(key: "GestureUnlockSettingViewController_InconsistentWithPreviousGraphicPasswordTitle", commit: "")
               return
             }
             count += 1
@@ -280,7 +296,7 @@ class GestureUnlockSettingViewController: UIViewController {
           
           
         } else {
-          customizeTitleLabel.text = NSLocalizedString("InconsistentWithPreviousGraphicPasswordTitle", comment: "")
+          customizeTitleLabel.text = LanguageTool.sharedInstance().customzieLocalizedString(key: "GestureUnlockSettingViewController_InconsistentWithPreviousGraphicPasswordTitle", commit: "")
           return
         }
 
@@ -294,7 +310,8 @@ class GestureUnlockSettingViewController: UIViewController {
         resetButton.layer.borderColor = Singleton.sharedInstance().getThemeColorR226xG75xB91().cgColor
         
       } else {
-        customizeTitleLabel.text = NSLocalizedString("PleaeClickContinueToSetting", comment: "")
+        
+        customizeTitleLabel.text = LanguageTool.sharedInstance().customzieLocalizedString(key: "GestureUnlockSettingViewController_PleaeClickContinueToSetting", commit: "")
         finishButton.isEnabled = true
         finishButton.backgroundColor = Singleton.sharedInstance().getThemeColorR226xG75xB91()
         finishButton.layer.borderColor = Singleton.sharedInstance().getThemeColorR226xG75xB91().cgColor
@@ -392,14 +409,14 @@ class GestureUnlockSettingViewController: UIViewController {
     resetButton.layer.borderWidth = 1.5
     resetButton.layer.cornerRadius = 8.0
     resetButton.layer.borderColor = Singleton.sharedInstance().getThemeColorR140xG140xB143().cgColor
-    resetButton.setTitle(NSLocalizedString("ResetTitle", comment: ""), for: .normal)
+    resetButton.setTitle(LanguageTool.sharedInstance().customzieLocalizedString(key: "GestureUnlockSettingViewController_ResetTitle", commit: ""), for: .normal)
     resetButton.setTitleColor(Singleton.sharedInstance().getThemeColorR140xG140xB143(), for: .normal)
     
     finishButton.isEnabled = false
     finishButton.layer.borderWidth = 1.5
     finishButton.layer.cornerRadius = 8.0
     finishButton.layer.borderColor = Singleton.sharedInstance().getThemeColorR140xG140xB143().cgColor
-    finishButton.setTitle(NSLocalizedString("ContinueTitle", comment: ""), for: .normal)
+    finishButton.setTitle(LanguageTool.sharedInstance().customzieLocalizedString(key: "GestureUnlockSettingViewController_ContinueTitle", commit: ""), for: .normal)
     finishButton.backgroundColor = Singleton.sharedInstance().getThemeColorR140xG140xB143()
     finishButton.setTitleColor(.white, for: .normal)
   }

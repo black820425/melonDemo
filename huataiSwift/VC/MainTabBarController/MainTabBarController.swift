@@ -19,10 +19,10 @@ class MainTabBarController: UITabBarController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    tabBarItmeTitleArray = [NSLocalizedString("TabBarControllerMainViewTitle", comment: ""),
-                            NSLocalizedString("TabBarControllerQRCodePaymentTitle", comment: ""),
-                            NSLocalizedString("TabBarControllerMapTitle", comment: ""),
-                            NSLocalizedString("TabBarControllerMoreTitle", comment: "")]
+    tabBarItmeTitleArray = [LanguageTool.sharedInstance().customzieLocalizedString(key: "TabBarController_MainViewTitle", commit: ""),
+                            LanguageTool.sharedInstance().customzieLocalizedString(key: "TabBarController_QRCodePaymentTitle", commit: ""),
+                            LanguageTool.sharedInstance().customzieLocalizedString(key: "TabBarController_MapTitle", commit: ""),
+                            LanguageTool.sharedInstance().customzieLocalizedString(key: "TabBarController_MoreTitle", commit: "")]
     
     self.tabBar.unselectedItemTintColor = .white
     
@@ -81,13 +81,13 @@ class MainTabBarController: UITabBarController {
     var storyboard:UIStoryboard
     switch item.title {
       
-    case NSLocalizedString("ServiceLocationTitle", comment: ""):
+    case LanguageTool.sharedInstance().customzieLocalizedString(key: "TabBarController_MapTitle", commit: ""):
       storyboard = UIStoryboard.init(name: "MapViewController", bundle: nil)
       let mapViewController = storyboard.instantiateViewController(withIdentifier: "MapViewController")
       present(mapViewController, animated: true, completion: nil)
       break
       
-    case NSLocalizedString("NavigationControllerMoreTitle", comment: ""):
+    case LanguageTool.sharedInstance().customzieLocalizedString(key: "TabBarController_MoreTitle", commit: ""):
       storyboard = UIStoryboard.init(name: "MoreViewController", bundle: nil)
       let moreViewController = storyboard.instantiateViewController(withIdentifier: "MoreViewController")
       present(moreViewController, animated: true, completion: nil)
@@ -120,7 +120,12 @@ class MainTabBarController: UITabBarController {
     mapViewController.title = tabBarItmeTitleArray[2]
     moreViewController.title = tabBarItmeTitleArray[3]
     
-    self.viewControllers = [qRCodePaymentViewController,mapViewController,moreViewController]
+    if(Singleton.sharedInstance().getTestLogin()) {
+      self.viewControllers = [mainViewController,qRCodePaymentViewController,mapViewController,moreViewController]
+      
+    } else {
+      self.viewControllers = [qRCodePaymentViewController,mapViewController,moreViewController]
+    }
   }
   
   

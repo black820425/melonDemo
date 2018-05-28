@@ -29,7 +29,6 @@ class MainViewController: UIViewController,WKNavigationDelegate{
     super.didReceiveMemoryWarning()
     
   }
-
   
   func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
     

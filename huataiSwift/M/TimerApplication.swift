@@ -10,9 +10,8 @@ import UIKit
 
 class TimerApplication: UIApplication {
   
-  
   private var timeoutInSeconds: TimeInterval {
-    return 1 * 60
+    return 1 * 10
   }
   
   private var idleTimer: Timer?

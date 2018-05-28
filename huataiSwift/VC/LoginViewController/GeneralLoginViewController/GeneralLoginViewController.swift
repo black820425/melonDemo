@@ -12,12 +12,6 @@ class GeneralLoginViewController: UIViewController {
   
   @IBOutlet weak var customizeScrollView: UIScrollView!
   
-  @IBOutlet weak var rememberMeButton: UIButton!
-  @IBOutlet weak var refreshConfimppButton: UIButton!
-  
-  @IBOutlet weak var userLoginButton: UIButton!
-  @IBOutlet weak var userCrdSignButton: UIButton!
-  
   @IBOutlet weak var userppBackgroundView: UIView!
   @IBOutlet weak var userCodeBackgroundView: UIView!
   @IBOutlet weak var identityCardBackgroundView: UIView!
@@ -28,6 +22,15 @@ class GeneralLoginViewController: UIViewController {
   @IBOutlet weak var userCodeTextField: UITextField!
   @IBOutlet weak var userConfimppTextField: UITextField!
   
+  @IBOutlet weak var userLoginButton: UIButton!
+  @IBOutlet weak var rememberMeButton: UIButton!
+  @IBOutlet weak var userCrdSignButton: UIButton!
+  @IBOutlet weak var forgetPasswordButton: UIButton!
+  @IBOutlet weak var refreshConfimppButton: UIButton!
+  
+  @IBOutlet weak var rememberMeTitleLabel: UILabel!
+  @IBOutlet weak var pleaseEnter6To12Code: UILabel!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -36,6 +39,7 @@ class GeneralLoginViewController: UIViewController {
     userCodeTextField.delegate = self
     userConfimppTextField.delegate = self
     
+    prepareLanuageChange()
     repareTextFieldAndButtonRadious()
     
     //註冊tap事件，點選瑩幕任一處可關閉瑩幕小鍵盤
@@ -89,6 +93,20 @@ class GeneralLoginViewController: UIViewController {
       NotificationCenter.default.post(name: NSNotification.Name.init("TestLoginSuccess"), object: nil)
       NotificationCenter.default.post(name: NSNotification.Name.init("TestLoginSuccessToPopLoginView"), object: nil)
     }
+  }
+  
+  func prepareLanuageChange() {
+    identityTextField.placeholder = LanguageTool.sharedInstance().customzieLocalizedString(key: "GeneralLoginViewController_identityTextField_placeholder", commit: "")
+    userCodeTextField.placeholder = LanguageTool.sharedInstance().customzieLocalizedString(key: "GeneralLoginViewController_userCodeTextField_placeholder", commit: "")
+    userppTextField.placeholder = LanguageTool.sharedInstance().customzieLocalizedString(key: "GeneralLoginViewController_userppTextField_placeholder", commit: "")
+    userConfimppTextField.placeholder = LanguageTool.sharedInstance().customzieLocalizedString(key: "GeneralLoginViewController_userConfimppTextField_placeholder", commit: "")
+    rememberMeTitleLabel.text = LanguageTool.sharedInstance().customzieLocalizedString(key:
+      "GeneralLoginViewController_rememberMeTitle", commit: "")
+    pleaseEnter6To12Code.text = LanguageTool.sharedInstance().customzieLocalizedString(key: "GeneralLoginViewController_pleaseEnter6To12CodeTitle", commit: "")
+    userLoginButton.setTitle(LanguageTool.sharedInstance().customzieLocalizedString(key:
+      "GeneralLoginViewController_loginTitle", commit: ""), for: .normal)
+    userCrdSignButton.setTitle(LanguageTool.sharedInstance().customzieLocalizedString(key:
+      "GeneralLoginViewController_crdSignTitle", commit: ""), for: .normal)
   }
   
   func repareTextFieldAndButtonRadious() {

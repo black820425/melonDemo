@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Notification View Controller-->
+        <scene sceneID="rFu-0S-4Vv">
+            <objects>
+                <viewController storyboardIdentifier="NotificationViewController" id="u42-gR-lpS" customClass="NotificationViewController" customModule="huataiSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3PI-1y-eXH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qR5-pu-IDD">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NotificationTableViewCell" rowHeight="118" id="Mty-xw-KuB" customClass="NotificationTableViewCell" customModule="huataiSwift" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="118"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mty-xw-KuB" id="cGr-0j-NHt">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="117.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ew4-cF-pg9">
+                                                    <rect key="frame" x="41" y="27" width="45.5" height="26"/>
+                                                    <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PeR-3d-JfK">
+                                                    <rect key="frame" x="318.5" y="71" width="40.5" height="22.5"/>
+                                                    <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="16"/>
+                                                    <color key="textColor" red="0.54901960780000003" green="0.54901960780000003" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Ew4-cF-pg9" firstAttribute="top" secondItem="cGr-0j-NHt" secondAttribute="topMargin" constant="16" id="AOZ-E0-yU5"/>
+                                                <constraint firstItem="PeR-3d-JfK" firstAttribute="top" secondItem="Ew4-cF-pg9" secondAttribute="bottom" constant="18" id="Fnq-9D-vnn"/>
+                                                <constraint firstItem="Ew4-cF-pg9" firstAttribute="leading" secondItem="cGr-0j-NHt" secondAttribute="leadingMargin" constant="26" id="KY3-TH-tbJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="PeR-3d-JfK" secondAttribute="trailing" constant="16" id="Qdb-AE-Fh5"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="customizeDetailLabel" destination="PeR-3d-JfK" id="ZZW-JT-9eF"/>
+                                            <outlet property="customizeTitleLabel" destination="Ew4-cF-pg9" id="Tkf-u6-bT8"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="u42-gR-lpS" id="cI7-Eh-sCN"/>
+                                    <outlet property="delegate" destination="u42-gR-lpS" id="Omm-OM-PcY"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qR5-pu-IDD" firstAttribute="leading" secondItem="sZs-II-gfZ" secondAttribute="leading" id="W5A-Fa-wpQ"/>
+                            <constraint firstItem="qR5-pu-IDD" firstAttribute="top" secondItem="sZs-II-gfZ" secondAttribute="top" id="WMT-C7-cQB"/>
+                            <constraint firstItem="sZs-II-gfZ" firstAttribute="bottom" secondItem="qR5-pu-IDD" secondAttribute="bottom" id="gYn-2T-Keu"/>
+                            <constraint firstItem="sZs-II-gfZ" firstAttribute="trailing" secondItem="qR5-pu-IDD" secondAttribute="trailing" id="oie-Ej-DG6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sZs-II-gfZ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fIb-nP-ICU">
+                        <barButtonItem key="leftBarButtonItem" image="Shape" id="YZy-IE-a6v">
+                            <color key="tintColor" red="0.54901960780000003" green="0.54901960780000003" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="popButtonAction:" destination="u42-gR-lpS" id="FQi-RF-lD2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="NotificationTableView" destination="qR5-pu-IDD" id="rny-S1-69s"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bvj-iG-y5n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="879.20000000000005" y="-136.28185907046478"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="H8v-Cs-Rcv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xlg-ZL-f7U" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JOT-6d-Nv0">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="u42-gR-lpS" kind="relationship" relationship="rootViewController" id="hai-ON-lHR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="20j-uH-HKJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-60" y="-136.28185907046478"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Shape" width="16" height="16"/>
+    </resources>
+</document>

@@ -271,7 +271,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fah-Of-JIb">
                                         <rect key="frame" x="40" y="172" width="295" height="40"/>
                                         <subviews>
-                                            <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密碼" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9G3-sD-Fax">
+                                            <textField opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密碼" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9G3-sD-Fax">
                                                 <rect key="frame" x="20" y="0.0" width="205" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="vGo-uZ-sPv"/>
@@ -280,24 +280,23 @@
                                                 <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="忘記密碼" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0J-YQ-pzC">
-                                                <rect key="frame" x="225" y="11" width="53" height="19"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="52.5" id="DBT-Mx-lTF"/>
-                                                </constraints>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sTh-jB-fz3">
+                                                <rect key="frame" x="225" y="5" width="53" height="31"/>
                                                 <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="13"/>
-                                                <color key="textColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                                <state key="normal" title="忘記密碼">
+                                                    <color key="titleColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="C0J-YQ-pzC" firstAttribute="top" secondItem="fah-Of-JIb" secondAttribute="top" constant="11" id="NfM-Jn-425"/>
-                                            <constraint firstItem="C0J-YQ-pzC" firstAttribute="leading" secondItem="9G3-sD-Fax" secondAttribute="trailing" id="Sjk-Jd-wyZ"/>
+                                            <constraint firstItem="sTh-jB-fz3" firstAttribute="leading" secondItem="9G3-sD-Fax" secondAttribute="trailing" id="0oZ-fx-4vQ"/>
+                                            <constraint firstItem="9G3-sD-Fax" firstAttribute="top" secondItem="fah-Of-JIb" secondAttribute="top" id="AyH-45-ghq"/>
+                                            <constraint firstAttribute="bottom" secondItem="9G3-sD-Fax" secondAttribute="bottom" id="KwD-NQ-auc"/>
+                                            <constraint firstItem="sTh-jB-fz3" firstAttribute="centerY" secondItem="9G3-sD-Fax" secondAttribute="centerY" id="Ru0-22-8HN"/>
+                                            <constraint firstAttribute="trailing" secondItem="sTh-jB-fz3" secondAttribute="trailing" constant="17" id="Tk6-0Z-81h"/>
                                             <constraint firstItem="9G3-sD-Fax" firstAttribute="leading" secondItem="fah-Of-JIb" secondAttribute="leading" multiplier="15" constant="20" symbolic="YES" id="Z3V-tM-XLn"/>
-                                            <constraint firstAttribute="trailing" secondItem="C0J-YQ-pzC" secondAttribute="trailing" constant="17" id="fOn-H5-ced"/>
                                             <constraint firstAttribute="height" constant="40" id="he2-UT-zpf"/>
-                                            <constraint firstItem="9G3-sD-Fax" firstAttribute="centerY" secondItem="C0J-YQ-pzC" secondAttribute="centerY" id="iBt-Kp-0Uy"/>
                                         </constraints>
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ds7-LR-9WX">
@@ -426,10 +425,13 @@
                     </navigationItem>
                     <connections>
                         <outlet property="customizeScrollView" destination="XiY-nb-tZE" id="7pf-PO-mV1"/>
+                        <outlet property="forgetPasswordButton" destination="sTh-jB-fz3" id="YRR-c9-KKS"/>
                         <outlet property="identityCardBackgroundView" destination="D36-64-68x" id="Zs3-0G-shG"/>
                         <outlet property="identityTextField" destination="as5-So-xXn" id="N6b-ab-Rr8"/>
+                        <outlet property="pleaseEnter6To12Code" destination="Jbx-ni-gbt" id="lSi-bK-zQQ"/>
                         <outlet property="refreshConfimppButton" destination="eQl-77-adx" id="Wzw-3g-kQn"/>
                         <outlet property="rememberMeButton" destination="12d-BB-i9Q" id="01j-TM-EEd"/>
+                        <outlet property="rememberMeTitleLabel" destination="4xa-zs-xGm" id="Z7D-OH-4SD"/>
                         <outlet property="userCodeBackgroundView" destination="0hw-JH-cns" id="g2e-cE-vsH"/>
                         <outlet property="userCodeTextField" destination="LrK-w7-dsC" id="IQ8-qW-GQA"/>
                         <outlet property="userConfimppTextField" destination="rFu-zq-SfR" id="eRe-ex-Wjh"/>
@@ -442,7 +444,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9kG-Ax-t9G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3375" y="-516"/>
+            <point key="canvasLocation" x="3373.5999999999999" y="-516.79160419790105"/>
         </scene>
         <!--Credit Card Membership View Controller-->
         <scene sceneID="6i4-Yl-5rz">
@@ -617,10 +619,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xaM-5K-YDV">
+                                <rect key="frame" x="150.5" y="523.5" width="73" height="38"/>
+                                <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="18"/>
+                                <state key="normal" title="忘記密碼">
+                                    <color key="titleColor" red="0.54901960780000003" green="0.54901960780000003" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="forgetPWButtonAction:" destination="Go3-ht-qvm" eventType="touchUpInside" id="Uwt-NL-6Cv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="xaM-5K-YDV" firstAttribute="centerX" secondItem="snb-or-5I9" secondAttribute="centerX" id="APR-QD-RFT"/>
                             <constraint firstItem="sim-0e-gMU" firstAttribute="centerX" secondItem="aaH-dx-c92" secondAttribute="centerX" id="EKe-0s-y63"/>
+                            <constraint firstItem="xaM-5K-YDV" firstAttribute="top" secondItem="snb-or-5I9" secondAttribute="bottom" constant="45" id="M7V-Ed-uSF"/>
                             <constraint firstItem="snb-or-5I9" firstAttribute="centerY" secondItem="aaH-dx-c92" secondAttribute="centerY" id="MrB-bn-8sJ"/>
                             <constraint firstItem="snb-or-5I9" firstAttribute="centerX" secondItem="aaH-dx-c92" secondAttribute="centerX" id="RYz-bk-q9V"/>
                             <constraint firstItem="snb-or-5I9" firstAttribute="top" secondItem="sim-0e-gMU" secondAttribute="bottom" constant="25" id="gob-z8-wti"/>
@@ -629,6 +643,7 @@
                     </view>
                     <connections>
                         <outlet property="customizeDrawImageView" destination="snb-or-5I9" id="Z5o-Jp-QHa"/>
+                        <outlet property="customizeTitleLabel" destination="sim-0e-gMU" id="LP6-vf-Bg5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rHI-xA-Ktl" userLabel="First Responder" sceneMemberID="firstResponder"/>

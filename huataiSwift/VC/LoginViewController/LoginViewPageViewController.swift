@@ -18,9 +18,10 @@ class LoginViewPageViewController: UIPageViewController {
     super.viewDidLoad()
     
     let generalLoginViewController = storyboard?.instantiateViewController(withIdentifier: "GeneralLoginViewController")
-    let biometricsViewController = storyboard?.instantiateViewController(withIdentifier: "BiometricsViewController")
-    
-    viewControllersArray = [generalLoginViewController,biometricsViewController] as! [UIViewController]
+    let biometricViewController = storyboard?.instantiateViewController(withIdentifier: "BiometricViewController")
+    let gestureUnlockViewController = storyboard?.instantiateViewController(withIdentifier: "GestureUnlockViewController")
+
+    viewControllersArray = [generalLoginViewController,biometricViewController,gestureUnlockViewController] as! [UIViewController]
     
     self.setViewControllers([generalLoginViewController!], direction: .forward, animated: false, completion: nil)
   }

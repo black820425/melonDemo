@@ -12,7 +12,7 @@ class Singleton {
   
   private static var object:Singleton?
   
-  var testLoginBoolValue = false
+  private var testLoginBoolValue = false
   
   static func sharedInstance() -> Singleton {
     if object == nil {

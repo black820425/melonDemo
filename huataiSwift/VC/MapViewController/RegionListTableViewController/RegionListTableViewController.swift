@@ -17,7 +17,7 @@ class RegionListTableViewController: UIViewController {
     }
   
   override func viewWillAppear(_ animated: Bool) {
-    self.navigationItem.title = NSLocalizedString("NavigationControllerMapTitle", comment: "");
+    self.navigationItem.title = LanguageTool.sharedInstance().customzieLocalizedString(key: "NavigaitonControllerTitle_MapTitle", commit: "")
   }
 
     override func didReceiveMemoryWarning() {

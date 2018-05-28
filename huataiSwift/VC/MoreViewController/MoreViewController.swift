@@ -17,38 +17,56 @@ class MoreViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+        
     moreViewTableView.layer.cornerRadius = 10
+    
+    imageNameArray = ["更多_利匯率",
+                      "更多_服務據點",
+                      "更多_訊息",
+                      "更多_QR Code收付",
+                      "更多_線上業務申辦",
+                      "更多_使用者隱私聲明",
+                      "更多_版本",
+                      "更多_設定",
+                      "更多_登出"]
     
     var AppVersion = ""
     if let text = Bundle.main.infoDictionary?["CFBundleShortVersionString"]  as? String {
-      AppVersion = String(format: "%@%@",NSLocalizedString("AppVersionTitle", comment: ""),text)
+      AppVersion = String(format: "%@%@",LanguageTool.sharedInstance().customzieLocalizedString(key: "MoreViewController_AppVersionTitle", commit: ""),text)
     }
-    imageNameArray = ["更多_利匯率",
-                      "更多_服務據點",
-                      "更多_版本",
-                      "更多_訊息",
-                      "更多_線上業務申辦",
-                      "更多_使用者隱私聲明",
-                      "更多_QR Code收付",
-                      "更多_設定",
-                      "更多_使用者隱私聲明"]
     
-    titleNameArray = [NSLocalizedString("InterestRateTitle", comment: ""),
-                      NSLocalizedString("ServiceLocationTitle", comment: ""),
-                      NSLocalizedString("MessageTitle", comment: ""),
-                      NSLocalizedString("QRCodePaymentTitle", comment: ""),
-                      NSLocalizedString("OnlineBusinessBidTitle", comment: ""),
-                      NSLocalizedString("UserPrivacyStatementTitle", comment: ""),
-                      NSLocalizedString("SettingTitle", comment: ""),
+    titleNameArray = [LanguageTool.sharedInstance().customzieLocalizedString(key: "MoreViewController_InterestRateTitle", commit: ""),
+                      LanguageTool.sharedInstance().customzieLocalizedString(key: "MoreViewController_ServiceLocationTitle", commit: ""),
+                      LanguageTool.sharedInstance().customzieLocalizedString(key: "MoreViewController_MessageTitle", commit: ""),
+                      LanguageTool.sharedInstance().customzieLocalizedString(key: "MoreViewController_QRCodePaymentTitle", commit: ""),
+                      LanguageTool.sharedInstance().customzieLocalizedString(key: "MoreViewController_OnlineBusinessBidTitle", commit: ""),
+                      LanguageTool.sharedInstance().customzieLocalizedString(key: "MoreViewController_UserPrivacyStatementTitle", commit: ""),
                       AppVersion,
-                      "測試登出"]
+                      LanguageTool.sharedInstance().customzieLocalizedString(key: "MoreViewController_SettingTitle", commit: ""),
+                      LanguageTool.sharedInstance().customzieLocalizedString(key: "MoreViewController_LogOutTitle", commit: "")]
+    
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     
-    navigationItem.title = NSLocalizedString("NavigationControllerMoreTitle", comment: "");
+    navigationItem.title = LanguageTool.sharedInstance().customzieLocalizedString(key: "NavigaitonControllerTitle_MoreTitle", commit: "")
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    
+    if(UserDefaults.standard.bool(forKey: "ChangeLanguageBool")) {
+      UserDefaults.standard.set(false, forKey: "ChangeLanguageBool")
+      UserDefaults.standard.synchronize()
+      
+      let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+      let mainTabBarController =  storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
+
+      dismiss(animated: true) {
+        
+        UIApplication.shared.keyWindow?.rootViewController = mainTabBarController
+      }
+    }
   }
   
   override func didReceiveMemoryWarning() {
@@ -59,7 +77,6 @@ class MoreViewController: UIViewController {
   @IBAction func dimissViewButtonAction(_ sender: Any) {
     dismiss(animated: true, completion: nil)
   }
-  
   
   /*
    // MARK: - Navigation
@@ -75,7 +92,13 @@ class MoreViewController: UIViewController {
 extension MoreViewController: UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return imageNameArray.count == titleNameArray.count ? imageNameArray.count : 0
+    
+    if(Singleton.sharedInstance().getTestLogin()) {
+      return imageNameArray.count == titleNameArray.count ? imageNameArray.count : 0
+      
+    } else {
+      return imageNameArray.count == titleNameArray.count ? imageNameArray.count-1 : 0
+    }
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -128,47 +151,51 @@ extension MoreViewController: UITableViewDelegate {
      "QRCodePaymentTitle" = "QR Code收付";
      "OnlineBusinessBidTitle" = "線上業務申辦";
      "UserPrivacyStatementTitle" = "使用者隱私聲明";*/
+    
     var storyboard:UIStoryboard
     switch moreViewTableViewCell.customizeTitleLabel.text {
       
-    case NSLocalizedString("MessageTitle", comment: ""):
+    case LanguageTool.sharedInstance().customzieLocalizedString(key: "MoreViewController_MessageTitle", commit: ""):
+      storyboard = UIStoryboard.init(name: "NotificationViewController", bundle: nil)
+      let notificationViewController = storyboard.instantiateViewController(withIdentifier: "NotificationViewController")
+      navigationController?.pushViewController(notificationViewController, animated: true)
       break
       
-    case NSLocalizedString("AppVersionTitle", comment: ""):
+    case LanguageTool.sharedInstance().customzieLocalizedString(key: "MoreViewController_AppVersionTitle", commit: ""):
       break
       
-    case NSLocalizedString("InterestRateTitle", comment: ""):
+    case LanguageTool.sharedInstance().customzieLocalizedString(key: "MoreViewController_InterestRateTitle", commit: ""):
       break
       
-    case NSLocalizedString("ServiceLocationTitle", comment: ""):
+    case LanguageTool.sharedInstance().customzieLocalizedString(key: "MoreViewController_ServiceLocationTitle", commit: ""):
       storyboard = UIStoryboard.init(name: "MapViewController", bundle: nil)
       let mapViewController = storyboard.instantiateViewController(withIdentifier: "MapViewController")
       present(mapViewController, animated: true, completion: nil)
       break
       
-    case NSLocalizedString("QRCodePaymentTitle", comment: ""):
+    case LanguageTool.sharedInstance().customzieLocalizedString(key: "MoreViewController_QRCodePaymentTitle", commit: ""):
       break
       
-    case NSLocalizedString("OnlineBusinessBidTitle", comment: ""):
+    case LanguageTool.sharedInstance().customzieLocalizedString(key: "MoreViewController_OnlineBusinessBidTitle", commit: ""):
       break
       
-    case NSLocalizedString("UserPrivacyStatementTitle", comment: ""):
+    case LanguageTool.sharedInstance().customzieLocalizedString(key: "MoreViewController_UserPrivacyStatementTitle", commit: ""):
       break
       
-    case NSLocalizedString("SettingTitle", comment: ""):
+    case LanguageTool.sharedInstance().customzieLocalizedString(key: "MoreViewController_SettingTitle", commit: ""):
       storyboard = UIStoryboard.init(name: "SettingViewController", bundle: nil)
-      let quickLoginSettingViewController = storyboard.instantiateViewController(withIdentifier: "QuickLoginSettingViewController")
-      navigationController?.pushViewController(quickLoginSettingViewController, animated: true)
+      let settingViewController = storyboard.instantiateViewController(withIdentifier: "SettingViewController")
+      navigationController?.pushViewController(settingViewController, animated: true)
+      break
+      
+    case LanguageTool.sharedInstance().customzieLocalizedString(key: "MoreViewController_LogOutTitle", commit: ""):
+      Singleton.sharedInstance().setTestLogin(bool: false)
+      dismiss(animated: true, completion: nil)
+      NotificationCenter.default.post(name: NSNotification.Name.init("TestSignOutSuccess"), object: nil)
       break
       
     default:
       break
-    }
-    
-    if(indexPath.row == 8) {
-      Singleton.sharedInstance().setTestLogin(bool: false)
-      dismiss(animated: true, completion: nil)
-      NotificationCenter.default.post(name: NSNotification.Name.init("TestSignOutSuccess"), object: nil)
     }
   }
 }

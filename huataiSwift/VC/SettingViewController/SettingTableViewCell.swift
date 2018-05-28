@@ -10,6 +10,8 @@ import UIKit
 
 class SettingTableViewCell: UITableViewCell {
   
+  @IBOutlet weak var customizeImageView: UIImageView!
+  
   @IBOutlet weak var customizeTitleLabel: UILabel!
   
   @IBOutlet weak var customizeSwitch: UISwitch!

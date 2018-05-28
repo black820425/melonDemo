@@ -13,7 +13,6 @@ class QuickLoginSettingViewController: UIViewController {
   @IBOutlet weak var biometricButton: UIButton!
   @IBOutlet weak var gestureUnlockButton: UIButton!
   
-  
     override func viewDidLoad() {
         super.viewDidLoad()
       
@@ -26,7 +25,6 @@ class QuickLoginSettingViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-  
   
   
   @IBAction func popButtonAction(_ sender: Any) {

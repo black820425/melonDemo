@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomizeCalloutAccessoryView" customModule="huataiSwift" customModuleProvider="target">
+            <connections>
+                <outlet property="addressTitleLabel" destination="Ec7-6S-Kbq" id="qxO-Tr-m2t"/>
+                <outlet property="branchTitleLabel" destination="vAK-sj-PMI" id="7B0-vF-RZO"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="abd-WG-Htl"/>
+                <outlet property="distanceTitleLabel" destination="8eD-L1-ku8" id="k37-cQ-sdT"/>
+                <outlet property="phoneNumberTitleLabel" destination="IoK-Fu-bEX" id="Vrf-l6-YJi"/>
+                <outlet property="pinImageView" destination="3qf-3D-9SI" id="Lw6-hZ-Ryh"/>
+                <outlet property="routeButton" destination="5eu-np-WUZ" id="max-JU-0Ia"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="278" height="143"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="古亭分行" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAK-sj-PMI">
+                    <rect key="frame" x="11" y="10" width="64" height="22.5"/>
+                    <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="16"/>
+                    <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="108台北市萬華區中華路二段418號" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ec7-6S-Kbq">
+                    <rect key="frame" x="11" y="40.5" width="243.5" height="22.5"/>
+                    <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="16"/>
+                    <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02 2305 1655" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IoK-Fu-bEX">
+                    <rect key="frame" x="11" y="71" width="104" height="22.5"/>
+                    <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="16"/>
+                    <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="座標" translatesAutoresizingMaskIntoConstraints="NO" id="3qf-3D-9SI">
+                    <rect key="frame" x="186" y="12.5" width="14" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="14" id="aBt-QC-PQT"/>
+                        <constraint firstAttribute="height" constant="18" id="coJ-LV-a1o"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5eu-np-WUZ">
+                    <rect key="frame" x="179" y="95" width="73" height="38"/>
+                    <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="18"/>
+                    <state key="normal" title="路線規劃">
+                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.2km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8eD-L1-ku8">
+                    <rect key="frame" x="206" y="10" width="46" height="22.5"/>
+                    <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="16"/>
+                    <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="5eu-np-WUZ" secondAttribute="bottom" constant="10" id="BWH-PV-BT2"/>
+                <constraint firstItem="IoK-Fu-bEX" firstAttribute="top" secondItem="Ec7-6S-Kbq" secondAttribute="bottom" constant="8" id="BxR-uc-c5f"/>
+                <constraint firstItem="5eu-np-WUZ" firstAttribute="trailing" secondItem="8eD-L1-ku8" secondAttribute="trailing" id="Gc0-Cc-qSn"/>
+                <constraint firstItem="Ec7-6S-Kbq" firstAttribute="leading" secondItem="vAK-sj-PMI" secondAttribute="leading" id="Nzj-mt-dLW"/>
+                <constraint firstItem="8eD-L1-ku8" firstAttribute="centerY" secondItem="3qf-3D-9SI" secondAttribute="centerY" id="OfL-6h-bUL"/>
+                <constraint firstItem="3qf-3D-9SI" firstAttribute="leading" secondItem="vAK-sj-PMI" secondAttribute="trailing" constant="111" id="UpS-bm-W52"/>
+                <constraint firstItem="vAK-sj-PMI" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="XCN-xY-ft9"/>
+                <constraint firstItem="Ec7-6S-Kbq" firstAttribute="top" secondItem="vAK-sj-PMI" secondAttribute="bottom" constant="8" id="eKA-bE-fMp"/>
+                <constraint firstItem="3qf-3D-9SI" firstAttribute="centerY" secondItem="vAK-sj-PMI" secondAttribute="centerY" id="psQ-5I-3IK"/>
+                <constraint firstItem="8eD-L1-ku8" firstAttribute="leading" secondItem="3qf-3D-9SI" secondAttribute="trailing" constant="6" id="qGi-DM-GHT"/>
+                <constraint firstItem="vAK-sj-PMI" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="11" id="wwq-tJ-uat"/>
+                <constraint firstItem="IoK-Fu-bEX" firstAttribute="leading" secondItem="Ec7-6S-Kbq" secondAttribute="leading" id="zRi-Ax-Aff"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="34" y="53.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="座標" width="14" height="19"/>
+    </resources>
+</document>
