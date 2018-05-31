@@ -62,7 +62,7 @@ class MoreViewController: UIViewController {
       let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
       let mainTabBarController =  storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
 
-      dismiss(animated: true) {
+      dismiss(animated: false) {
         
         UIApplication.shared.keyWindow?.rootViewController = mainTabBarController
       }

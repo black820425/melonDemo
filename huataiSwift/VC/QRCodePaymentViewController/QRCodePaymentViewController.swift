@@ -23,8 +23,13 @@ class QRCodePaymentViewController: UIViewController {
     navigationController?.navigationBar.backIndicatorImage = UIImage(named: "ic_com_Left_pressed")
     navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "ic_com_Left_pressed")
     
-//    NotificationCenter.default.addObserver(self, selector: #selector(TestSingOutSuccess), name: NSNotification.Name(rawValue: "TestSignOutSuccess"), object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(TestSingOutSuccess), name: NSNotification.Name(rawValue: "TestSignOutSuccess"), object: nil)
     
+    if(!Singleton.sharedInstance().getTestLogin()) {
+      if let viewController = UIStoryboard(name: "LoginViewController", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
+        self.navigationController?.pushViewController(viewController, animated: true)
+      }
+    }
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -32,11 +37,6 @@ class QRCodePaymentViewController: UIViewController {
   }
   
   override func viewDidAppear(_ animated: Bool) {
-    if(!Singleton.sharedInstance().getTestLogin()) {
-      if let viewController = UIStoryboard(name: "LoginViewController", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
-        self.navigationController?.pushViewController(viewController, animated: true)
-      }
-    }
   }
   
   override func didReceiveMemoryWarning() {
@@ -46,12 +46,12 @@ class QRCodePaymentViewController: UIViewController {
   deinit {
     NotificationCenter.default.removeObserver(self)
   }
-//
-//  @objc func TestSingOutSuccess() {
-//    if let viewController = UIStoryboard(name: "LoginViewController", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
-//      self.navigationController?.pushViewController(viewController, animated: true)
-//    }
-//  }
+
+  @objc func TestSingOutSuccess() {
+    if let viewController = UIStoryboard(name: "LoginViewController", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
+      self.navigationController?.pushViewController(viewController, animated: true)
+    }
+  }
   
   @IBAction func scanPaymentButtonAction(_ sender: Any) {
     performSegue(withIdentifier: "scan", sender: nil)

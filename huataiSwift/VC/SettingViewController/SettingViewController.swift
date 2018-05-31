@@ -93,7 +93,7 @@ class SettingViewController: UIViewController {
     
     let fiexbleSpaceButton = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
     
-    let doneButton = UIBarButtonItem.init(title:LanguageTool.sharedInstance().customzieLocalizedString(key: "FinishTitle", commit: ""), style: .done, target: self, action: #selector(doneToSearchRegion))
+    let doneButton = UIBarButtonItem.init(title:LanguageTool.sharedInstance().customzieLocalizedString(key: "ConfirmTitle", commit: ""), style: .done, target: self, action: #selector(doneToSearchRegion))
     doneButton.tintColor = .white
     
     let cancelButton = UIBarButtonItem.init(title:LanguageTool.sharedInstance().customzieLocalizedString(key: "CancelTitle", commit: ""), style: .done, target: self, action: #selector(cancelSearchRegion))

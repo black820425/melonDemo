@@ -55,6 +55,8 @@ class QuickLoginSetViewContorller: UIViewController {
         navigationController?.pushViewController(gestureUnlockSettingViewController, animated: true)
         
       } else {
+        KeychainService.removePassword(service: "myService", account: "myAccount")
+        
         UserDefaults.standard.removeObject(forKey: "confirmSelectArray")
         UserDefaults.standard.synchronize()
         
@@ -157,11 +159,20 @@ extension QuickLoginSetViewContorller: UITableViewDataSource {
     
     switch indexPath.section {
     case 0:
-      if(UserDefaults.standard.object(forKey: "confirmSelectArray") != nil) {
+            
+      if(KeychainService.loadPassword(service: "myService", account: "myAccount") != nil) {
+        cell.customizeSwitch.isOn = true
+
+      } else {
+        cell.customizeSwitch.isOn = false
+
+      }
+
+      /*if(UserDefaults.standard.object(forKey: "confirmSelectArray") != nil) {
         cell.customizeSwitch.isOn = true
       } else {
         cell.customizeSwitch.isOn = false
-      }
+      }*/
       
       if(indexPath.row == 0) {
         cell.customizeSwitch.isHidden = true

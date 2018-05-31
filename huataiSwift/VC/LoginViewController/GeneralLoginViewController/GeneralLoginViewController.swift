@@ -90,6 +90,7 @@ class GeneralLoginViewController: UIViewController {
     Singleton.sharedInstance().setTestLogin(bool: true)
     
     ProjectAPI.Object().connectAPIWithUrl { (array) in
+      
       NotificationCenter.default.post(name: NSNotification.Name.init("TestLoginSuccess"), object: nil)
       NotificationCenter.default.post(name: NSNotification.Name.init("TestLoginSuccessToPopLoginView"), object: nil)
     }

@@ -69,7 +69,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
 
     print("deviceTokenString --> \(deviceTokenString)")
+  }
+  
+  func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
     
+    UIApplication.shared.applicationIconBadgeNumber = userInfo["badge"] as! Int
+    
+    if(UserDefaults.standard.object(forKey: "NotificationContentArray") != nil) {
+      
+    }
   }
   
 }

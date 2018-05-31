@@ -38,6 +38,8 @@ class GestureUnlockSettingViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    
+    
     customizeTitleLabel.text = LanguageTool.sharedInstance().customzieLocalizedString(key: "GestureUnlockSettingViewController_PleaseDrawSixPointsInARowTitle", commit: "")
     
     bounds = UIScreen.main.bounds
@@ -86,9 +88,12 @@ class GestureUnlockSettingViewController: UIViewController {
         confirmSelectArray.append(button.tag)
       }
       
+      /*
       UserDefaults.standard.set(false, forKey: "GestureLockBool")
       UserDefaults.standard.set(confirmSelectArray, forKey: "confirmSelectArray")
-      UserDefaults.standard.synchronize()
+      UserDefaults.standard.synchronize()*/
+      
+      KeychainService.savePassword(service: "myService", account: "myAccount", data: confirmSelectArray)
       
       navigationController?.popViewController(animated: true)
     } else {

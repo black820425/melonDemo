@@ -19,10 +19,10 @@ class MainViewController: UIViewController,WKNavigationDelegate{
     wkWebView = WKWebView.init(frame: view.frame)
     wkWebView.navigationDelegate = self
     self.view.addSubview(wkWebView)
-    let loadUrl = URL(string: "demoJaveScrip.html")
+    let loadUrl = URL(string: "https://nibwebq.hwataibank.com.tw/VisualDesign/Index2.html")
     let customRequest = URLRequest(url: loadUrl!)
     wkWebView.load(customRequest)
-
+    
   }
   
   override func didReceiveMemoryWarning() {

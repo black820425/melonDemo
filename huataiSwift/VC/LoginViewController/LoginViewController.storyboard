@@ -299,15 +299,15 @@
                                             <constraint firstAttribute="height" constant="40" id="he2-UT-zpf"/>
                                         </constraints>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ds7-LR-9WX">
-                                        <rect key="frame" x="233" y="234" width="102" height="40"/>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ds7-LR-9WX">
+                                        <rect key="frame" x="233" y="212" width="102" height="0.0"/>
                                         <color key="backgroundColor" red="0.80784313725490198" green="0.80784313725490198" blue="0.80784313725490198" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="UON-QA-QBg"/>
+                                            <constraint firstAttribute="height" id="UON-QA-QBg"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xJ2-Hi-chK">
-                                        <rect key="frame" x="40" y="304" width="295" height="40"/>
+                                        <rect key="frame" x="40" y="242" width="295" height="40"/>
                                         <color key="backgroundColor" red="0.81176470590000005" green="0.070588235289999995" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="rpE-AW-fGg"/>
@@ -318,7 +318,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ze-Pt-i4P">
-                                        <rect key="frame" x="40" y="374" width="295" height="40"/>
+                                        <rect key="frame" x="40" y="312" width="295" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="kRX-Kq-fBV"/>
                                         </constraints>
@@ -331,7 +331,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TuS-Q4-enm">
-                                        <rect key="frame" x="40" y="444" width="295" height="40"/>
+                                        <rect key="frame" x="40" y="382" width="295" height="40"/>
                                         <color key="backgroundColor" red="0.38629466299999998" green="0.65891212219999995" blue="0.50988483429999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="GT3-sQ-cFa"/>
@@ -344,22 +344,22 @@
                                             <action selector="testLoginButtonAction:" destination="sae-7i-qal" eventType="touchUpInside" id="v6a-fm-Bfb"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="04Z-zM-wt4">
-                                        <rect key="frame" x="40" y="234" width="154" height="40"/>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="04Z-zM-wt4">
+                                        <rect key="frame" x="40" y="212" width="154" height="0.0"/>
                                         <subviews>
                                             <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="驗證碼" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rFu-zq-SfR">
-                                                <rect key="frame" x="20" y="0.0" width="105" height="40"/>
+                                                <rect key="frame" x="20" y="0.0" width="118" height="0.0"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="VhW-mj-4NL"/>
+                                                    <constraint firstAttribute="height" id="VhW-mj-4NL"/>
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQl-77-adx">
-                                                <rect key="frame" x="125" y="13.5" width="13" height="13"/>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQl-77-adx">
+                                                <rect key="frame" x="138" y="0.0" width="0.0" height="0.0"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="13" id="a63-79-mvt"/>
+                                                    <constraint firstAttribute="width" id="a63-79-mvt"/>
                                                     <constraint firstAttribute="width" secondItem="eQl-77-adx" secondAttribute="height" multiplier="1:1" id="fW2-Hn-U5X"/>
                                                 </constraints>
                                                 <state key="normal" image="驗證碼更新"/>
@@ -388,7 +388,7 @@
                                     <constraint firstItem="xJ2-Hi-chK" firstAttribute="centerX" secondItem="XiY-nb-tZE" secondAttribute="centerX" id="Abl-0u-IwX"/>
                                     <constraint firstItem="0hw-JH-cns" firstAttribute="width" secondItem="D36-64-68x" secondAttribute="width" id="Fig-yI-DFQ"/>
                                     <constraint firstItem="Ds7-LR-9WX" firstAttribute="trailing" secondItem="Jbx-ni-gbt" secondAttribute="trailing" id="G2v-h6-dtb"/>
-                                    <constraint firstItem="Ds7-LR-9WX" firstAttribute="top" secondItem="fah-Of-JIb" secondAttribute="bottom" constant="22" id="GuD-9i-us7"/>
+                                    <constraint firstItem="Ds7-LR-9WX" firstAttribute="top" secondItem="fah-Of-JIb" secondAttribute="bottom" id="GuD-9i-us7"/>
                                     <constraint firstItem="fah-Of-JIb" firstAttribute="top" secondItem="Jbx-ni-gbt" secondAttribute="bottom" constant="8" id="HZB-ph-dMF"/>
                                     <constraint firstItem="TuS-Q4-enm" firstAttribute="width" secondItem="3Ze-Pt-i4P" secondAttribute="width" id="Ixq-sF-DmW"/>
                                     <constraint firstAttribute="trailing" secondItem="fah-Of-JIb" secondAttribute="trailing" constant="39" id="JaC-6L-hzK"/>

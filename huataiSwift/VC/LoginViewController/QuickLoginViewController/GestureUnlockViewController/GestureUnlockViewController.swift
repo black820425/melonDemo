@@ -34,7 +34,7 @@ class GestureUnlockViewController: UIViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     
-    if(UserDefaults.standard.object(forKey: "confirmSelectArray") != nil) {
+    if(KeychainService.loadPassword(service: "myService", account: "myAccount") != nil) {
       
       if(UserDefaults.standard.bool(forKey: "GestureLockBool")) {
         self.view.isHidden = true
@@ -177,62 +177,71 @@ class GestureUnlockViewController: UIViewController {
     
     //判斷手勢密碼是否正確
     if(selectedButtonsArray.count >= 6) {
-      let confirmSelectArray = UserDefaults.standard.object(forKey: "confirmSelectArray") as! Array<Int>
-      if(selectedButtonsArray.count == confirmSelectArray.count) {
-        
-        var count = 0
-        for button in selectedButtonsArray {
-          let selectTag = confirmSelectArray[count]
-          if(button.tag == selectTag) {
-            //..
-          } else {
-            errorCount += 1
-            
-            if(errorCount == 5) {
-              setAlertViewContrllerOfTitle(title: LanguageTool.sharedInstance().customzieLocalizedString(key: "GestureUnlockSettingViewController_RepeatedInputErrorUpToFiveTimesMessageTitle", commit: ""), message: "")
-              
-              self.view.isHidden = true
-              UserDefaults.standard.set(true, forKey: "GestureLockBool")
-              UserDefaults.standard.synchronize()
-              
-            } else {
-              setAlertViewContrllerOfTitle(title: LanguageTool.sharedInstance().customzieLocalizedString(key: "GestureUnlockViewController_IncorrectPasswordTitle", commit: ""), message: "")
-            }
-            return
-          }
-          count += 1
-        }
-        
-        let alertController = UIAlertController.init(title: LanguageTool.sharedInstance().customzieLocalizedString(key: "GestureUnlockViewController_SuccessLoginTitle", commit: ""), message: "", preferredStyle: .alert)
-        
-        let confirm = UIAlertAction.init(title: LanguageTool.sharedInstance().customzieLocalizedString(key: "ConfirmTitle", commit: ""), style: .default) { (action) in
-          
-          Singleton.sharedInstance().setTestLogin(bool: true)
-          NotificationCenter.default.post(name: NSNotification.Name.init("TestLoginSuccess"), object: nil)
-          NotificationCenter.default.post(name: NSNotification.Name.init("TestLoginSuccessToPopLoginView"), object: nil)
-          
-          self.navigationController?.popViewController(animated: true)
-        }
-        
-        alertController.addAction(confirm)
-        self.present(alertController, animated: true, completion: nil)
-        
-        
-      } else {
-        errorCount += 1
+      
+      var confirmSelectArray = [Int]()
 
-        if(errorCount == 5) {
-          setAlertViewContrllerOfTitle(title: LanguageTool.sharedInstance().customzieLocalizedString(key: "GestureUnlockSettingViewController_RepeatedInputErrorUpToFiveTimesMessageTitle", commit: ""), message: "")
+      if let array = KeychainService.loadPassword(service: "myService", account: "myAccount") {
+        confirmSelectArray = array
+        if(selectedButtonsArray.count == confirmSelectArray.count) {
           
-          self.view.isHidden = true
-          UserDefaults.standard.set(true, forKey: "GestureLockBool")
-          UserDefaults.standard.synchronize()
+          var count = 0
+          for button in selectedButtonsArray {
+            let selectTag = confirmSelectArray[count]
+            if(button.tag == selectTag) {
+              //..
+            } else {
+              errorCount += 1
+              
+              if(errorCount == 5) {
+                setAlertViewContrllerOfTitle(title: LanguageTool.sharedInstance().customzieLocalizedString(key: "GestureUnlockSettingViewController_RepeatedInputErrorUpToFiveTimesMessageTitle", commit: ""), message: "")
+                
+                self.view.isHidden = true
+                UserDefaults.standard.set(true, forKey: "GestureLockBool")
+                UserDefaults.standard.synchronize()
+                
+              } else {
+                setAlertViewContrllerOfTitle(title: LanguageTool.sharedInstance().customzieLocalizedString(key: "GestureUnlockViewController_IncorrectPasswordTitle", commit: ""), message: "")
+              }
+              return
+            }
+            count += 1
+          }
+          
+          let alertController = UIAlertController.init(title: LanguageTool.sharedInstance().customzieLocalizedString(key: "GestureUnlockViewController_SuccessLoginTitle", commit: ""), message: "", preferredStyle: .alert)
+          
+          let confirm = UIAlertAction.init(title: LanguageTool.sharedInstance().customzieLocalizedString(key: "ConfirmTitle", commit: ""), style: .default) { (action) in
+            
+            Singleton.sharedInstance().setTestLogin(bool: true)
+            NotificationCenter.default.post(name: NSNotification.Name.init("TestLoginSuccess"), object: nil)
+            NotificationCenter.default.post(name: NSNotification.Name.init("TestLoginSuccessToPopLoginView"), object: nil)
+            
+            self.navigationController?.popViewController(animated: true)
+          }
+          
+          alertController.addAction(confirm)
+          self.present(alertController, animated: true, completion: nil)
+          
           
         } else {
-          setAlertViewContrllerOfTitle(title: LanguageTool.sharedInstance().customzieLocalizedString(key: "GestureUnlockViewController_IncorrectPasswordTitle", commit: ""), message: "")
+          errorCount += 1
+          
+          if(errorCount == 5) {
+            setAlertViewContrllerOfTitle(title: LanguageTool.sharedInstance().customzieLocalizedString(key: "GestureUnlockSettingViewController_RepeatedInputErrorUpToFiveTimesMessageTitle", commit: ""), message: "")
+            
+            self.view.isHidden = true
+            UserDefaults.standard.set(true, forKey: "GestureLockBool")
+            UserDefaults.standard.synchronize()
+            
+          } else {
+            setAlertViewContrllerOfTitle(title: LanguageTool.sharedInstance().customzieLocalizedString(key: "GestureUnlockViewController_IncorrectPasswordTitle", commit: ""), message: "")
+          }
         }
       }
+      else {
+        print("Password does not exist")
+      }
       
+
     } else {
       setAlertViewContrllerOfTitle(title: LanguageTool.sharedInstance().customzieLocalizedString(key: "GestureUnlockViewController_PleaseEnterAtLeastSixDigitsTitle", commit: ""), message: "")
     }

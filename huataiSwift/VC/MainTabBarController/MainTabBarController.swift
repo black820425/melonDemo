@@ -10,16 +10,18 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
   
-  var tabBarItmeTitleArray = [String]()
-  var mapViewController = UIViewController()
-  var moreViewController = UIViewController()
-  var mainViewController = MainViewController()
-  var qRCodePaymentViewController = UINavigationController()
+  private var tabBarItmeTitleArray = [String]()
+  private var mapViewController = UIViewController()
+  private var moreViewController = UIViewController()
+  private var mainViewController = MainViewController()
+  private var qRCodePaymentViewController = UINavigationController()
+  private var actionCertificationViewController = ActionCertificationViewController()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
     tabBarItmeTitleArray = [LanguageTool.sharedInstance().customzieLocalizedString(key: "TabBarController_MainViewTitle", commit: ""),
+                            "行動認證",
                             LanguageTool.sharedInstance().customzieLocalizedString(key: "TabBarController_QRCodePaymentTitle", commit: ""),
                             LanguageTool.sharedInstance().customzieLocalizedString(key: "TabBarController_MapTitle", commit: ""),
                             LanguageTool.sharedInstance().customzieLocalizedString(key: "TabBarController_MoreTitle", commit: "")]
@@ -54,11 +56,13 @@ class MainTabBarController: UITabBarController {
   }
   
   @objc func reloadTabBarControllerIfSuccessLogin() {
-    self.setViewControllers([mainViewController,qRCodePaymentViewController,mapViewController,moreViewController], animated: true)
+    self.setViewControllers([mainViewController,qRCodePaymentViewController,actionCertificationViewController,mapViewController,moreViewController], animated: true)
+    
+    self.selectedIndex = 0
   }
   
   @objc func TestSingOutSuccess() {
-    self.setViewControllers([qRCodePaymentViewController,mapViewController,moreViewController], animated: true)
+    self.setViewControllers([qRCodePaymentViewController,actionCertificationViewController,mapViewController,moreViewController], animated: true)
   }
   
   func imageWithColor(color: UIColor, size: CGSize) -> UIImage {
@@ -105,6 +109,10 @@ class MainTabBarController: UITabBarController {
     storyboard = UIStoryboard.init(name: "MainViewController", bundle: nil)
     mainViewController = storyboard.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
     
+    
+    storyboard = UIStoryboard.init(name: "ActionCertificationViewController", bundle: nil)
+    actionCertificationViewController = storyboard.instantiateViewController(withIdentifier: "ActionCertificationViewController") as! ActionCertificationViewController
+    
     storyboard = UIStoryboard.init(name: "QRCodePaymentViewController", bundle: nil)
     qRCodePaymentViewController =
       storyboard.instantiateViewController(withIdentifier: "QRCodePaymentViewController") as! UINavigationController
@@ -116,15 +124,23 @@ class MainTabBarController: UITabBarController {
     moreViewController = storyboard.instantiateViewController(withIdentifier: "MoreViewTabBarController")
     
     mainViewController.title = tabBarItmeTitleArray[0]
-    qRCodePaymentViewController.title = tabBarItmeTitleArray[1]
-    mapViewController.title = tabBarItmeTitleArray[2]
-    moreViewController.title = tabBarItmeTitleArray[3]
+    actionCertificationViewController.title = tabBarItmeTitleArray[1]
+    qRCodePaymentViewController.title = tabBarItmeTitleArray[2]
+    mapViewController.title = tabBarItmeTitleArray[3]
+    moreViewController.title = tabBarItmeTitleArray[4]
     
     if(Singleton.sharedInstance().getTestLogin()) {
-      self.viewControllers = [mainViewController,qRCodePaymentViewController,mapViewController,moreViewController]
+      self.viewControllers = [mainViewController,
+                              qRCodePaymentViewController,
+                              actionCertificationViewController,
+                              mapViewController,
+                              moreViewController]
       
     } else {
-      self.viewControllers = [qRCodePaymentViewController,mapViewController,moreViewController]
+      self.viewControllers = [qRCodePaymentViewController,
+                              actionCertificationViewController,
+                              mapViewController,
+                              moreViewController]
     }
   }
   

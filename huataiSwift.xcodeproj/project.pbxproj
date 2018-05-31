@@ -10,6 +10,23 @@
 		3A0DACA620BBF03100F210DC /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0DACA520BBF03100F210DC /* NotificationViewController.swift */; };
 		3A0DACA820BBFE4E00F210DC /* NotificationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A0DACA720BBFE4E00F210DC /* NotificationViewController.storyboard */; };
 		3A0DACAA20BC005C00F210DC /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0DACA920BC005C00F210DC /* NotificationTableViewCell.swift */; };
+		3A0DACAF20BCFBDF00F210DC /* ActionCertificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0DACAE20BCFBDF00F210DC /* ActionCertificationViewController.swift */; };
+		3A0DACB120BCFD0B00F210DC /* ActionCertificationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A0DACB020BCFD0B00F210DC /* ActionCertificationViewController.storyboard */; };
+		3A0DACB320BD063C00F210DC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0DACB220BD063C00F210DC /* Security.framework */; };
+		3A0DACB520BD064B00F210DC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0DACB420BD064B00F210DC /* SystemConfiguration.framework */; };
+		3A0DACB720BD065D00F210DC /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0DACB620BD065D00F210DC /* CoreTelephony.framework */; };
+		3A0DACB920BD066E00F210DC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0DACB820BD066E00F210DC /* CoreLocation.framework */; };
+		3A0DACC320BD076D00F210DC /* hwatai_credential.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3A0DACBD20BD076A00F210DC /* hwatai_credential.bin */; };
+		3A0DACC420BD076D00F210DC /* 1-proto5-pub.der in Resources */ = {isa = PBXBuildFile; fileRef = 3A0DACBE20BD076A00F210DC /* 1-proto5-pub.der */; };
+		3A0DACC520BD076D00F210DC /* hwataibank_app_const_production.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3A0DACBF20BD076B00F210DC /* hwataibank_app_const_production.bin */; };
+		3A0DACC620BD076D00F210DC /* hwatai_app_const.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3A0DACC020BD076C00F210DC /* hwatai_app_const.bin */; };
+		3A0DACC720BD076D00F210DC /* kspfoxconn-1-pub.der in Resources */ = {isa = PBXBuildFile; fileRef = 3A0DACC120BD076C00F210DC /* kspfoxconn-1-pub.der */; };
+		3A0DACC820BD076D00F210DC /* hwataibank_credential_production.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3A0DACC220BD076C00F210DC /* hwataibank_credential_production.bin */; };
+		3A0DACCE20BD153F00F210DC /* VaktenManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0DACCD20BD153E00F210DC /* VaktenManager.m */; };
+		3A0DACD820BD27C200F210DC /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0DACD720BD27C200F210DC /* libc++.tbd */; };
+		3A0DACDE20BD28F900F210DC /* Vakten.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0DACDD20BD28F900F210DC /* Vakten.framework */; };
+		3A0DACE020BE384800F210DC /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0DACDF20BE384800F210DC /* KeychainService.swift */; };
+		3A0DACE220BE74DB00F210DC /* TaskListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0DACE120BE74DB00F210DC /* TaskListTableViewController.swift */; };
 		3A11C56C20AA82BE008B1C09 /* GestureUnlockSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A11C56B20AA82BE008B1C09 /* GestureUnlockSettingViewController.swift */; };
 		3A11C56E20AA8831008B1C09 /* QuickLoginSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A11C56D20AA8831008B1C09 /* QuickLoginSettingViewController.swift */; };
 		3A11C85020AD8341008B1C09 /* RegionListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A11C84F20AD8340008B1C09 /* RegionListTableViewController.swift */; };
@@ -98,6 +115,25 @@
 		3A0DACA520BBF03100F210DC /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		3A0DACA720BBFE4E00F210DC /* NotificationViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NotificationViewController.storyboard; sourceTree = "<group>"; };
 		3A0DACA920BC005C00F210DC /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
+		3A0DACAE20BCFBDF00F210DC /* ActionCertificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCertificationViewController.swift; sourceTree = "<group>"; };
+		3A0DACB020BCFD0B00F210DC /* ActionCertificationViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActionCertificationViewController.storyboard; sourceTree = "<group>"; };
+		3A0DACB220BD063C00F210DC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		3A0DACB420BD064B00F210DC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		3A0DACB620BD065D00F210DC /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		3A0DACB820BD066E00F210DC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		3A0DACBD20BD076A00F210DC /* hwatai_credential.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = hwatai_credential.bin; sourceTree = "<group>"; };
+		3A0DACBE20BD076A00F210DC /* 1-proto5-pub.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "1-proto5-pub.der"; sourceTree = "<group>"; };
+		3A0DACBF20BD076B00F210DC /* hwataibank_app_const_production.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = hwataibank_app_const_production.bin; sourceTree = "<group>"; };
+		3A0DACC020BD076C00F210DC /* hwatai_app_const.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = hwatai_app_const.bin; sourceTree = "<group>"; };
+		3A0DACC120BD076C00F210DC /* kspfoxconn-1-pub.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "kspfoxconn-1-pub.der"; sourceTree = "<group>"; };
+		3A0DACC220BD076C00F210DC /* hwataibank_credential_production.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = hwataibank_credential_production.bin; sourceTree = "<group>"; };
+		3A0DACCB20BD153C00F210DC /* huataiSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "huataiSwift-Bridging-Header.h"; sourceTree = "<group>"; };
+		3A0DACCC20BD153D00F210DC /* VaktenManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VaktenManager.h; sourceTree = "<group>"; };
+		3A0DACCD20BD153E00F210DC /* VaktenManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VaktenManager.m; sourceTree = "<group>"; };
+		3A0DACD720BD27C200F210DC /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		3A0DACDD20BD28F900F210DC /* Vakten.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Vakten.framework; sourceTree = "<group>"; };
+		3A0DACDF20BE384800F210DC /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		3A0DACE120BE74DB00F210DC /* TaskListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListTableViewController.swift; sourceTree = "<group>"; };
 		3A11C56B20AA82BE008B1C09 /* GestureUnlockSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureUnlockSettingViewController.swift; sourceTree = "<group>"; };
 		3A11C56D20AA8831008B1C09 /* QuickLoginSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickLoginSettingViewController.swift; sourceTree = "<group>"; };
 		3A11C84F20AD8340008B1C09 /* RegionListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionListTableViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +218,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A0DACDE20BD28F900F210DC /* Vakten.framework in Frameworks */,
+				3A0DACD820BD27C200F210DC /* libc++.tbd in Frameworks */,
+				3A0DACB920BD066E00F210DC /* CoreLocation.framework in Frameworks */,
+				3A0DACB720BD065D00F210DC /* CoreTelephony.framework in Frameworks */,
+				3A0DACB520BD064B00F210DC /* SystemConfiguration.framework in Frameworks */,
+				3A0DACB320BD063C00F210DC /* Security.framework in Frameworks */,
 				3A50C20220747C07002171F4 /* LocalAuthentication.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,6 +253,29 @@
 				3A0DACA720BBFE4E00F210DC /* NotificationViewController.storyboard */,
 			);
 			path = NotificationViewController;
+			sourceTree = "<group>";
+		};
+		3A0DACAD20BCFB8200F210DC /* ActionCertificationViewController  */ = {
+			isa = PBXGroup;
+			children = (
+				3A0DACE120BE74DB00F210DC /* TaskListTableViewController.swift */,
+				3A0DACAE20BCFBDF00F210DC /* ActionCertificationViewController.swift */,
+				3A0DACB020BCFD0B00F210DC /* ActionCertificationViewController.storyboard */,
+			);
+			path = "ActionCertificationViewController ";
+			sourceTree = "<group>";
+		};
+		3A0DACBC20BD073800F210DC /* HTBank */ = {
+			isa = PBXGroup;
+			children = (
+				3A0DACBE20BD076A00F210DC /* 1-proto5-pub.der */,
+				3A0DACC020BD076C00F210DC /* hwatai_app_const.bin */,
+				3A0DACBD20BD076A00F210DC /* hwatai_credential.bin */,
+				3A0DACBF20BD076B00F210DC /* hwataibank_app_const_production.bin */,
+				3A0DACC220BD076C00F210DC /* hwataibank_credential_production.bin */,
+				3A0DACC120BD076C00F210DC /* kspfoxconn-1-pub.der */,
+			);
+			path = HTBank;
 			sourceTree = "<group>";
 		};
 		3A11C56A20AA829B008B1C09 /* GestureUnlockSettingViewController */ = {
@@ -286,6 +351,10 @@
 				3A50C1DE20747BE1002171F4 /* Info.plist */,
 				3AF56DFF20999BE20021C42E /* InfoPlist.strings */,
 				3AF56E0720999C4C0021C42E /* Localizable.strings */,
+				3A0DACCC20BD153D00F210DC /* VaktenManager.h */,
+				3A0DACCD20BD153E00F210DC /* VaktenManager.m */,
+				3A0DACCB20BD153C00F210DC /* huataiSwift-Bridging-Header.h */,
+				3A0DACBC20BD073800F210DC /* HTBank */,
 				3AF56DF420998CFB0021C42E /* M */,
 				3AF56DF820998D2F0021C42E /* VC */,
 			);
@@ -313,6 +382,12 @@
 		3A50C20020747C07002171F4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3A0DACD720BD27C200F210DC /* libc++.tbd */,
+				3A0DACDD20BD28F900F210DC /* Vakten.framework */,
+				3A0DACB820BD066E00F210DC /* CoreLocation.framework */,
+				3A0DACB620BD065D00F210DC /* CoreTelephony.framework */,
+				3A0DACB420BD064B00F210DC /* SystemConfiguration.framework */,
+				3A0DACB220BD063C00F210DC /* Security.framework */,
 				3A50C20120747C07002171F4 /* LocalAuthentication.framework */,
 			);
 			name = Frameworks;
@@ -437,6 +512,7 @@
 				3AF56DF0209957940021C42E /* ProjectAPI.swift */,
 				3A50C1D220747BE0002171F4 /* AppDelegate.swift */,
 				3A3FD8C220B6938800B883DE /* LanguageTool.swift */,
+				3A0DACDF20BE384800F210DC /* KeychainService.swift */,
 				3A975CDB20A97978007C1EC2 /* TimerApplication.swift */,
 			);
 			path = M;
@@ -447,6 +523,7 @@
 			children = (
 				3A50C1D420747BE0002171F4 /* ViewController.swift */,
 				3A50C1DB20747BE1002171F4 /* LaunchScreen.storyboard */,
+				3A0DACAD20BCFB8200F210DC /* ActionCertificationViewController  */,
 				3A97577020A15B8D007C1EC2 /* MainTabBarController */,
 				3A97576B20A063BA007C1EC2 /* MainViewController */,
 				3A97576520A06038007C1EC2 /* QRCodePaymentViewController */,
@@ -568,6 +645,7 @@
 				TargetAttributes = {
 					3A50C1CE20747BE0002171F4 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -616,18 +694,24 @@
 			files = (
 				3A975B0920A43C54007C1EC2 /* QRCodePaymentViewImages.xcassets in Resources */,
 				3A97575E20A02EB1007C1EC2 /* GestureUnlockViewImage.xcassets in Resources */,
+				3A0DACC820BD076D00F210DC /* hwataibank_credential_production.bin in Resources */,
 				3AF56DF320998CB70021C42E /* MapViewController.storyboard in Resources */,
 				3A97577620A17C94007C1EC2 /* NavigationItemImage.xcassets in Resources */,
+				3A0DACC520BD076D00F210DC /* hwataibank_app_const_production.bin in Resources */,
+				3A0DACC320BD076D00F210DC /* hwatai_credential.bin in Resources */,
 				3A945C41209C456F005414BE /* TabBarImages.xcassets in Resources */,
 				3A975B1620A545FE007C1EC2 /* GeneralLoginViewImages.xcassets in Resources */,
 				3A975B0720A4131D007C1EC2 /* .gitignore in Resources */,
 				3AF56E0520999C4C0021C42E /* Localizable.strings in Resources */,
 				3A975B0E20A526E1007C1EC2 /* SettingViewController.storyboard in Resources */,
+				3A0DACC420BD076D00F210DC /* 1-proto5-pub.der in Resources */,
+				3A0DACC720BD076D00F210DC /* kspfoxconn-1-pub.der in Resources */,
 				3A50C1DD20747BE1002171F4 /* LaunchScreen.storyboard in Resources */,
 				3A50C1DA20747BE1002171F4 /* Assets.xcassets in Resources */,
 				3A11C85420AEC51D008B1C09 /* CustomizeCalloutAccessoryView.xib in Resources */,
 				3A975B1820A5463B007C1EC2 /* MapViewImages.xcassets in Resources */,
 				3A97577320A15C0E007C1EC2 /* MainViewController.storyboard in Resources */,
+				3A0DACC620BD076D00F210DC /* hwatai_app_const.bin in Resources */,
 				3AF56E19209B17FE0021C42E /* ScanQRCodeViewController.storyboard in Resources */,
 				3A97577C20A19FCF007C1EC2 /* MoreViewController.xcassets in Resources */,
 				3A975B1020A52BD2007C1EC2 /* SettingViewImages.xcassets in Resources */,
@@ -636,6 +720,7 @@
 				3A945C49209C5E01005414BE /* LoginViewController.storyboard in Resources */,
 				3A50C1D820747BE0002171F4 /* Main.storyboard in Resources */,
 				3AF56E0D2099AADF0021C42E /* MainViewImage.xcassets in Resources */,
+				3A0DACB120BCFD0B00F210DC /* ActionCertificationViewController.storyboard in Resources */,
 				3AF56DFD20999BE20021C42E /* InfoPlist.strings in Resources */,
 				3A97576A20A0617F007C1EC2 /* QRCodePaymentViewController.storyboard in Resources */,
 			);
@@ -671,16 +756,19 @@
 				3A97575C20A01B1C007C1EC2 /* GeneralLoginViewController.swift in Sources */,
 				3AF56DF1209957940021C42E /* ProjectAPI.swift in Sources */,
 				3AF56E12209AFCD70021C42E /* Singleton.swift in Sources */,
+				3A0DACE220BE74DB00F210DC /* TaskListTableViewController.swift in Sources */,
 				3A945C45209C52B9005414BE /* MainTabBarController.swift in Sources */,
 				3A0DACA620BBF03100F210DC /* NotificationViewController.swift in Sources */,
 				3A97594520A2D444007C1EC2 /* CreditCardPublicTextFieldTableViewCell.swift in Sources */,
 				3A11C85920AEDB3B008B1C09 /* RouteCollectionViewCell.swift in Sources */,
+				3A0DACCE20BD153F00F210DC /* VaktenManager.m in Sources */,
 				3A975CE020A9872D007C1EC2 /* main.swift in Sources */,
 				3A975B1420A53EF4007C1EC2 /* SettingTableViewCell.swift in Sources */,
 				3A975CDE20A97D45007C1EC2 /* BiometricViewController.swift in Sources */,
 				3A11C56C20AA82BE008B1C09 /* GestureUnlockSettingViewController.swift in Sources */,
 				3AF56E15209B088A0021C42E /* ScanQRCodeViewController.swift in Sources */,
 				3A945C3F209C2B62005414BE /* EffectiveScanningRangeView.swift in Sources */,
+				3A0DACAF20BCFBDF00F210DC /* ActionCertificationViewController.swift in Sources */,
 				3A3FD77520B64C6400B883DE /* SettingViewController.swift in Sources */,
 				3A97577A20A18A39007C1EC2 /* MoreViewTableViewCell.swift in Sources */,
 				3A975CDC20A97979007C1EC2 /* TimerApplication.swift in Sources */,
@@ -697,6 +785,7 @@
 				3AF56E10209AE9880021C42E /* MapViewCollectionViewCell.swift in Sources */,
 				3A945C4F209C6289005414BE /* LoginViewCollectionViewCell.swift in Sources */,
 				3A97576820A06133007C1EC2 /* QRCodePaymentViewController.swift in Sources */,
+				3A0DACE020BE384800F210DC /* KeychainService.swift in Sources */,
 				3A11C85220AD85CA008B1C09 /* RegionListTableViewCell.swift in Sources */,
 				3A97594320A2D3D5007C1EC2 /* CreditCardInstructionsTableViewCell.swift in Sources */,
 				3AF56DFA20998D6F0021C42E /* MapViewController.swift in Sources */,
@@ -906,17 +995,29 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = huataiSwift/huataiSwift.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VN24ZWQUQ3;
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/\"";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					"ENV_LYDSEC=1",
+				);
 				INFOPLIST_FILE = huataiSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				"OTHER_SWIFT_FLAGS[arch=*]" = "-D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.usync.ent.hwatai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "huataiSwift/huataiSwift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -926,9 +1027,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = huataiSwift/huataiSwift.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VN24ZWQUQ3;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/\"";
+				GCC_PREPROCESSOR_DEFINITIONS = "ENV_LYDSEC=1";
 				INFOPLIST_FILE = huataiSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -937,6 +1042,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.usync.ent.hwatai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "huataiSwift/huataiSwift-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
