@@ -71,17 +71,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ck5-Zc-LcI">
+                                <rect key="frame" x="16" y="62" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="sNT-HF-nsV" firstAttribute="centerY" secondItem="rwe-dm-CcJ" secondAttribute="centerY" multiplier="2/3" id="2bW-mi-yde"/>
                             <constraint firstItem="n42-ax-6FN" firstAttribute="centerX" secondItem="rwe-dm-CcJ" secondAttribute="centerX" id="39b-Vt-NtF"/>
                             <constraint firstItem="5WM-lc-GPQ" firstAttribute="centerX" secondItem="rwe-dm-CcJ" secondAttribute="centerX" id="40h-hl-hHw"/>
+                            <constraint firstItem="n42-ax-6FN" firstAttribute="top" secondItem="Ck5-Zc-LcI" secondAttribute="bottom" constant="16" id="DsW-s5-88w"/>
                             <constraint firstItem="VT3-xh-Ink" firstAttribute="top" secondItem="3tE-eX-Hf8" secondAttribute="bottom" constant="16" id="FIw-2e-MAq"/>
                             <constraint firstItem="iIe-fc-A2d" firstAttribute="top" secondItem="n42-ax-6FN" secondAttribute="bottom" constant="16" id="FQc-ae-iQ2"/>
                             <constraint firstItem="VT3-xh-Ink" firstAttribute="centerX" secondItem="rwe-dm-CcJ" secondAttribute="centerX" id="FZS-6a-BZc"/>
+                            <constraint firstItem="Ck5-Zc-LcI" firstAttribute="leading" secondItem="yVq-Fx-CyW" secondAttribute="leading" constant="16" id="GgR-cY-GZu"/>
                             <constraint firstItem="bhr-P4-vn1" firstAttribute="centerX" secondItem="rwe-dm-CcJ" secondAttribute="centerX" id="JQ3-9I-EzS"/>
                             <constraint firstItem="iIe-fc-A2d" firstAttribute="centerX" secondItem="rwe-dm-CcJ" secondAttribute="centerX" id="Jkl-xA-LpZ"/>
+                            <constraint firstItem="yVq-Fx-CyW" firstAttribute="trailing" secondItem="Ck5-Zc-LcI" secondAttribute="trailing" constant="16" id="YIC-Wa-dZQ"/>
                             <constraint firstItem="5WM-lc-GPQ" firstAttribute="top" secondItem="VT3-xh-Ink" secondAttribute="bottom" constant="16" id="fSj-be-uT0"/>
                             <constraint firstItem="3tE-eX-Hf8" firstAttribute="top" secondItem="sNT-HF-nsV" secondAttribute="bottom" constant="16" id="gUn-h6-PNb"/>
                             <constraint firstItem="sNT-HF-nsV" firstAttribute="centerX" secondItem="rwe-dm-CcJ" secondAttribute="centerX" id="hQm-Wy-udt"/>
@@ -95,6 +104,7 @@
                     <connections>
                         <outlet property="confirmButton" destination="sNT-HF-nsV" id="MWD-dN-KQb"/>
                         <outlet property="cutomizeTitleLabel" destination="n42-ax-6FN" id="eZD-Ie-bF2"/>
+                        <outlet property="deviceTokenTextField" destination="Ck5-Zc-LcI" id="iL7-b8-Xcu"/>
                         <outlet property="otpCodeLabel" destination="bhr-P4-vn1" id="NHA-c3-ZLJ"/>
                         <outlet property="ppTextField" destination="iIe-fc-A2d" id="6hZ-Oj-neL"/>
                     </connections>
@@ -109,6 +119,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="0Gi-Ja-2tN" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VvG-qV-4AB">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

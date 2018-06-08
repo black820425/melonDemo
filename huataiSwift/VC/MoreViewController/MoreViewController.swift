@@ -28,6 +28,7 @@ class MoreViewController: UIViewController {
                       "更多_使用者隱私聲明",
                       "更多_版本",
                       "更多_設定",
+                      "更多_設定",
                       "更多_登出"]
     
     var AppVersion = ""
@@ -43,6 +44,7 @@ class MoreViewController: UIViewController {
                       LanguageTool.sharedInstance().customzieLocalizedString(key: "MoreViewController_UserPrivacyStatementTitle", commit: ""),
                       AppVersion,
                       LanguageTool.sharedInstance().customzieLocalizedString(key: "MoreViewController_SettingTitle", commit: ""),
+                      "推播 Token 取得",
                       LanguageTool.sharedInstance().customzieLocalizedString(key: "MoreViewController_LogOutTitle", commit: "")]
     
   }
@@ -192,6 +194,12 @@ extension MoreViewController: UITableViewDelegate {
       Singleton.sharedInstance().setTestLogin(bool: false)
       dismiss(animated: true, completion: nil)
       NotificationCenter.default.post(name: NSNotification.Name.init("TestSignOutSuccess"), object: nil)
+      break
+      
+    case "推播 Token 取得":
+      storyboard = UIStoryboard.init(name: "MoreViewController", bundle: nil)
+      let getPushDeviceTokenViewController = storyboard.instantiateViewController(withIdentifier: "GetPushDeviceTokenViewController")
+      navigationController?.pushViewController(getPushDeviceTokenViewController, animated: true)
       break
       
     default:

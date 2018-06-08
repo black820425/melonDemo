@@ -10,6 +10,8 @@ import UIKit
 
 class ActionCertificationViewController: UIViewController {
   
+  @IBOutlet weak var deviceTokenTextField: UITextField!
+  
   @IBOutlet weak var otpCodeLabel: UILabel!
   @IBOutlet weak var confirmButton: UIButton!
   @IBOutlet weak var ppTextField: UITextField!
@@ -96,6 +98,12 @@ class ActionCertificationViewController: UIViewController {
         otpCodeLabel.text = String(format: "%d", (otp?.resultCode.rawValue)!)
         break
       }
+    }
+    
+    if let DeviceTokenString = UserDefaults.standard.object(forKey: "DeviceTokenString") as? String {
+      deviceTokenTextField.text = DeviceTokenString
+    } else {
+      deviceTokenTextField.text = "未取得DeviceToken"
     }
   }
   

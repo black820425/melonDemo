@@ -98,6 +98,13 @@ class MapViewController: UIViewController {
   }
   
   @IBAction func searchButtonAction(_ sender: Any) {
+    
+    let dic: [String: String] = ["Body":""]
+    ProjectAPI.Object().connectAPIWithUrl(method: "GetRegionList", parmaterDic: dic) { (response) in
+      
+      
+    }
+    
     customizeMapView.removeOverlays(self.customizeMapView.overlays)
     
     myTextField.becomeFirstResponder()

@@ -22,7 +22,6 @@ class MainViewController: UIViewController,WKNavigationDelegate{
     let loadUrl = URL(string: "https://nibwebq.hwataibank.com.tw/VisualDesign/Index2.html")
     let customRequest = URLRequest(url: loadUrl!)
     wkWebView.load(customRequest)
-    
   }
   
   override func didReceiveMemoryWarning() {

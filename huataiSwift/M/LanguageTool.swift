@@ -26,6 +26,7 @@ class LanguageTool {
 
     if((currentLanguage()) != nil) {
       //..
+      
     } else {
       systemLanguage()
     }

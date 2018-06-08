@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -29,6 +28,46 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="02A-XR-vTq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="31" y="300"/>
+        </scene>
+        <!--Get Push Device Token View Controller-->
+        <scene sceneID="Z2D-QX-JZ1">
+            <objects>
+                <viewController storyboardIdentifier="GetPushDeviceTokenViewController" id="U3O-iM-DSP" customClass="GetPushDeviceTokenViewController" customModule="huataiSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Plm-st-rVh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fha-wD-Lpu">
+                                <rect key="frame" x="60" y="100" width="255" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ULK-EX-so1">
+                                <rect key="frame" x="124" y="164" width="126" height="30"/>
+                                <state key="normal" title="取得 Token Button"/>
+                                <connections>
+                                    <action selector="getPushTokenPress:" destination="U3O-iM-DSP" eventType="touchUpInside" id="4fV-T5-8gD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nUA-dI-7to" firstAttribute="trailing" secondItem="Fha-wD-Lpu" secondAttribute="trailing" constant="60" id="CyC-96-krl"/>
+                            <constraint firstItem="Fha-wD-Lpu" firstAttribute="leading" secondItem="nUA-dI-7to" secondAttribute="leading" constant="60" id="PIg-h4-bT3"/>
+                            <constraint firstItem="Fha-wD-Lpu" firstAttribute="top" secondItem="nUA-dI-7to" secondAttribute="top" constant="80" id="ckA-Jj-BXg"/>
+                            <constraint firstItem="ULK-EX-so1" firstAttribute="centerX" secondItem="Fha-wD-Lpu" secondAttribute="centerX" id="cym-5S-MSe"/>
+                            <constraint firstItem="ULK-EX-so1" firstAttribute="top" secondItem="Fha-wD-Lpu" secondAttribute="bottom" constant="34" id="sHN-it-Eos"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nUA-dI-7to"/>
+                    </view>
+                    <connections>
+                        <outlet property="cutomizeTextField" destination="Fha-wD-Lpu" id="Hol-wb-3pz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O0M-JD-dW2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="834.39999999999998" y="300"/>
         </scene>
         <!--More View Controller-->
         <scene sceneID="syD-uJ-8Sr">

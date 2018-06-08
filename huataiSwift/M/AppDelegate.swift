@@ -69,6 +69,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
 
     print("deviceTokenString --> \(deviceTokenString)")
+    
+    UserDefaults.standard.set(deviceTokenString, forKey: "DeviceTokenString")
+    UserDefaults.standard.synchronize()
   }
   
   func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {

@@ -10,8 +10,8 @@ import UIKit
 
 class QRCodePaymentViewController: UIViewController {
   
-  var timer: Timer!
   var sixSec = 0
+  var timer: Timer!
   
   @IBOutlet weak var backgroundView: UIView!
   
@@ -24,12 +24,6 @@ class QRCodePaymentViewController: UIViewController {
     navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "ic_com_Left_pressed")
     
     NotificationCenter.default.addObserver(self, selector: #selector(TestSingOutSuccess), name: NSNotification.Name(rawValue: "TestSignOutSuccess"), object: nil)
-    
-    if(!Singleton.sharedInstance().getTestLogin()) {
-      if let viewController = UIStoryboard(name: "LoginViewController", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
-        self.navigationController?.pushViewController(viewController, animated: true)
-      }
-    }
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -37,6 +31,13 @@ class QRCodePaymentViewController: UIViewController {
   }
   
   override func viewDidAppear(_ animated: Bool) {
+    
+    if(!Singleton.sharedInstance().getTestLogin()) {
+      
+      if let viewController = UIStoryboard(name: "LoginViewController", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
+        self.navigationController?.pushViewController(viewController, animated: true)
+      }
+    }
   }
   
   override func didReceiveMemoryWarning() {

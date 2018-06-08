@@ -101,10 +101,15 @@
 "GeneralLoginViewController_pleaseEnter6To12CodeTitle" = "請輸入6至12位用戶代碼";
 
 // MARK: - GestureUnlockViewController
-"GestureUnlockViewController_PleaseEnterGestureCodeTitle" = "請輸入圖形密碼";
-"GestureUnlockViewController_IncorrectPasswordTitle" = "密碼輸入錯誤";
 "GestureUnlockViewController_SuccessLoginTitle" = "成功登入";
+"GestureUnlockViewController_IncorrectPasswordTitle" = "密碼輸入錯誤";
+"GestureUnlockViewController_PleaseEnterGestureCodeTitle" = "請輸入圖形密碼";
 "GestureUnlockViewController_PleaseEnterAtLeastSixDigitsTitle" = "請輸入至少六位數";
+
+// MARK: - TimerApplication
+"TimerApplication_SystemMessageTitle" = "系統訊息";
+"TimerApplication_timeHasExceededMessage" = "您已超過未操作時間，系統自動性登出";
+"TimerApplication_SystemMessage" = "系統訊息";
 
 
 

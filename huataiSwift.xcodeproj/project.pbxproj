@@ -34,6 +34,7 @@
 		3A11C85420AEC51D008B1C09 /* CustomizeCalloutAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A11C85320AEC51D008B1C09 /* CustomizeCalloutAccessoryView.xib */; };
 		3A11C85620AEC62B008B1C09 /* CustomizeCalloutAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A11C85520AEC62B008B1C09 /* CustomizeCalloutAccessoryView.swift */; };
 		3A11C85920AEDB3B008B1C09 /* RouteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A11C85820AEDB3B008B1C09 /* RouteCollectionViewCell.swift */; };
+		3A3C94CB20CA20EA00ECFBFC /* GetPushDeviceTokenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C94CA20CA20EA00ECFBFC /* GetPushDeviceTokenViewController.swift */; };
 		3A3FD77520B64C6400B883DE /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3FD77420B64C6400B883DE /* SettingViewController.swift */; };
 		3A3FD8C320B6938800B883DE /* LanguageTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3FD8C220B6938800B883DE /* LanguageTool.swift */; };
 		3A50C1D320747BE0002171F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50C1D220747BE0002171F4 /* AppDelegate.swift */; };
@@ -79,6 +80,8 @@
 		3A975CDC20A97979007C1EC2 /* TimerApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A975CDB20A97978007C1EC2 /* TimerApplication.swift */; };
 		3A975CDE20A97D45007C1EC2 /* BiometricViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A975CDD20A97D45007C1EC2 /* BiometricViewController.swift */; };
 		3A975CE020A9872D007C1EC2 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A975CDF20A9872D007C1EC2 /* main.swift */; };
+		3A981D5E20C4E70D00306803 /* DES3Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A981D5D20C4E70D00306803 /* DES3Util.m */; };
+		3A981D6220C4E83500306803 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A981D6120C4E83500306803 /* GTMBase64.m */; };
 		3AD8438320B7BB71006E4C1F /* SettingLangueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD8438220B7BB71006E4C1F /* SettingLangueTableViewCell.swift */; };
 		3AF56DF1209957940021C42E /* ProjectAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF56DF0209957940021C42E /* ProjectAPI.swift */; };
 		3AF56DF320998CB70021C42E /* MapViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AF56DF220998CB70021C42E /* MapViewController.storyboard */; };
@@ -141,6 +144,7 @@
 		3A11C85320AEC51D008B1C09 /* CustomizeCalloutAccessoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomizeCalloutAccessoryView.xib; sourceTree = "<group>"; };
 		3A11C85520AEC62B008B1C09 /* CustomizeCalloutAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeCalloutAccessoryView.swift; sourceTree = "<group>"; };
 		3A11C85820AEDB3B008B1C09 /* RouteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteCollectionViewCell.swift; sourceTree = "<group>"; };
+		3A3C94CA20CA20EA00ECFBFC /* GetPushDeviceTokenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPushDeviceTokenViewController.swift; sourceTree = "<group>"; };
 		3A3FD77420B64C6400B883DE /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		3A3FD8C120B653E700B883DE /* huataiSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = huataiSwift.entitlements; sourceTree = "<group>"; };
 		3A3FD8C220B6938800B883DE /* LanguageTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTool.swift; sourceTree = "<group>"; };
@@ -194,6 +198,12 @@
 		3A975CDB20A97978007C1EC2 /* TimerApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerApplication.swift; sourceTree = "<group>"; };
 		3A975CDD20A97D45007C1EC2 /* BiometricViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiometricViewController.swift; sourceTree = "<group>"; };
 		3A975CDF20A9872D007C1EC2 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		3A981D5C20C4E70D00306803 /* DES3Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DES3Util.h; sourceTree = "<group>"; };
+		3A981D5D20C4E70D00306803 /* DES3Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DES3Util.m; sourceTree = "<group>"; };
+		3A981D6020C4E83400306803 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
+		3A981D6120C4E83500306803 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
+		3A981D6420C4E88D00306803 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		3A981D6620C4E8E000306803 /* kDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kDefine.h; sourceTree = "<group>"; };
 		3AD8438220B7BB71006E4C1F /* SettingLangueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingLangueTableViewCell.swift; sourceTree = "<group>"; };
 		3AF56DF0209957940021C42E /* ProjectAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectAPI.swift; sourceTree = "<group>"; };
 		3AF56DF220998CB70021C42E /* MapViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapViewController.storyboard; sourceTree = "<group>"; };
@@ -351,9 +361,9 @@
 				3A50C1DE20747BE1002171F4 /* Info.plist */,
 				3AF56DFF20999BE20021C42E /* InfoPlist.strings */,
 				3AF56E0720999C4C0021C42E /* Localizable.strings */,
-				3A0DACCC20BD153D00F210DC /* VaktenManager.h */,
-				3A0DACCD20BD153E00F210DC /* VaktenManager.m */,
 				3A0DACCB20BD153C00F210DC /* huataiSwift-Bridging-Header.h */,
+				3A981D5B20C4E6F400306803 /* DES3Util */,
+				3A981D5A20C4C85B00306803 /* VaktenManager */,
 				3A0DACBC20BD073800F210DC /* HTBank */,
 				3AF56DF420998CFB0021C42E /* M */,
 				3AF56DF820998D2F0021C42E /* VC */,
@@ -458,6 +468,7 @@
 			children = (
 				3A945C42209C45D4005414BE /* MoreViewController.storyboard */,
 				3A97577720A18064007C1EC2 /* MoreViewController.swift */,
+				3A3C94CA20CA20EA00ECFBFC /* GetPushDeviceTokenViewController.swift */,
 				3A97577920A18A39007C1EC2 /* MoreViewTableViewCell.swift */,
 			);
 			path = MoreViewController;
@@ -502,6 +513,52 @@
 				3A11C56F20AA883F008B1C09 /* QuickLoginSettingViewController */,
 			);
 			path = SettingViewController;
+			sourceTree = "<group>";
+		};
+		3A981D5A20C4C85B00306803 /* VaktenManager */ = {
+			isa = PBXGroup;
+			children = (
+				3A0DACCC20BD153D00F210DC /* VaktenManager.h */,
+				3A0DACCD20BD153E00F210DC /* VaktenManager.m */,
+			);
+			path = VaktenManager;
+			sourceTree = "<group>";
+		};
+		3A981D5B20C4E6F400306803 /* DES3Util */ = {
+			isa = PBXGroup;
+			children = (
+				3A981D5C20C4E70D00306803 /* DES3Util.h */,
+				3A981D5D20C4E70D00306803 /* DES3Util.m */,
+				3A981D6520C4E8D500306803 /* kDefine */,
+				3A981D5F20C4E81E00306803 /* GTMBase64 */,
+				3A981D6320C4E87300306803 /* GTMDefines */,
+			);
+			path = DES3Util;
+			sourceTree = "<group>";
+		};
+		3A981D5F20C4E81E00306803 /* GTMBase64 */ = {
+			isa = PBXGroup;
+			children = (
+				3A981D6020C4E83400306803 /* GTMBase64.h */,
+				3A981D6120C4E83500306803 /* GTMBase64.m */,
+			);
+			path = GTMBase64;
+			sourceTree = "<group>";
+		};
+		3A981D6320C4E87300306803 /* GTMDefines */ = {
+			isa = PBXGroup;
+			children = (
+				3A981D6420C4E88D00306803 /* GTMDefines.h */,
+			);
+			path = GTMDefines;
+			sourceTree = "<group>";
+		};
+		3A981D6520C4E8D500306803 /* kDefine */ = {
+			isa = PBXGroup;
+			children = (
+				3A981D6620C4E8E000306803 /* kDefine.h */,
+			);
+			path = kDefine;
 			sourceTree = "<group>";
 		};
 		3AF56DF420998CFB0021C42E /* M */ = {
@@ -747,6 +804,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A3C94CB20CA20EA00ECFBFC /* GetPushDeviceTokenViewController.swift in Sources */,
 				3A11C85020AD8341008B1C09 /* RegionListTableViewController.swift in Sources */,
 				AEF160FA20A58D7700BDDC60 /* QRCodeBarViewController.swift in Sources */,
 				3A97577820A18064007C1EC2 /* MoreViewController.swift in Sources */,
@@ -773,6 +831,7 @@
 				3A97577A20A18A39007C1EC2 /* MoreViewTableViewCell.swift in Sources */,
 				3A975CDC20A97979007C1EC2 /* TimerApplication.swift in Sources */,
 				3A97593F20A29B77007C1EC2 /* CreditCardMembershipViewController.swift in Sources */,
+				3A981D5E20C4E70D00306803 /* DES3Util.m in Sources */,
 				3A11C56E20AA8831008B1C09 /* QuickLoginSettingViewController.swift in Sources */,
 				3A0DACAA20BC005C00F210DC /* NotificationTableViewCell.swift in Sources */,
 				3A975755209FDFE8007C1EC2 /* LoginViewPageViewController.swift in Sources */,
@@ -792,6 +851,7 @@
 				AEF160F820A58D6800BDDC60 /* QRCodeScanViewController.swift in Sources */,
 				3A97576F20A063E7007C1EC2 /* MainViewController.swift in Sources */,
 				3A975B1220A53DC2007C1EC2 /* QuickLoginSetViewContorller.swift in Sources */,
+				3A981D6220C4E83500306803 /* GTMBase64.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
